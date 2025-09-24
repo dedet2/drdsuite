@@ -1,0 +1,271 @@
+Build a unified, mobile-first website for Dr. Dédé + incluu
+Objectives
+
+Merge these projects into one responsive site with shared brand system:
+
+Replit: dr-dede-static, dr-dede, incluu, incluu-static, rar-landing-clean
+
+GitHub: dedet2/dr-dede-tedx-homepage
+
+Keep existing logos/images and brand colors from dr-dede.com and incluu.us. Extract hex tokens and apply globally. (Source for dr-dede.com content: 
+Dr. Dédé Tetsubayashi
+)
+
+Public site for audiences; private admin link routes to my control center at:
+
+Admin control center (external only): https://replit.com/@admin3035/risktravel-dashboard (do not mirror; just link under /admin with access note)
+
+SEO, accessibility, and performance by default.
+
+Tech stack
+
+Next.js 14 (App Router) + TypeScript
+
+Tailwind CSS + shadcn/ui
+
+Framer Motion (micro-interactions)
+
+Contentlayer (MDX) for long-form pages
+
+Next SEO + JSON-LD
+
+Vercel or Replit deployment
+
+Monorepo structure
+apps/
+  web/                # public site
+packages/
+  ui/                 # shared UI components (buttons, nav, cards)
+  config/             # tailwind, eslint, tsconfig
+  content/            # mdx content pulled from legacy sites
+
+Brand system
+
+Auto-extract tokens
+
+Fetch CSS and assets from dr-dede.com and incluu.us.
+
+Parse primary/secondary color variables or compute dominant palette from SVG/PNGs.
+
+Produce brand.tokens.ts:
+
+export const brand = {
+  dede: { primary: "<#hex>", secondary: "<#hex>", accent: "<#hex>" },
+  incluu: { primary: "<#hex>", secondary: "<#hex>", accent: "<#hex>" },
+  neutrals: { bg: "#0B0B0B", fg: "#FFFFFF" }
+};
+
+
+Tailwind config: map tokens to theme.extend.colors.brand.*.
+
+Logos/Images: copy from the listed projects; store in apps/web/public/brand/....
+
+Routes & pages (App Router)
+/                -> Unified home (hero, TEDx CTA, services, retreat)
+/tedx            -> Talk details, embed, transcript, press kit
+/consulting      -> AI governance, accessibility systems, ROI CTA
+/retreat         -> Luxury retreat overview + application form
+/rar             -> “RaR” landing (migrate from rar-landing-clean)
+/incluu          -> Brand story + travel accessibility
+/stories         -> Videos & articles (MDX + YouTube embeds)
+/contact         -> Form (Netlify/Vercel serverless)
+/admin           -> External link: risktravel-dashboard (visibility note)
+/privacy, /terms -> Legal
+/sitemap.xml, /robots.txt
+
+Content migration
+
+Static clones: ingest HTML/CSS/images from Replit projects dr-dede-static, incluu-static.
+
+Dynamic pieces: port React sections from dr-dede, incluu, rar-landing-clean into Next.js Server/Client Components.
+
+GitHub dr-dede-tedx-homepage: import hero, talk section, and styles; convert to components.
+
+Navigation
+
+Top bar with brand toggle (Dr. Dédé / incluu) that swaps color tokens and accent components.
+
+Persistent CTA buttons: “Book a Call”, “Watch TEDx”.
+
+Components (in packages/ui)
+
+<Header/>, <Footer/>, <MobileNav/>
+
+<Hero/>, <Section/>, <Card/>, <Testimonial/>
+
+<VideoEmbed provider="youtube" id="..."/>
+
+<BrandSwitcher/> to swap tokens at runtime
+
+<AccessibilityToolbar/> (text size, contrast, motion toggle)
+
+Admin link
+
+/admin page = secure notice + outbound button to the external dashboard:
+
+“This control center is private. Continue to authenticated dashboard.” → opens risktravel-dashboard in new tab.
+
+No credentials stored in this site. No proxies. No embedded iframes.
+
+Accessibility
+
+WCAG 2.2 AA: color contrast checks, focus states, skip links, semantic headings, ARIA labels.
+
+Prefers-reduced-motion support.
+
+All media with alt text and transcripts.
+
+Performance
+
+Next/Image for hero and brand assets.
+
+Route-level code splitting.
+
+Preconnect to YouTube when needed only.
+
+SEO
+
+next-seo defaults per route.
+
+JSON-LD:
+
+Person (Dr. Dédé) with sameAs to social links.
+
+Organization (incluu / RiskTravel Intelligence).
+
+Event markup if retreat has dated sessions.
+
+Open Graph images per page via dynamic OG route.
+
+Analytics
+
+Add privacy-friendly analytics (Plausible) with outbound link tracking.
+
+Build steps
+
+Create repo and Next.js app:
+
+npx create-next-app@latest apps/web --ts --eslint --tailwind --app
+pnpm i -D @types/node
+
+
+Add packages:
+
+pnpm add class-variance-authority tailwind-merge lucide-react framer-motion next-seo contentlayer @next/mdx
+
+
+shadcn/ui:
+
+pnpm dlx shadcn-ui@latest init -d packages/ui
+pnpm dlx shadcn-ui@latest add button card navigation-menu dialog accordion
+
+
+Ingest legacy projects
+
+Pull code/assets from:
+
+Replit: dr-dede-static, dr-dede, incluu, incluu-static, rar-landing-clean
+
+GitHub: dedet2/dr-dede-tedx-homepage
+
+Place images in apps/web/public/brand/...
+
+Convert legacy sections into React Server Components under apps/web/app/(site)/_components.
+
+Brand token extraction task
+
+Script: scan public/brand SVGs + CSS for hex codes; output brand.tokens.ts.
+
+Fallback to manual palette if extraction fails.
+
+Contentlayer
+
+Create packages/content/posts for long-form; add MDX loader; migrate TEDx page copy and messaging.
+
+CI/CD
+
+GitHub Actions: build + preview.
+
+Deploy to Replit or Vercel. Set NEXT_PUBLIC_BASE_URL and analytics env.
+
+Sample code stubs
+
+apps/web/app/layout.tsx
+
+import "./globals.css";
+import { brand } from "@/brand/brand.tokens";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className="bg-brand-bg text-brand-fg">
+      <body>{children}</body>
+    </html>
+  );
+}
+
+
+apps/web/app/page.tsx (home hero)
+
+import { Button } from "@/components/ui/button";
+import VideoEmbed from "@/components/video-embed";
+
+export default function Home() {
+  return (
+    <main className="px-4 sm:px-6 md:px-8">
+      <section className="py-12 md:py-20">
+        <h1 className="text-4xl md:text-6xl font-bold">AI Governance + Accessible Futures</h1>
+        <p className="mt-4 max-w-prose">
+          Systems design for compliance, access, and growth. Built from embodied expertise.
+        </p>
+        <div className="mt-6 flex gap-3">
+          <Button asChild><a href="/consulting">Work With Me</a></Button>
+          <Button variant="secondary" asChild><a href="/tedx">Watch TEDx</a></Button>
+        </div>
+      </section>
+      <section className="py-8">
+        <VideoEmbed provider="youtube" id="YOUR_YOUTUBE_ID" />
+      </section>
+    </main>
+  );
+}
+
+
+apps/web/app/admin/page.tsx
+
+export default function AdminGate() {
+  return (
+    <main className="min-h-[60vh] grid place-items-center p-8 text-center">
+      <div>
+        <h1 className="text-3xl font-semibold">Private Control Center</h1>
+        <p className="mt-2">Admin access is managed off-site.</p>
+        <a
+          className="mt-6 inline-block underline"
+          href="https://replit.com/@admin3035/risktravel-dashboard"
+          rel="noopener noreferrer" target="_blank"
+        >
+          Open RiskTravel Dashboard
+        </a>
+      </div>
+    </main>
+  );
+}
+
+Data privacy
+
+No PII stored. Forms submit to your secure endpoint or Replit Forms; add reCAPTCHA.
+
+Tasks for the agent
+
+ Pull and dedupe assets from all listed projects.
+
+ Extract brand tokens from dr-dede.com and incluu.us; map to Tailwind.
+
+ Port TEDx homepage sections and RaR landing as routes.
+
+ Build /retreat with application form and calendar embed.
+
+ Wire /admin to external dashboard link only.
+
+ Add SEO, a11y checks, sitemap, robots.
+
+ Ship mobile-first layouts and test on iOS/Android.
