@@ -14,6 +14,7 @@ import BrandSwitcher from './BrandSwitcher';
 import ThemeToggle from '@/components/ThemeToggle';
 import { Menu, Play, Calendar, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
+import ContactForm from '@/components/ContactForm';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -44,7 +45,6 @@ const navigation = [
       { name: 'Book Event', href: '/book-event' }
     ]
   },
-  { name: 'incluu', href: '/incluu' },
   { name: 'Contact', href: '/contact' }
 ];
 
@@ -117,14 +117,21 @@ export default function Header() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <BrandSwitcher />
-            <Button size="sm" data-testid="button-watch-tedx">
-              <Play className="w-4 h-4 mr-2" />
-              Watch TEDx
-            </Button>
-            <Button variant="outline" size="sm" data-testid="button-book-call">
-              <Calendar className="w-4 h-4 mr-2" />
-              Book a Call
-            </Button>
+            <Link href="/tedx">
+              <Button size="sm" data-testid="button-watch-tedx">
+                <Play className="w-4 h-4 mr-2" />
+                Watch TEDx
+              </Button>
+            </Link>
+            <ContactForm
+              defaultType="consultation"
+              defaultService="Strategic Consulting"
+              triggerText="Book a Call"
+              triggerVariant="outline"
+              triggerSize="sm"
+              description="Schedule a consultation to discuss AI governance, product inclusion, or technology leadership needs."
+              context="header"
+            />
             <ThemeToggle />
           </div>
 
@@ -187,14 +194,22 @@ export default function Header() {
                     </div>
                   ))}
                   <div className="pt-4 border-t space-y-2">
-                    <Button className="w-full" data-testid="mobile-button-watch-tedx">
-                      <Play className="w-4 h-4 mr-2" />
-                      Watch TEDx
-                    </Button>
-                    <Button variant="outline" className="w-full" data-testid="mobile-button-book-call">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      Book a Call
-                    </Button>
+                    <Link href="/tedx">
+                      <Button className="w-full" data-testid="mobile-button-watch-tedx">
+                        <Play className="w-4 h-4 mr-2" />
+                        Watch TEDx
+                      </Button>
+                    </Link>
+                    <ContactForm
+                      defaultType="consultation"
+                      defaultService="Strategic Consulting"
+                      triggerText="Book a Call"
+                      triggerVariant="outline"
+                      triggerSize="default"
+                      className="w-full"
+                      description="Schedule a consultation to discuss AI governance, product inclusion, or technology leadership needs."
+                      context="mobile-header"
+                    />
                   </div>
                 </nav>
               </SheetContent>
