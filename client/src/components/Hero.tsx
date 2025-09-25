@@ -52,7 +52,7 @@ export default function Hero({
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20"
+              className="text-lg px-8 py-6 bg-primary/20 hover:bg-primary/30 backdrop-blur-sm border border-primary/30 text-white"
               onClick={primaryCta.action}
               data-testid="button-hero-primary"
             >
@@ -64,7 +64,7 @@ export default function Hero({
             <Button 
               variant="outline" 
               size="lg"
-              className="text-lg px-8 py-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white"
+              className="text-lg px-8 py-6 bg-white/10 hover:bg-primary/20 backdrop-blur-sm border border-primary/50 text-white"
               onClick={secondaryCta.action}
               data-testid="button-hero-secondary"
             >
