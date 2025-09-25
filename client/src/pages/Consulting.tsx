@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, ArrowRight, Users, Target, Shield, Lightbulb, Clock, TrendingUp, Calendar } from 'lucide-react';
+import { CheckCircle, ArrowRight, Users, Target, Shield, Lightbulb, Clock, TrendingUp, Calendar, Download } from 'lucide-react';
+import ContactForm from '@/components/ContactForm';
 
 const services = [
   {
@@ -103,14 +104,25 @@ export default function Consulting() {
             ensuring compliance and accessibility.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
-            <Button size="lg" data-testid="button-schedule-consultation">
-              <Calendar className="w-4 h-4 mr-2" />
-              Schedule Consultation
-            </Button>
-            <Button variant="outline" size="lg" data-testid="button-download-capabilities">
-              <ArrowRight className="w-4 h-4 mr-2" />
-              Download Capabilities Deck
-            </Button>
+            <ContactForm
+              defaultType="consultation"
+              defaultService="AI Governance & Risk Management"
+              triggerText="Schedule Consultation"
+              triggerSize="lg"
+              icon={Calendar}
+              description="Book a strategic consultation to discuss AI governance, product inclusion, or technology leadership needs."
+              context="consulting-page"
+            />
+            <ContactForm
+              defaultType="download"
+              defaultService="Strategic Consulting"
+              triggerText="Download Capabilities Deck"
+              triggerVariant="outline"
+              triggerSize="lg"
+              icon={Download}
+              description="Get our comprehensive capabilities deck with case studies and service details."
+              context="consulting-page"
+            />
           </div>
         </div>
 
