@@ -9,9 +9,16 @@ import { Link, useLocation } from 'wouter';
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'TEDx Talk', href: '/tedx' },
+  { name: 'Speaking', href: '/speaking' },
   { name: 'Consulting', href: '/consulting' },
-  { name: 'Retreat', href: '/retreat' },
-  { name: 'RaR', href: '/rar' },
+  { 
+    name: 'Retreats', 
+    href: '/retreat',
+    submenu: [
+      { name: 'Executive Retreat', href: '/retreat' },
+      { name: 'RaR Program', href: '/rar' }
+    ]
+  },
   { name: 'incluu', href: '/incluu' },
   { name: 'Stories', href: '/stories' },
   { name: 'Contact', href: '/contact' },
