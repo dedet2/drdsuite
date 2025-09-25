@@ -7,14 +7,14 @@
 
 ### A. Color Palette
 **Dr. Dédé Brand Colors:**
-- Primary: 220 85% 25% (deep professional blue)
-- Secondary: 220 15% 95% (light neutral)
-- Accent: 45 95% 55% (warm gold for CTAs)
+- Primary: 180 100% 56% (cyan #18FFFF)
+- Secondary: 254 31% 46% (purple #5A509B)
+- Accent: 330 81% 51% (pink #e01b84)
 
 **incluu Brand Colors:**
-- Primary: 160 75% 30% (accessible teal)
-- Secondary: 160 10% 96% (soft neutral)
-- Accent: 280 70% 50% (inclusive purple)
+- Primary: 254 31% 46% (purple #5A509B)
+- Secondary: 180 100% 56% (cyan #18FFFF)
+- Accent: 330 81% 51% (pink #e01b84)
 
 **Neutral System:**
 - Background: 0 0% 4% (rich black)
@@ -22,8 +22,8 @@
 - Muted: 220 10% 85% (warm gray)
 
 ### B. Typography
-**Primary Font:** Inter (Google Fonts) - clean, accessible, professional
-**Accent Font:** Playfair Display (for hero headlines) - sophisticated, authoritative
+**Primary Font:** Roboto (Google Fonts) - clean, accessible, professional
+**Accent Font:** Montserrat (for hero headlines) - sophisticated, authoritative
 **Hierarchy:** Use font-semibold for headings, font-normal for body, font-light for captions
 
 ### C. Layout System
