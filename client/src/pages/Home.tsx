@@ -123,7 +123,7 @@ export default function Home() {
                 Black, queer, first-generation Togolese immigrant and Cornell-educated social scientist with 20+ years of experience in ethical technology and social justice. Living with sickle-cell disease, I bring unique insights to AI governance and systems design rooted in lived experience.
               </p>
               <p className="text-lg text-muted-foreground mb-8">
-                As founder of incluu, I've delivered $200M+ in cost savings and $500M+ in market expansion for enterprise clients through strategic AI governance and tech equity implementations.
+                As founder of incluu, I've delivered $300M+ in cost savings and $500M+ in market expansion for enterprise clients through strategic AI governance and tech equity implementations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" data-testid="button-luxury-retreat">
@@ -143,7 +143,7 @@ export default function Home() {
               />
               <div className="absolute -bottom-8 -right-8 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
                 <p className="font-semibold">AI Governance Expert</p>
-                <p className="text-sm opacity-90">$200M+ Cost Savings Delivered</p>
+                <p className="text-sm opacity-90">$300M+ Cost Savings Delivered</p>
               </div>
             </div>
           </div>
