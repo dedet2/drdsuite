@@ -40,7 +40,7 @@ export default function Hero({
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 leading-tight">
             <span className="block text-white">{title}</span>
-            <span className="block bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+            <span className="block text-primary">
               {subtitle}
             </span>
           </h1>
