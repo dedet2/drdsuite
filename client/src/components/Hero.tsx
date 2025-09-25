@@ -29,7 +29,7 @@ export default function Hero({
     <section className="relative min-h-[90vh] sm:min-h-[85vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-right-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center lg:bg-right bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="absolute inset-0" style={{ background: 'var(--gradient-hero-current, linear-gradient(135deg, rgba(24, 255, 255, 0.2) 0%, rgba(90, 80, 155, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%))' }} />

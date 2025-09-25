@@ -31,7 +31,7 @@ export default function TEDx() {
         <div className="max-w-4xl mx-auto mb-16">
           <VideoEmbed
             provider="youtube"
-            id="dQw4w9WgXcQ"
+            id="ZnqUquGeUzI"
             title="AI Governance and Accessible Futures | Dr. Dédé Tetsubayashi | TEDx"
           />
         </div>
