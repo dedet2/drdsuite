@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Play, Calendar, ArrowRight } from 'lucide-react';
-import aiGovernanceImage from '@assets/generated_images/AI_governance_tech_background_845924c8.png';
+import aiGovernanceImage from '@assets/stock_images/professional_black_w_b86625b4.jpg';
 
 interface HeroProps {
   title: string;
