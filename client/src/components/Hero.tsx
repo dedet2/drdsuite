@@ -26,7 +26,7 @@ export default function Hero({
   backgroundImage = aiGovernanceImage
 }: HeroProps) {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] sm:min-h-[85vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -36,23 +36,23 @@ export default function Hero({
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <div className="relative z-10 container mx-auto px-6 sm:px-8 lg:px-8 text-center text-white">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif mb-4 sm:mb-6 leading-tight">
             <span className="block text-white">{title}</span>
             <span className="block text-primary">
               {subtitle}
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 max-w-2xl mx-auto px-4 sm:px-0">
             {description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-primary/20 hover:bg-primary/30 backdrop-blur-sm border border-primary/30 text-white shadow-lg hover:shadow-xl transition-all"
+              className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-primary/20 hover:bg-primary/30 backdrop-blur-sm border border-primary/30 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
               onClick={primaryCta.action}
               data-testid="button-hero-primary"
             >
@@ -64,7 +64,7 @@ export default function Hero({
             <Button 
               variant="outline" 
               size="lg"
-              className="text-lg px-8 py-6 bg-white/10 hover:bg-primary/20 backdrop-blur-sm border border-primary/50 text-white shadow-lg hover:shadow-xl transition-all"
+              className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-white/10 hover:bg-primary/20 backdrop-blur-sm border border-primary/50 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
               onClick={secondaryCta.action}
               data-testid="button-hero-secondary"
             >

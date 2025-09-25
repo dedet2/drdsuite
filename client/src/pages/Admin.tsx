@@ -9,13 +9,13 @@ export default function Admin() {
   };
 
   return (
-    <div className="min-h-screen py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+    <div className="min-h-screen py-16 sm:py-20 md:py-24">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-8 max-w-2xl">
         <div className="text-center mb-12">
           <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center mx-auto mb-6">
             <Shield className="w-10 h-10 text-muted-foreground" />
           </div>
-          <h1 className="text-4xl font-bold font-serif mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif mb-4 px-4 sm:px-0">
             Private Control Center
           </h1>
           <p className="text-xl text-muted-foreground">
