@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Calendar, Users, Heart, MapPin, Clock, Star, CheckCircle, Mountain, Wifi, Accessibility } from 'lucide-react';
+import { ArrowRight, Calendar, Users, Heart, MapPin, Clock, Star, CheckCircle, Mountain, Wifi, Accessibility, Download } from 'lucide-react';
+import ContactForm from '@/components/ContactForm';
 
 const retreatFeatures = [
   {
@@ -121,14 +122,25 @@ export default function Retreat() {
             <Badge variant="secondary">Nature Setting</Badge>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
-            <Button size="lg" data-testid="button-apply-retreat">
-              <Calendar className="w-4 h-4 mr-2" />
-              Apply for Next Cohort
-            </Button>
-            <Button variant="outline" size="lg" data-testid="button-retreat-info">
-              <ArrowRight className="w-4 h-4 mr-2" />
-              Download Program Guide
-            </Button>
+            <ContactForm
+              defaultType="retreat"
+              defaultService="Executive Retreats"
+              triggerText="Apply for Next Cohort"
+              triggerSize="lg"
+              icon={Calendar}
+              description="Apply for the next executive retreat cohort. Maximum 12 senior executives per retreat."
+              context="retreat-page"
+            />
+            <ContactForm
+              defaultType="download"
+              defaultService="Executive Retreats"
+              triggerText="Download Program Guide"
+              triggerVariant="outline"
+              triggerSize="lg"
+              icon={Download}
+              description="Get the comprehensive program guide with curriculum, logistics, and testimonials."
+              context="retreat-page"
+            />
           </div>
         </div>
 

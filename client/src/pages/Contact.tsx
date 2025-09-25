@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Mail, Phone, MapPin, ExternalLink, Calendar, MessageSquare, Linkedin, Clock, Globe } from 'lucide-react';
+import ContactForm from '@/components/ContactForm';
 
 const contactMethods = [
   {
@@ -84,15 +85,16 @@ export default function Contact() {
                   <CardDescription className="text-center">{method.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <Button 
-                    variant={method.priority === "primary" ? "default" : method.priority as "secondary" | "outline"} 
-                    size="lg" 
+                  <ContactForm
+                    defaultType={method.href === "#book-consultation" ? "consultation" : method.href === "#book-speaking" ? "speaking" : "general"}
+                    triggerText={method.action}
+                    triggerVariant={method.priority === "primary" ? "default" : method.priority as "secondary" | "outline"}
+                    triggerSize="lg"
                     className="w-full"
-                    data-testid={`button-${method.action.toLowerCase().replace(' ', '-')}`}
-                  >
-                    {method.action}
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
+                    icon={ExternalLink}
+                    description={method.description}
+                    context="contact-page"
+                  />
                 </CardContent>
               </Card>
             ))}
