@@ -16,11 +16,11 @@
 
   --background: 0 0% 98%;
   
-  /* Gradient backgrounds for brand themes */
-  --gradient-dede: linear-gradient(135deg, rgba(24, 255, 255, 0.1) 0%, rgba(90, 80, 155, 0.2) 100%);
-  --gradient-incluu: linear-gradient(135deg, rgba(90, 80, 155, 0.1) 0%, rgba(24, 255, 255, 0.2) 100%);
-  --gradient-hero-dede: linear-gradient(135deg, rgba(24, 255, 255, 0.3) 0%, rgba(90, 80, 155, 0.4) 70%, rgba(0, 0, 0, 0.8) 100%);
-  --gradient-hero-incluu: linear-gradient(135deg, rgba(90, 80, 155, 0.3) 0%, rgba(24, 255, 255, 0.4) 70%, rgba(0, 0, 0, 0.8) 100%);
+  /* Gradient backgrounds for brand themes - Updated to match dr-dede.com exactly */
+  --gradient-dede: linear-gradient(135deg, rgba(24, 255, 255, 0.15) 0%, rgba(44, 37, 77, 0.25) 100%);
+  --gradient-incluu: linear-gradient(135deg, rgba(44, 37, 77, 0.15) 0%, rgba(24, 255, 255, 0.25) 100%);
+  --gradient-hero-dede: linear-gradient(135deg, rgba(24, 255, 255, 0.4) 0%, rgba(44, 37, 77, 0.6) 60%, rgba(0, 0, 0, 0.85) 100%);
+  --gradient-hero-incluu: linear-gradient(135deg, rgba(44, 37, 77, 0.4) 0%, rgba(24, 255, 255, 0.6) 60%, rgba(0, 0, 0, 0.85) 100%);
   
   /* Enhanced button and interactive element theming */
   --button-primary-shadow: 0 4px 14px 0 rgba(24, 255, 255, 0.15);
@@ -59,8 +59,9 @@
   --popover-border: 220 13% 84%;
 
   --primary: 180 100% 56%; /* Start with Dr. Dédé cyan */
+  --primary-readable: 245 32% 23%; /* Dark purple text for cyan backgrounds */
 
-  --primary-foreground: 220 85% 95%;
+  --primary-foreground: 245 32% 15%; /* Dark text for better contrast on cyan */
 
   --secondary: 220 13% 86%;
 
@@ -86,13 +87,13 @@
   --chart-4: 280 70% 30%;
   --chart-5: 340 75% 30%;
 
-  /* Brand Tokens - Dr. Dédé: Cyan primary, Purple secondary */
-  --dede-primary: 180 100% 56%; /* #18FFFF */
-  --dede-secondary: 254 31% 46%; /* #5A509B */
+  /* Brand Tokens - Dr. Dédé: Cyan primary, Deep purple secondary */
+  --dede-primary: 180 100% 56%; /* #18FFFF - Bright cyan */
+  --dede-secondary: 245 32% 23%; /* #2C254D - Deep purple/violet from dr-dede.com */
   --dede-accent: 330 81% 51%; /* #e01b84 */
   /* incluu: Purple primary, Cyan secondary */
-  --incluu-primary: 254 31% 46%; /* #5A509B */
-  --incluu-secondary: 180 100% 56%; /* #18FFFF */
+  --incluu-primary: 245 32% 23%; /* #2C254D - Deep purple/violet */
+  --incluu-secondary: 180 100% 56%; /* #18FFFF - Bright cyan */
   --incluu-accent: 330 81% 51%; /* #e01b84 */
 
   --font-sans: Roboto, sans-serif;

@@ -22,9 +22,9 @@ const navigation = [
     name: 'AI GRC & Advisory', 
     href: '/consulting',
     submenu: [
-      { name: 'AI Governance', href: '/ai-governance' },
+      { name: 'AI Governance', href: '/consulting' }, // Fixed - now routes to existing page
       { name: 'Strategic Consulting', href: '/consulting' },
-      { name: 'Risk & Compliance', href: '/risk-compliance' }
+      { name: 'incluu Solutions', href: 'https://www.incluu.us', external: true } // Links to existing incluu site
     ]
   },
   { 
@@ -32,8 +32,8 @@ const navigation = [
     href: '/retreat',
     submenu: [
       { name: 'Executive Retreats', href: '/retreat' },
-      { name: 'Disability Advocacy', href: '/advocacy' },
-      { name: 'Wellness Programs', href: '/wellness' }
+      { name: 'Disability Advocacy', href: 'https://www.dr-dede.com', external: true }, // Links to existing site
+      { name: 'Wellness Programs', href: '/retreat' } // Fixed - now routes to existing page
     ]
   },
   { 
@@ -42,7 +42,7 @@ const navigation = [
     submenu: [
       { name: 'TEDx Talk', href: '/tedx' },
       { name: 'Speaking Topics', href: '/speaking' },
-      { name: 'Book Event', href: '/book-event' }
+      { name: 'Book Event', href: '/contact' } // Fixed - now routes to contact page for booking
     ]
   },
   { name: 'Contact', href: '/contact' }
@@ -66,7 +66,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="hidden md:flex">
+          <NavigationMenu className="hidden md:flex relative">
             <NavigationMenuList>
               {navigation.map((item) => (
                 <NavigationMenuItem key={item.name}>
@@ -79,18 +79,30 @@ export default function Header() {
                         {item.name}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <div className="grid w-48 gap-2 p-4">
+                        <div className="grid w-56 gap-2 p-4">
                           {item.submenu.map((subItem) => (
                             <NavigationMenuLink key={subItem.name} asChild>
-                              <Link 
-                                href={subItem.href}
-                                className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
-                                  location === subItem.href ? 'text-primary bg-primary/20' : ''
-                                }`}
-                                data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                              >
-                                <div className="text-sm font-medium leading-none">{subItem.name}</div>
-                              </Link>
+                              {subItem.external ? (
+                                <a 
+                                  href={subItem.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary"
+                                  data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                >
+                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                </a>
+                              ) : (
+                                <Link 
+                                  href={subItem.href}
+                                  className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
+                                    location === subItem.href ? 'text-primary bg-primary/20' : ''
+                                  }`}
+                                  data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                >
+                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                </Link>
+                              )}
                             </NavigationMenuLink>
                           ))}
                         </div>
@@ -165,17 +177,31 @@ export default function Header() {
                           </CollapsibleTrigger>
                           <CollapsibleContent className="pl-4 space-y-1">
                             {item.submenu.map((subItem) => (
-                              <Link key={subItem.name} href={subItem.href}>
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
-                                  onClick={() => setMobileOpen(false)}
-                                  data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                >
-                                  {subItem.name}
-                                </Button>
-                              </Link>
+                              subItem.external ? (
+                                <a key={subItem.name} href={subItem.href} target="_blank" rel="noopener noreferrer">
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    className="w-full justify-start"
+                                    onClick={() => setMobileOpen(false)}
+                                    data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                  >
+                                    {subItem.name}
+                                  </Button>
+                                </a>
+                              ) : (
+                                <Link key={subItem.name} href={subItem.href}>
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
+                                    onClick={() => setMobileOpen(false)}
+                                    data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                  >
+                                    {subItem.name}
+                                  </Button>
+                                </Link>
+                              )
                             ))}
                           </CollapsibleContent>
                         </Collapsible>
