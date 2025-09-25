@@ -15,6 +15,10 @@
   --elevate-2: rgba(0,0,0, .08);
 
   --background: 0 0% 98%;
+  
+  /* Gradient backgrounds for brand themes */
+  --gradient-dede: linear-gradient(135deg, rgba(24, 255, 255, 0.1) 0%, rgba(90, 80, 155, 0.2) 100%);
+  --gradient-incluu: linear-gradient(135deg, rgba(90, 80, 155, 0.1) 0%, rgba(24, 255, 255, 0.2) 100%);
 
   --foreground: 220 15% 15%;
 
