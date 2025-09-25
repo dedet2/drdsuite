@@ -81,14 +81,14 @@ const speakingTopics = [
 
 export default function Speaking() {
   return (
-    <div className="min-h-screen py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-16 sm:py-20 md:py-24">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold font-serif mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 sm:mb-6 px-4 sm:px-0">
             Speaking & Workshops
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto px-4 sm:px-0">
             Bringing insights from the intersection of AI governance, accessibility, and inclusive design 
             to audiences worldwide through keynotes, panels, and interactive workshops.
           </p>

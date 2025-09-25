@@ -25,19 +25,19 @@ export default function Home() {
       />
 
       {/* Services Section */}
-      <section className="py-24 bg-background relative">
+      <section className="py-16 sm:py-20 md:py-24 bg-background relative">
         <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ background: 'var(--gradient-current, linear-gradient(135deg, rgba(24, 255, 255, 0.1) 0%, rgba(90, 80, 155, 0.2) 100%))' }} />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold font-serif mb-4">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif mb-4 px-4 sm:px-0">
               Expertise That Delivers Results
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4 sm:px-0">
               From compliance frameworks to accessible design, I help organizations build systems that work for everyone.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             <ServiceCard
               title="AI Governance"
               description="Compliance systems that scale with your business"
@@ -91,15 +91,15 @@ export default function Home() {
       </section>
 
       {/* TEDx Video Section */}
-      <section className="py-24 bg-muted/30 relative">
+      <section className="py-16 sm:py-20 md:py-24 bg-muted/30 relative">
         <div className="absolute inset-0 opacity-25 pointer-events-none" style={{ background: 'var(--gradient-current, linear-gradient(135deg, rgba(24, 255, 255, 0.1) 0%, rgba(90, 80, 155, 0.2) 100%))' }} />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold font-serif mb-4">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif mb-4 px-4 sm:px-0">
                 The Future of AI Governance
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-lg sm:text-xl text-muted-foreground px-4 sm:px-0">
                 Watch my TEDx talk on building accessible futures through responsible AI governance
               </p>
             </div>
@@ -114,12 +114,12 @@ export default function Home() {
       </section>
 
       {/* About & Retreat CTA */}
-      <section className="py-24 bg-background relative">
+      <section className="py-16 sm:py-20 md:py-24 bg-background relative">
         <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ background: 'var(--gradient-current, linear-gradient(135deg, rgba(24, 255, 255, 0.1) 0%, rgba(90, 80, 155, 0.2) 100%))' }} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold font-serif mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif mb-4 sm:mb-6 px-4 sm:px-0">
                 Embodied Expertise, Proven Results
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
@@ -128,7 +128,7 @@ export default function Home() {
               <p className="text-lg text-muted-foreground mb-8">
                 As founder of incluu, I've delivered $300M+ in cost savings and $500M+ in market expansion for enterprise clients through strategic AI governance and tech equity implementations.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0">
                 <Button size="lg" className="shadow-lg hover:shadow-xl transition-shadow" data-testid="button-luxury-retreat">
                   Luxury Retreat Program
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -154,10 +154,10 @@ export default function Home() {
       </section>
 
       {/* Retreat Preview */}
-      <section className="py-24 bg-muted/30 relative">
+      <section className="py-16 sm:py-20 md:py-24 bg-muted/30 relative">
         <div className="absolute inset-0 opacity-25 pointer-events-none" style={{ background: 'var(--gradient-current, linear-gradient(135deg, rgba(24, 255, 255, 0.1) 0%, rgba(90, 80, 155, 0.2) 100%))' }} />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
               <img 
                 src={retreatImage}
