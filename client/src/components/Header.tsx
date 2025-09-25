@@ -10,7 +10,6 @@ import {
   NavigationMenuTrigger
 } from '@/components/ui/navigation-menu';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import BrandSwitcher from './BrandSwitcher';
 import ThemeToggle from '@/components/ThemeToggle';
 import { Menu, Play, Calendar, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
@@ -19,30 +18,21 @@ import ContactForm from '@/components/ContactForm';
 const navigation = [
   { name: 'Home', href: '/' },
   { 
-    name: 'AI GRC & Advisory', 
-    href: '/consulting',
+    name: 'incluu', 
+    href: 'https://incluu.vercel.app/',
+    external: true,
     submenu: [
-      { name: 'AI Governance', href: '/consulting' }, // Fixed - now routes to existing page
-      { name: 'Strategic Consulting', href: '/consulting' },
-      { name: 'incluu Solutions', href: 'https://www.incluu.us', external: true } // Links to existing incluu site
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Testimonials', href: '/testimonials' }
     ]
   },
   { 
-    name: 'Retreats & Advocacy', 
-    href: '/retreat',
+    name: 'Dr. Dédé', 
+    href: 'https://dr-dede.vercel.app/',
+    external: true,
     submenu: [
-      { name: 'Executive Retreats', href: '/retreat' },
-      { name: 'Disability Advocacy', href: 'https://www.dr-dede.com', external: true }, // Links to existing site
-      { name: 'Wellness Programs', href: '/retreat' } // Fixed - now routes to existing page
-    ]
-  },
-  { 
-    name: 'Speaking & Events', 
-    href: '/speaking',
-    submenu: [
-      { name: 'TEDx Talk', href: '/tedx' },
-      { name: 'Speaking Topics', href: '/speaking' },
-      { name: 'Book Event', href: '/contact' } // Fixed - now routes to contact page for booking
+      { name: 'Retreats & Advocacy', href: '/retreat' },
+      { name: 'Speaking & Events', href: '/speaking' }
     ]
   },
   { name: 'Contact', href: '/contact' }
@@ -82,27 +72,15 @@ export default function Header() {
                         <div className="grid w-56 gap-2 p-4">
                           {item.submenu.map((subItem) => (
                             <NavigationMenuLink key={subItem.name} asChild>
-                              {subItem.external ? (
-                                <a 
-                                  href={subItem.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary"
-                                  data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                >
-                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
-                                </a>
-                              ) : (
-                                <Link 
-                                  href={subItem.href}
-                                  className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
-                                    location === subItem.href ? 'text-primary bg-primary/20' : ''
-                                  }`}
-                                  data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                >
-                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
-                                </Link>
-                              )}
+                              <Link 
+                                href={subItem.href}
+                                className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
+                                  location === subItem.href ? 'text-primary bg-primary/20' : ''
+                                }`}
+                                data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                              >
+                                <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                              </Link>
                             </NavigationMenuLink>
                           ))}
                         </div>
@@ -110,15 +88,27 @@ export default function Header() {
                     </>
                   ) : (
                     <NavigationMenuLink asChild>
-                      <Link 
-                        href={item.href}
-                        className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 ${
-                          location === item.href ? 'text-primary' : ''
-                        }`}
-                        data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      >
-                        {item.name}
-                      </Link>
+                      {item.external ? (
+                        <a 
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                          data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <Link 
+                          href={item.href}
+                          className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 ${
+                            location === item.href ? 'text-primary' : ''
+                          }`}
+                          data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
                     </NavigationMenuLink>
                   )}
                 </NavigationMenuItem>
@@ -128,17 +118,16 @@ export default function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <BrandSwitcher />
-            <Link href="/tedx">
+            <a href="https://dr-dede-tedx-homepage.vercel.app/" target="_blank" rel="noopener noreferrer">
               <Button size="sm" data-testid="button-watch-tedx">
                 <Play className="w-4 h-4 mr-2" />
                 Watch TEDx
               </Button>
-            </Link>
+            </a>
             <ContactForm
               defaultType="consultation"
               defaultService="Strategic Consulting"
-              triggerText="Book a Call"
+              triggerText="Contact"
               triggerVariant="outline"
               triggerSize="sm"
               description="Schedule a consultation to discuss AI governance, product inclusion, or technology leadership needs."
@@ -149,7 +138,6 @@ export default function Header() {
 
           {/* Mobile Menu */}
           <div className="md:hidden flex items-center space-x-2">
-            <BrandSwitcher />
             <ThemeToggle />
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
@@ -177,59 +165,58 @@ export default function Header() {
                           </CollapsibleTrigger>
                           <CollapsibleContent className="pl-4 space-y-1">
                             {item.submenu.map((subItem) => (
-                              subItem.external ? (
-                                <a key={subItem.name} href={subItem.href} target="_blank" rel="noopener noreferrer">
-                                  <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    className="w-full justify-start"
-                                    onClick={() => setMobileOpen(false)}
-                                    data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                  >
-                                    {subItem.name}
-                                  </Button>
-                                </a>
-                              ) : (
-                                <Link key={subItem.name} href={subItem.href}>
-                                  <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
-                                    onClick={() => setMobileOpen(false)}
-                                    data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                  >
-                                    {subItem.name}
-                                  </Button>
-                                </Link>
-                              )
+                              <Link key={subItem.name} href={subItem.href}>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
+                                  onClick={() => setMobileOpen(false)}
+                                  data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                >
+                                  {subItem.name}
+                                </Button>
+                              </Link>
                             ))}
                           </CollapsibleContent>
                         </Collapsible>
                       ) : (
-                        <Link href={item.href}>
-                          <Button
-                            variant="ghost"
-                            className={`w-full justify-start ${location === item.href ? 'text-primary' : ''}`}
-                            onClick={() => setMobileOpen(false)}
-                            data-testid={`mobile-link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                          >
-                            {item.name}
-                          </Button>
-                        </Link>
+                        item.external ? (
+                          <a href={item.href} target="_blank" rel="noopener noreferrer">
+                            <Button
+                              variant="ghost"
+                              className="w-full justify-start"
+                              onClick={() => setMobileOpen(false)}
+                              data-testid={`mobile-link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                            >
+                              {item.name}
+                            </Button>
+                          </a>
+                        ) : (
+                          <Link href={item.href}>
+                            <Button
+                              variant="ghost"
+                              className={`w-full justify-start ${location === item.href ? 'text-primary' : ''}`}
+                              onClick={() => setMobileOpen(false)}
+                              data-testid={`mobile-link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                            >
+                              {item.name}
+                            </Button>
+                          </Link>
+                        )
                       )}
                     </div>
                   ))}
                   <div className="pt-4 border-t space-y-2">
-                    <Link href="/tedx">
+                    <a href="https://dr-dede-tedx-homepage.vercel.app/" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full" data-testid="mobile-button-watch-tedx">
                         <Play className="w-4 h-4 mr-2" />
                         Watch TEDx
                       </Button>
-                    </Link>
+                    </a>
                     <ContactForm
                       defaultType="consultation"
                       defaultService="Strategic Consulting"
-                      triggerText="Book a Call"
+                      triggerText="Contact"
                       triggerVariant="outline"
                       triggerSize="default"
                       className="w-full"
