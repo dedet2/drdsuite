@@ -48,7 +48,7 @@
 
   --popover-border: 220 13% 84%;
 
-  --primary: 220 85% 25%;
+  --primary: 180 100% 56%; /* Start with Dr. Dédé cyan */
 
   --primary-foreground: 220 85% 95%;
 
@@ -69,7 +69,7 @@
   --destructive-foreground: 0 75% 95%;
 
   --input: 220 13% 82%;
-  --ring: 220 85% 25%;
+  --ring: 180 100% 56%; /* Start with Dr. Dédé cyan */
   --chart-1: 220 85% 25%;
   --chart-2: 160 75% 30%;
   --chart-3: 45 95% 35%;
