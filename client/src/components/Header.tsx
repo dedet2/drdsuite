@@ -15,27 +15,35 @@ import { Menu, Play, Calendar, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import ContactForm from '@/components/ContactForm';
 
-const navigation = [
+type NavigationItem = {
+  name: string;
+  href?: string;
+  external?: boolean;
+  submenu?: Array<{
+    name: string;
+    href: string;
+    external?: boolean;
+  }>;
+};
+
+const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
+  { name: 'incluu', href: 'https://incluu.vercel.app/', external: true },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Testimonials', href: '/testimonials' },
+  { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
+  { name: 'Resources', href: 'https://dr-dede.vercel.app/', external: true },
+  { name: 'Dr. Dédé', href: 'https://dr-dede.vercel.app/', external: true },
   { 
-    name: 'incluu',
+    name: 'Retreats & Advocacy',
     submenu: [
-      { name: 'incluu Solutions', href: 'https://incluu.vercel.app/', external: true },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Testimonials', href: '/testimonials' },
-      { name: 'About Dr. Dédé', href: 'https://dr-dede.vercel.app/', external: true },
-      { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
-      { name: 'Resources', href: 'https://dr-dede.vercel.app/', external: true }
+      { name: 'Executive Retreats', href: '/retreat' },
+      { name: 'Luxury Wellness', href: '/luxury-wellness' },
+      { name: 'Disability Advocacy', href: '/disability-advocacy' }
     ]
   },
-  { 
-    name: 'Dr. Dédé',
-    submenu: [
-      { name: 'Retreats & Advocacy', href: '/retreat' },
-      { name: 'Speaking & Events', href: '/speaking' },
-      { name: 'incluu', href: 'https://incluu.vercel.app/', external: true }
-    ]
-  }
+  { name: 'Speaking & Events', href: '/speaking' },
+  { name: 'ROI Calculator', href: 'https://pmukyznd.manus.space/', external: true }
 ];
 
 export default function Header() {
@@ -100,15 +108,25 @@ export default function Header() {
                     </>
                   ) : (
                     <NavigationMenuLink asChild>
-                      <Link 
-                        href={item.href}
-                        className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 ${
-                          location === item.href ? 'text-primary' : ''
-                        }`}
-                        data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      >
-                        {item.name}
-                      </Link>
+                      {item.external ? (
+                        <a 
+                          href={item.href!}
+                          className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}
+                          data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <Link 
+                          href={item.href!}
+                          className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 ${
+                            location === item.href ? 'text-primary' : ''
+                          }`}
+                          data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
                     </NavigationMenuLink>
                   )}
                 </NavigationMenuItem>
@@ -118,7 +136,7 @@ export default function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
+            <a href="https://nslacnow.manus.space/">
               <Button size="sm" data-testid="button-watch-tedx">
                 <Play className="w-4 h-4 mr-2" />
                 Watch TEDx
@@ -194,21 +212,34 @@ export default function Header() {
                           </CollapsibleContent>
                         </Collapsible>
                       ) : (
-                          <Link href={item.href}>
-                            <Button
-                              variant="ghost"
-                              className={`w-full justify-start ${location === item.href ? 'text-primary' : ''}`}
-                              onClick={() => setMobileOpen(false)}
-                              data-testid={`mobile-link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                            >
-                              {item.name}
-                            </Button>
-                          </Link>
+                          item.external ? (
+                            <a href={item.href!}>
+                              <Button
+                                variant="ghost"
+                                className="w-full justify-start"
+                                onClick={() => setMobileOpen(false)}
+                                data-testid={`mobile-link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                              >
+                                {item.name}
+                              </Button>
+                            </a>
+                          ) : (
+                            <Link href={item.href!}>
+                              <Button
+                                variant="ghost"
+                                className={`w-full justify-start ${location === item.href ? 'text-primary' : ''}`}
+                                onClick={() => setMobileOpen(false)}
+                                data-testid={`mobile-link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                              >
+                                {item.name}
+                              </Button>
+                            </Link>
+                          )
                       )}
                     </div>
                   ))}
                   <div className="pt-4 border-t space-y-2">
-                    <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://nslacnow.manus.space/">
                       <Button className="w-full" data-testid="mobile-button-watch-tedx">
                         <Play className="w-4 h-4 mr-2" />
                         Watch TEDx
