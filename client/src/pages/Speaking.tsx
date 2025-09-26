@@ -67,33 +67,49 @@ export default function Speaking() {
         </div>
       </section>
 
-      {/* Featured TEDx Section */}
+      {/* Recent Presentations Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-primary/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Featured Presentation</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Recent Presentations</h2>
           
-          <Card className="max-w-2xl mx-auto hover-elevate">
-            <CardHeader>
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Play className="w-8 h-8 text-primary" />
-              </div>
-              <CardTitle className="text-2xl">AI Governance and Accessible Futures</CardTitle>
-              <CardDescription>
-                TEDx presentation exploring how responsible AI governance can create more inclusive and accessible futures for everyone.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-6">
-                A powerful 18-minute presentation that challenges conventional approaches to AI development and offers a roadmap for creating technology that serves all communities.
-              </p>
-              <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" data-testid="button-watch-tedx">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch TEDx Talk
-                </Button>
-              </a>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="hover-elevate">
+              <CardHeader>
+                <CardTitle className="text-lg">AI Ethics in Healthcare Technology</CardTitle>
+                <CardDescription>
+                  Healthcare Innovation Summit 2024
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Addressing bias in medical AI systems and ensuring equitable healthcare technology deployment.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <CardTitle className="text-lg">Building Inclusive Product Teams</CardTitle>
+                <CardDescription>
+                  Tech Leadership Conference 2024
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Strategies for creating diverse teams that drive innovation and market expansion through inclusion.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-8">
+            <a href="https://nslacnow.manus.space/">
+              <Button variant="outline" size="lg" data-testid="button-watch-tedx">
+                <Play className="mr-2 h-5 w-5" />
+                Watch TEDx Talk
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
