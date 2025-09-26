@@ -27,7 +27,7 @@ export default function DisabilityAdvocacy() {
               defaultType="consultation"
               defaultService="Disability Advocacy"
             />
-            <a href="https://dr-dede.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <a href="https://dr-dede.vercel.app/">
               <Button variant="outline" size="lg" data-testid="button-learn-more">
                 <Globe className="mr-2 h-5 w-5" />
                 Learn More About Dr. Dédé
