@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import Home from "@/pages/Home";
+import Incluu from "@/pages/Incluu";
 import TEDx from "@/pages/TEDx";
 import Speaking from "@/pages/Speaking";
 import Admin from "@/pages/Admin";
@@ -24,6 +25,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/incluu" component={Incluu} />
       <Route path="/tedx" component={TEDx} />
       <Route path="/speaking" component={Speaking} />
       <Route path="/admin" component={Admin} />
