@@ -18,19 +18,17 @@ import ContactForm from '@/components/ContactForm';
 const navigation = [
   { name: 'Home', href: '/' },
   { 
-    name: 'incluu', 
-    href: 'https://incluu.vercel.app/',
-    external: true,
+    name: 'incluu',
     submenu: [
+      { name: 'incluu Solutions', href: 'https://incluu.vercel.app/', external: true },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Testimonials', href: '/testimonials' }
     ]
   },
   { 
-    name: 'Dr. Dédé', 
-    href: 'https://dr-dede.vercel.app/',
-    external: true,
+    name: 'Dr. Dédé',
     submenu: [
+      { name: 'Dr. Dédé Profile', href: 'https://dr-dede.vercel.app/', external: true },
       { name: 'Retreats & Advocacy', href: '/retreat' },
       { name: 'Speaking & Events', href: '/speaking' }
     ]
@@ -63,7 +61,7 @@ export default function Header() {
                   {item.submenu ? (
                     <>
                       <NavigationMenuTrigger 
-                        className={`transition-colors hover:bg-primary/10 ${location === item.href || item.submenu.some(sub => location === sub.href) ? 'text-primary bg-primary/5' : ''}`}
+                        className={`transition-colors hover:bg-primary/10 ${item.submenu && item.submenu.some(sub => location === sub.href) ? 'text-primary bg-primary/5' : ''}`}
                         data-testid={`link-${item.name.toLowerCase()}`}
                       >
                         {item.name}
@@ -72,15 +70,27 @@ export default function Header() {
                         <div className="grid w-56 gap-2 p-4">
                           {item.submenu.map((subItem) => (
                             <NavigationMenuLink key={subItem.name} asChild>
-                              <Link 
-                                href={subItem.href}
-                                className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
-                                  location === subItem.href ? 'text-primary bg-primary/20' : ''
-                                }`}
-                                data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                              >
-                                <div className="text-sm font-medium leading-none">{subItem.name}</div>
-                              </Link>
+                              {subItem.external ? (
+                                <a 
+                                  href={subItem.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary"
+                                  data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                >
+                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                </a>
+                              ) : (
+                                <Link 
+                                  href={subItem.href}
+                                  className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
+                                    location === subItem.href ? 'text-primary bg-primary/20' : ''
+                                  }`}
+                                  data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                >
+                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                </Link>
+                              )}
                             </NavigationMenuLink>
                           ))}
                         </div>
@@ -88,27 +98,15 @@ export default function Header() {
                     </>
                   ) : (
                     <NavigationMenuLink asChild>
-                      {item.external ? (
-                        <a 
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                          data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                        >
-                          {item.name}
-                        </a>
-                      ) : (
-                        <Link 
-                          href={item.href}
-                          className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 ${
-                            location === item.href ? 'text-primary' : ''
-                          }`}
-                          data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                        >
-                          {item.name}
-                        </Link>
-                      )}
+                      <Link 
+                        href={item.href}
+                        className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 ${
+                          location === item.href ? 'text-primary' : ''
+                        }`}
+                        data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        {item.name}
+                      </Link>
                     </NavigationMenuLink>
                   )}
                 </NavigationMenuItem>
@@ -155,7 +153,7 @@ export default function Header() {
                             <Button
                               variant="ghost"
                               className={`w-full justify-between ${
-                                location === item.href || item.submenu.some(sub => location === sub.href) ? 'text-primary' : ''
+                                item.submenu && item.submenu.some(sub => location === sub.href) ? 'text-primary' : ''
                               }`}
                               data-testid={`mobile-link-${item.name.toLowerCase()}`}
                             >
@@ -165,33 +163,35 @@ export default function Header() {
                           </CollapsibleTrigger>
                           <CollapsibleContent className="pl-4 space-y-1">
                             {item.submenu.map((subItem) => (
-                              <Link key={subItem.name} href={subItem.href}>
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
-                                  onClick={() => setMobileOpen(false)}
-                                  data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                >
-                                  {subItem.name}
-                                </Button>
-                              </Link>
+                              subItem.external ? (
+                                <a key={subItem.name} href={subItem.href} target="_blank" rel="noopener noreferrer">
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    className="w-full justify-start"
+                                    onClick={() => setMobileOpen(false)}
+                                    data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                  >
+                                    {subItem.name}
+                                  </Button>
+                                </a>
+                              ) : (
+                                <Link key={subItem.name} href={subItem.href}>
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
+                                    onClick={() => setMobileOpen(false)}
+                                    data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                  >
+                                    {subItem.name}
+                                  </Button>
+                                </Link>
+                              )
                             ))}
                           </CollapsibleContent>
                         </Collapsible>
                       ) : (
-                        item.external ? (
-                          <a href={item.href} target="_blank" rel="noopener noreferrer">
-                            <Button
-                              variant="ghost"
-                              className="w-full justify-start"
-                              onClick={() => setMobileOpen(false)}
-                              data-testid={`mobile-link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                            >
-                              {item.name}
-                            </Button>
-                          </a>
-                        ) : (
                           <Link href={item.href}>
                             <Button
                               variant="ghost"
@@ -202,7 +202,6 @@ export default function Header() {
                               {item.name}
                             </Button>
                           </Link>
-                        )
                       )}
                     </div>
                   ))}
