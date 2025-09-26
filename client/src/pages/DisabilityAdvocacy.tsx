@@ -199,22 +199,25 @@ export default function DisabilityAdvocacy() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Comprehensive Services Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Advocacy Services</h2>
-            <p className="text-lg text-muted-foreground">
-              Comprehensive consulting services rooted in lived experience and proven methodologies.
+            <h2 className="text-3xl font-bold text-foreground mb-4">Comprehensive Advocacy Services</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Evidence-based consulting services rooted in 15+ years of lived experience navigating complex systems as a Black, queer, disabled professional.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="hover-elevate">
               <CardHeader>
-                <CardTitle>Organizational Consultation</CardTitle>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Organizational Transformation</CardTitle>
                 <CardDescription>
-                  Strategic guidance for building inclusive organizations and disability-friendly policies.
+                  End-to-end disability inclusion strategy for organizations seeking systemic change.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -223,24 +226,134 @@ export default function DisabilityAdvocacy() {
                   <li>• Inclusive policy development</li>
                   <li>• Leadership training and education</li>
                   <li>• Culture transformation strategies</li>
+                  <li>• Employee resource group development</li>
+                  <li>• Accommodation process optimization</li>
                 </ul>
+                <div className="mb-4">
+                  <Badge variant="secondary" className="text-xs">Starting at $25,000</Badge>
+                </div>
                 <ContactForm 
                   triggerText="Learn More"
                   triggerVariant="outline"
                   className="w-full"
-                  description="Discuss organizational consultation needs"
+                  description="Discuss organizational transformation needs"
                   context="disability-advocacy-org"
                   defaultType="consultation"
-                  defaultService="Organizational Consultation"
+                  defaultService="Organizational Transformation"
                 />
               </CardContent>
             </Card>
 
             <Card className="hover-elevate">
               <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Target className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Healthcare Navigation Consulting</CardTitle>
+                <CardDescription>
+                  Strategic guidance for healthcare organizations and chronic illness advocacy.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                  <li>• Patient advocacy training</li>
+                  <li>• Healthcare equity consulting</li>
+                  <li>• Medical system navigation</li>
+                  <li>• Chronic illness workplace support</li>
+                  <li>• Insurance advocacy strategies</li>
+                  <li>• Care team communication</li>
+                </ul>
+                <div className="mb-4">
+                  <Badge variant="secondary" className="text-xs">From $15,000</Badge>
+                </div>
+                <ContactForm 
+                  triggerText="Explore Healthcare"
+                  triggerVariant="outline"
+                  className="w-full"
+                  description="Discuss healthcare navigation consulting"
+                  context="disability-advocacy-healthcare"
+                  defaultType="consultation"
+                  defaultService="Healthcare Navigation"
+                />
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Leadership Development</CardTitle>
+                <CardDescription>
+                  Empowering disabled leaders and building intersectional leadership capacity.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                  <li>• Disabled leader mentorship</li>
+                  <li>• Intersectional identity coaching</li>
+                  <li>• Career advancement strategies</li>
+                  <li>• Executive presence development</li>
+                  <li>• Public speaking and advocacy</li>
+                  <li>• Network building and community</li>
+                </ul>
+                <div className="mb-4">
+                  <Badge variant="secondary" className="text-xs">$5,000/month</Badge>
+                </div>
+                <ContactForm 
+                  triggerText="Develop Leadership"
+                  triggerVariant="outline"
+                  className="w-full"
+                  description="Discuss leadership development programs"
+                  context="disability-advocacy-leadership"
+                  defaultType="consultation"
+                  defaultService="Leadership Development"
+                />
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Globe className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Technology Accessibility</CardTitle>
+                <CardDescription>
+                  Comprehensive accessibility strategy for digital products and platforms.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                  <li>• Accessibility compliance audits</li>
+                  <li>• Inclusive product design</li>
+                  <li>• User experience testing</li>
+                  <li>• Assistive technology integration</li>
+                  <li>• Developer training programs</li>
+                  <li>• Legal compliance strategy</li>
+                </ul>
+                <div className="mb-4">
+                  <Badge variant="secondary" className="text-xs">From $35,000</Badge>
+                </div>
+                <ContactForm 
+                  triggerText="Assess Technology"
+                  triggerVariant="outline"
+                  className="w-full"
+                  description="Discuss technology accessibility needs"
+                  context="disability-advocacy-tech"
+                  defaultType="consultation"
+                  defaultService="Technology Accessibility"
+                />
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <Heart className="w-6 h-6 text-primary" />
+                </div>
                 <CardTitle>Speaking & Education</CardTitle>
                 <CardDescription>
-                  Powerful presentations and workshops on disability advocacy, inclusion, and systemic change.
+                  Transformational presentations and workshops on disability advocacy and inclusion.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -249,7 +362,12 @@ export default function DisabilityAdvocacy() {
                   <li>• Workshop facilitation</li>
                   <li>• Panel participation</li>
                   <li>• Educational curriculum development</li>
+                  <li>• Media interviews and commentary</li>
+                  <li>• Conference and event hosting</li>
                 </ul>
+                <div className="mb-4">
+                  <Badge variant="secondary" className="text-xs">From $15,000/event</Badge>
+                </div>
                 <ContactForm 
                   triggerText="Book Speaking"
                   triggerVariant="outline"
@@ -259,6 +377,172 @@ export default function DisabilityAdvocacy() {
                   defaultType="speaking"
                   defaultService="Disability Advocacy Speaking"
                 />
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <ArrowRight className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Emergency Advocacy</CardTitle>
+                <CardDescription>
+                  Rapid response advocacy for urgent accessibility and discrimination issues.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                  <li>• Crisis intervention strategies</li>
+                  <li>• Legal compliance support</li>
+                  <li>• Media relations and messaging</li>
+                  <li>• Stakeholder communication</li>
+                  <li>• Rapid training deployment</li>
+                  <li>• 24/7 consultation availability</li>
+                </ul>
+                <div className="mb-4">
+                  <Badge variant="secondary" className="text-xs">$10,000/week</Badge>
+                </div>
+                <ContactForm 
+                  triggerText="Emergency Support"
+                  triggerVariant="outline"
+                  className="w-full"
+                  description="Request emergency advocacy support"
+                  context="disability-advocacy-emergency"
+                  defaultType="consultation"
+                  defaultService="Emergency Advocacy"
+                />
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Transformation Success Stories</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Real impact from organizations that have embraced disability inclusion through authentic advocacy and systemic change.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="hover-elevate">
+              <CardHeader>
+                <Badge variant="outline" className="w-fit mb-2">Fortune 500 Healthcare</Badge>
+                <CardTitle>$50M Healthcare Equity Initiative</CardTitle>
+                <CardDescription>
+                  Comprehensive accessibility transformation across 200+ facilities serving 2M+ patients.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Challenge:</h4>
+                    <p className="text-xs text-muted-foreground">
+                      Legacy healthcare system with significant accessibility gaps, rising litigation risk, and poor patient satisfaction scores among disabled patients.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Solution:</h4>
+                    <p className="text-xs text-muted-foreground">
+                      18-month comprehensive accessibility audit, staff training program, policy overhaul, and technology modernization guided by lived experience insights.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Results:</h4>
+                    <ul className="space-y-1 text-xs text-muted-foreground">
+                      <li>• 94% improvement in patient satisfaction scores</li>
+                      <li>• Zero accessibility-related legal issues</li>
+                      <li>• $25M cost savings through early intervention</li>
+                      <li>• 500+ staff trained in disability advocacy</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <Badge variant="outline" className="w-fit mb-2">Global Technology Company</Badge>
+                <CardTitle>Inclusive Product Development</CardTitle>
+                <CardDescription>
+                  Complete product accessibility overhaul reaching 50M+ users worldwide.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Challenge:</h4>
+                    <p className="text-xs text-muted-foreground">
+                      Major accessibility compliance gaps, user complaints, and missed market opportunities due to inaccessible product design.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Solution:</h4>
+                    <p className="text-xs text-muted-foreground">
+                      Embedded accessibility expert team, implemented inclusive design methodology, comprehensive user testing with disabled users.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-medium mb-2">Results:</h4>
+                    <ul className="space-y-1 text-xs text-muted-foreground">
+                      <li>• $150M new market segment access</li>
+                      <li>• 99.2% accessibility compliance rate</li>
+                      <li>• 300% increase in disabled user engagement</li>
+                      <li>• Industry accessibility leadership recognition</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Methodology Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Our Advocacy Methodology</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Proven framework combining lived experience with strategic business transformation for sustainable disability inclusion.
+            </p>
+          </div>
+          
+          <div className="space-y-8">
+            <Card className="hover-elevate">
+              <CardContent className="pt-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl font-bold text-primary">1</span>
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2">Assess & Discover</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Comprehensive organizational assessment including accessibility audits, culture evaluation, and gap analysis through both technical and lived experience lenses.
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl font-bold text-primary">2</span>
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2">Design & Strategize</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Custom strategy development incorporating intersectional approach, business objectives, and sustainable implementation roadmap with clear metrics and accountability.
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl font-bold text-primary">3</span>
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2">Transform & Sustain</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Implementation support, training delivery, culture transformation, and ongoing accountability systems to ensure lasting organizational change.
+                    </p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -282,7 +566,7 @@ export default function DisabilityAdvocacy() {
               defaultType="consultation"
               defaultService="Disability Advocacy Consulting"
             />
-            <a href="https://dr-dede.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <a href="https://dr-dede.vercel.app/">
               <Button variant="outline" size="lg">
                 <Globe className="mr-2 h-5 w-5" />
                 Explore Dr. Dédé's Full Story
