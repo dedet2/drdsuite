@@ -28,7 +28,7 @@ type NavigationItem = {
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
-  { name: 'incluu', href: 'https://incluu.vercel.app/', external: true },
+  { name: 'incluu', href: '/incluu' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Testimonials', href: '/testimonials' },
   { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
