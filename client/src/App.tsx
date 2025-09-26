@@ -14,6 +14,10 @@ import Consulting from "@/pages/Consulting";
 import Contact from "@/pages/Contact";
 import Retreat from "@/pages/Retreat";
 import Stories from "@/pages/Stories";
+import CaseStudies from "@/pages/CaseStudies";
+import Testimonials from "@/pages/Testimonials";
+import LuxuryWellness from "@/pages/LuxuryWellness";
+import DisabilityAdvocacy from "@/pages/DisabilityAdvocacy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -28,7 +32,10 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/retreat" component={Retreat} />
       <Route path="/stories" component={Stories} />
-      {/* TODO: Add remaining pages - rar */}
+      <Route path="/case-studies" component={CaseStudies} />
+      <Route path="/testimonials" component={Testimonials} />
+      <Route path="/luxury-wellness" component={LuxuryWellness} />
+      <Route path="/disability-advocacy" component={DisabilityAdvocacy} />
       <Route component={NotFound} />
     </Switch>
   );
