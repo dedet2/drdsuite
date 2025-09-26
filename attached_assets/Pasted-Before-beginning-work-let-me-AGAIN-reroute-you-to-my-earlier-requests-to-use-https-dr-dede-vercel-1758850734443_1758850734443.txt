@@ -1,0 +1,18 @@
+Before beginning work, let me AGAIN reroute you to my earlier requests to use https://dr-dede.vercel.app/, https://incluu.vercel.app/ and the accompanying Replit pages (https://replit.com/@admin3035/incluu, https://replit.com/@admin3035/dr-dede) as the base because they are already in your system, have the correct color themes, and does not require you to extract more information that you have already done. Stop duplicating efforts!
+
+The proposed navigation structure also makes no sense:
+Home is the same as AI GRC & Advisory because AI GRC & Advisory doesn't go anywhere. the submenu items also make no sense since AI Governance and Strategic Consulting have 2 links, but they are the same thing. You can also either use as a foundation or merge what you already created in https://replit.com/@admin3035/incluu into AI Governance & Strategic Consulting. Finally, incluu services ARE AI Governance & Strategic Consulting -- these pages will be connected to the incluu.us domain, and all pages related to dr-dede (speaking & Events) connect to the dr-dede domain. So this menu architechture should be incluu (https://replit.com/@admin3035/incluu or https://incluu.vercel.app/) with 2 submenus: "case studies", and "testimonials".
+
+Next should Dr. Dédé as a menu item (or use the Dr. Dédé widget and have the url redirect to (https://replit.com/@admin3035/dr-dede or https://dr-dede.vercel.app/) with 2 submenus: "retreats & advocay" (shoud be what is currently in place for "Executive Retreats"), and "spekaing & events" (should be what is currently link in 'Speaking topics").
+
+Contact + Book a Call: These two menu buttons should be merged into one.
+
+The Dr. Dédé widget that shits colors is cool, but since it changes colors of the entire site, we can remove it.
+
+Wellness Programs need a page created - these are for philanthropies, etc.. This should be changed to Luxury Wellness, and rar.dr-dede.com can be a submenu item of Luxury Wellness)
+
+Disability Advocacy needs a page to be created (NOT to be redirected to dr-dede.com).
+
+Watch TEDx should redirect to: https://dr-dede-tedx-homepage.vercel.app/
+
+With these changes implemented, we'll be ready to make small tweaks and move to production.
