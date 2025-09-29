@@ -3,7 +3,7 @@ import ServiceCard from '@/components/ServiceCard';
 import VideoEmbed from '@/components/VideoEmbed';
 import { Button } from '@/components/ui/button';
 import { Shield, Users, Zap, ArrowRight } from 'lucide-react';
-import drDedeImage from '@assets/stock_images/professional_black_w_9a2af9f7.jpg';
+import drDedeImage from '@assets/dr_dede_professional_headshot.jpg';
 import retreatImage from '@assets/generated_images/Luxury_accessible_retreat_center_c5a186a2.png';
 
 export default function Home() {
