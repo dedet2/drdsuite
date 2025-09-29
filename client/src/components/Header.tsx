@@ -22,18 +22,20 @@ const navigation = [
     submenu: [
       { name: 'incluu Solutions', href: 'https://incluu.vercel.app/', external: true },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Testimonials', href: '/testimonials' }
+      { name: 'Testimonials', href: '/testimonials' },
+      { name: 'About Dr. Dédé', href: 'https://dr-dede.vercel.app/', external: true },
+      { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
+      { name: 'Resources', href: 'https://dr-dede.vercel.app/', external: true }
     ]
   },
   { 
     name: 'Dr. Dédé',
     submenu: [
-      { name: 'Dr. Dédé Profile', href: 'https://dr-dede.vercel.app/', external: true },
       { name: 'Retreats & Advocacy', href: '/retreat' },
-      { name: 'Speaking & Events', href: '/speaking' }
+      { name: 'Speaking & Events', href: '/speaking' },
+      { name: 'incluu', href: 'https://incluu.vercel.app/', external: true }
     ]
-  },
-  { name: 'Contact', href: '/contact' }
+  }
 ];
 
 export default function Header() {
@@ -116,7 +118,7 @@ export default function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://dr-dede-tedx-homepage.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
               <Button size="sm" data-testid="button-watch-tedx">
                 <Play className="w-4 h-4 mr-2" />
                 Watch TEDx
@@ -206,7 +208,7 @@ export default function Header() {
                     </div>
                   ))}
                   <div className="pt-4 border-t space-y-2">
-                    <a href="https://dr-dede-tedx-homepage.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full" data-testid="mobile-button-watch-tedx">
                         <Play className="w-4 h-4 mr-2" />
                         Watch TEDx

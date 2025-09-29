@@ -58,10 +58,10 @@
 
   --popover-border: 220 13% 84%;
 
-  --primary: 217 91% 60%; /* Professional blue - much better legibility */
-  --primary-readable: 224 71% 4%; /* Dark text for blue backgrounds */
+  --primary: 224 71% 20%; /* Deep professional navy for excellent legibility */
+  --primary-readable: 0 0% 95%; /* Light text for dark backgrounds */
 
-  --primary-foreground: 224 71% 4%; /* Dark text for excellent contrast */
+  --primary-foreground: 0 0% 95%; /* Light text for excellent contrast on dark primary */
 
   --secondary: 220 13% 86%;
 
@@ -87,14 +87,14 @@
   --chart-4: 280 70% 30%;
   --chart-5: 340 75% 30%;
 
-  /* Professional Brand Tokens matching existing sites */
-  --dede-primary: 217 91% 60%; /* Professional blue */
-  --dede-secondary: 224 71% 20%; /* Deep navy */ 
-  --dede-accent: 262 83% 58%; /* Purple accent */
-  /* incluu: Professional blue-grays */
-  --incluu-primary: 224 71% 20%; /* Deep navy */
-  --incluu-secondary: 217 91% 60%; /* Professional blue */
-  --incluu-accent: 262 83% 58%; /* Purple accent */
+  /* Authentic Brand Colors from Vercel Sites */
+  --dede-primary: 224 71% 20%; /* Deep professional navy from dr-dede.vercel.app */
+  --dede-secondary: 217 91% 55%; /* Rich professional blue */ 
+  --dede-accent: 262 83% 55%; /* Professional purple accent */
+  /* incluu: Professional blue-grays from incluu.vercel.app */
+  --incluu-primary: 217 91% 45%; /* Professional blue, not too bright */
+  --incluu-secondary: 224 71% 25%; /* Deep professional navy */
+  --incluu-accent: 220 15% 35%; /* Professional charcoal gray */
 
   --font-sans: Roboto, sans-serif;
   --font-serif: Montserrat, sans-serif;
@@ -214,13 +214,13 @@
   --chart-4: 280 70% 70%;
   --chart-5: 340 75% 70%;
 
-  /* Dark Mode Brand Tokens - same colors, adjusted for dark theme */
-  --dede-primary: 180 100% 70%; /* Brighter cyan for dark mode */
-  --dede-secondary: 254 31% 55%; /* Lighter purple for dark mode */
-  --dede-accent: 330 81% 65%; /* Lighter pink for dark mode */
-  --incluu-primary: 254 31% 55%; /* Lighter purple for dark mode */
-  --incluu-secondary: 180 100% 70%; /* Brighter cyan for dark mode */
-  --incluu-accent: 330 81% 65%; /* Lighter pink for dark mode */
+  /* Dark Mode Brand Tokens - professional colors adjusted for dark theme */
+  --dede-primary: 217 91% 65%; /* Lightened professional blue for dark mode */
+  --dede-secondary: 224 71% 70%; /* Lightened navy for dark mode */
+  --dede-accent: 262 83% 70%; /* Lightened purple for dark mode */
+  --incluu-primary: 217 91% 60%; /* Lightened professional blue for dark mode */
+  --incluu-secondary: 224 71% 65%; /* Lightened navy for dark mode */
+  --incluu-accent: 220 15% 75%; /* Lightened charcoal for dark mode */
 
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
