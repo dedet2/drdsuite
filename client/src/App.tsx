@@ -12,7 +12,6 @@ import Speaking from "@/pages/Speaking";
 import Admin from "@/pages/Admin";
 import Consulting from "@/pages/Consulting";
 import Contact from "@/pages/Contact";
-import Incluu from "@/pages/Incluu";
 import Retreat from "@/pages/Retreat";
 import Stories from "@/pages/Stories";
 import NotFound from "@/pages/not-found";
@@ -27,7 +26,6 @@ function Router() {
       <Route path="/consulting" component={Consulting} />
       <Route path="/ai-governance" component={Consulting} />
       <Route path="/contact" component={Contact} />
-      <Route path="/incluu" component={Incluu} />
       <Route path="/retreat" component={Retreat} />
       <Route path="/stories" component={Stories} />
       {/* TODO: Add remaining pages - rar */}
