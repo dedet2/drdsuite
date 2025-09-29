@@ -17,20 +17,35 @@ import { Link, useLocation } from 'wouter';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'TEDx Talk', href: '/tedx' },
-  { name: 'Speaking', href: '/speaking' },
-  { name: 'Consulting', href: '/consulting' },
   { 
-    name: 'Retreats', 
+    name: 'AI GRC & Advisory', 
+    href: '/consulting',
+    submenu: [
+      { name: 'AI Governance', href: '/ai-governance' },
+      { name: 'Strategic Consulting', href: '/consulting' },
+      { name: 'Risk & Compliance', href: '/risk-compliance' }
+    ]
+  },
+  { 
+    name: 'Retreats & Advocacy', 
     href: '/retreat',
     submenu: [
-      { name: 'Executive Retreat', href: '/retreat' },
-      { name: 'RaR Program', href: '/rar' }
+      { name: 'Executive Retreats', href: '/retreat' },
+      { name: 'Disability Advocacy', href: '/advocacy' },
+      { name: 'Wellness Programs', href: '/wellness' }
+    ]
+  },
+  { 
+    name: 'Speaking & Events', 
+    href: '/speaking',
+    submenu: [
+      { name: 'TEDx Talk', href: '/tedx' },
+      { name: 'Speaking Topics', href: '/speaking' },
+      { name: 'Book Event', href: '/book-event' }
     ]
   },
   { name: 'incluu', href: '/incluu' },
-  { name: 'Stories', href: '/stories' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Contact', href: '/contact' }
 ];
 
 export default function Header() {

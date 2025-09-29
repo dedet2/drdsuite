@@ -3,7 +3,7 @@ import ServiceCard from '@/components/ServiceCard';
 import VideoEmbed from '@/components/VideoEmbed';
 import { Button } from '@/components/ui/button';
 import { Shield, Users, Zap, ArrowRight } from 'lucide-react';
-import drDedeImage from '@assets/generated_images/Dr_Dede_professional_headshot_c8ae07f3.png';
+import drDedeImage from '@assets/stock_images/professional_black_w_9a2af9f7.jpg';
 import retreatImage from '@assets/generated_images/Luxury_accessible_retreat_center_c5a186a2.png';
 
 export default function Home() {
@@ -120,13 +120,10 @@ export default function Home() {
                 Embodied Expertise, Proven Results
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                As someone who lives the intersection of technology and accessibility daily, 
-                I bring unique insights to AI governance and systems design. My approach is rooted 
-                in lived experience and proven methodologies.
+                Black, queer, first-generation Togolese immigrant and Cornell-educated social scientist with 20+ years of experience in ethical technology and social justice. Living with sickle-cell disease, I bring unique insights to AI governance and systems design rooted in lived experience.
               </p>
               <p className="text-lg text-muted-foreground mb-8">
-                From Fortune 500 compliance frameworks to startup accessibility audits, 
-                I help organizations build systems that are both inclusive and profitable.
+                As founder of incluu, I've delivered $300M+ in cost savings and $500M+ in market expansion for enterprise clients through strategic AI governance and tech equity implementations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" data-testid="button-luxury-retreat">
@@ -141,12 +138,12 @@ export default function Home() {
             <div className="relative">
               <img 
                 src={drDedeImage} 
-                alt="Dr. Dédé Tetsubayashi - AI Governance Expert"
+                alt="Dr. Dédé Tetsubayashi - AI Governance Expert and founder of incluu"
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-8 -right-8 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
-                <p className="font-semibold">Featured Speaker</p>
-                <p className="text-sm opacity-90">TEDx, SXSW, AI Summit</p>
+                <p className="font-semibold">AI Governance Expert</p>
+                <p className="text-sm opacity-90">$300M+ Cost Savings Delivered</p>
               </div>
             </div>
           </div>
