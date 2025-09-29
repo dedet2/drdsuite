@@ -25,13 +25,13 @@ export default function ServiceCard({
   return (
     <Card 
       className={`h-full hover-elevate transition-all duration-300 ${
-        highlighted ? 'ring-2 ring-primary/20 bg-primary/5' : ''
+        highlighted ? 'ring-2 ring-primary/20 bg-primary/5 border-primary/30' : 'border-muted hover:border-primary/20'
       }`}
       data-testid={`card-service-${title.toLowerCase().replace(/\s+/g, '-')}`}
     >
       <CardHeader className="text-center pb-4">
-        <div className={`w-16 h-16 mx-auto rounded-lg flex items-center justify-center mb-4 ${
-          highlighted ? 'bg-primary text-primary-foreground' : 'bg-muted'
+        <div className={`w-16 h-16 mx-auto rounded-lg flex items-center justify-center mb-4 transition-colors ${
+          highlighted ? 'bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-lg' : 'bg-muted hover:bg-primary/10'
         }`}>
           <Icon className="w-8 h-8" />
         </div>
@@ -45,7 +45,7 @@ export default function ServiceCard({
         <ul className="space-y-2">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start">
-              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0 shadow-sm" />
               <span className="text-sm text-muted-foreground">{feature}</span>
             </li>
           ))}

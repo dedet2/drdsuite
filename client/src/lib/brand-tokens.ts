@@ -50,6 +50,12 @@ export function setBrandTheme(brand: BrandType) {
   root.style.setProperty('--gradient-current', brand === 'dede' ? 'var(--gradient-dede)' : 'var(--gradient-incluu)');
   root.style.setProperty('--gradient-hero-current', brand === 'dede' ? 'var(--gradient-hero-dede)' : 'var(--gradient-hero-incluu)');
   
+  // Set brand-specific component themes
+  root.style.setProperty('--button-primary-shadow', brand === 'dede' 
+    ? 'var(--button-primary-shadow)'
+    : 'var(--button-primary-shadow-incluu)'
+  );
+  
   // Add brand class to body for any additional brand-specific styling
   document.body.className = document.body.className.replace(/brand-\w+/g, '');
   document.body.classList.add(`brand-${brand}`);

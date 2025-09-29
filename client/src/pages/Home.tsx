@@ -129,11 +129,11 @@ export default function Home() {
                 As founder of incluu, I've delivered $300M+ in cost savings and $500M+ in market expansion for enterprise clients through strategic AI governance and tech equity implementations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" data-testid="button-luxury-retreat">
+                <Button size="lg" className="shadow-lg hover:shadow-xl transition-shadow" data-testid="button-luxury-retreat">
                   Luxury Retreat Program
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button variant="outline" size="lg" data-testid="button-learn-more">
+                <Button variant="outline" size="lg" className="border-primary/30 hover:border-primary hover:bg-primary/5 transition-all" data-testid="button-learn-more">
                   Learn More About Me
                 </Button>
               </div>

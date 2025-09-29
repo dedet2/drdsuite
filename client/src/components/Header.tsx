@@ -53,13 +53,13 @@ export default function Header() {
   const [location] = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/50 transition-colors">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Brand */}
           <div className="flex items-center">
             <Link href="/">
-              <Button variant="ghost" className="text-lg font-semibold font-serif" data-testid="link-home">
+              <Button variant="ghost" className="text-lg font-semibold font-serif hover:bg-primary/10 hover:text-primary transition-colors" data-testid="link-home">
                 Dr. Dédé + incluu
               </Button>
             </Link>
@@ -73,7 +73,7 @@ export default function Header() {
                   {item.submenu ? (
                     <>
                       <NavigationMenuTrigger 
-                        className={location === item.href || item.submenu.some(sub => location === sub.href) ? 'text-primary' : ''}
+                        className={`transition-colors hover:bg-primary/10 ${location === item.href || item.submenu.some(sub => location === sub.href) ? 'text-primary bg-primary/5' : ''}`}
                         data-testid={`link-${item.name.toLowerCase()}`}
                       >
                         {item.name}
@@ -84,8 +84,8 @@ export default function Header() {
                             <NavigationMenuLink key={subItem.name} asChild>
                               <Link 
                                 href={subItem.href}
-                                className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${
-                                  location === subItem.href ? 'text-primary bg-accent/50' : ''
+                                className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
+                                  location === subItem.href ? 'text-primary bg-primary/20' : ''
                                 }`}
                                 data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
                               >
