@@ -1,17 +1,33 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { 
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger
+} from '@/components/ui/navigation-menu';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import BrandSwitcher from './BrandSwitcher';
 import ThemeToggle from '@/components/ThemeToggle';
-import { Menu, Play, Calendar } from 'lucide-react';
+import { Menu, Play, Calendar, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'TEDx Talk', href: '/tedx' },
+  { name: 'Speaking', href: '/speaking' },
   { name: 'Consulting', href: '/consulting' },
-  { name: 'Retreat', href: '/retreat' },
-  { name: 'RaR', href: '/rar' },
+  { 
+    name: 'Retreats', 
+    href: '/retreat',
+    submenu: [
+      { name: 'Executive Retreat', href: '/retreat' },
+      { name: 'RaR Program', href: '/rar' }
+    ]
+  },
   { name: 'incluu', href: '/incluu' },
   { name: 'Stories', href: '/stories' },
   { name: 'Contact', href: '/contact' },
@@ -35,20 +51,53 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link key={item.name} href={item.href}>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={location === item.href ? 'text-primary' : ''}
-                  data-testid={`link-${item.name.toLowerCase()}`}
-                >
-                  {item.name}
-                </Button>
-              </Link>
-            ))}
-          </nav>
+          <NavigationMenu className="hidden md:flex">
+            <NavigationMenuList>
+              {navigation.map((item) => (
+                <NavigationMenuItem key={item.name}>
+                  {item.submenu ? (
+                    <>
+                      <NavigationMenuTrigger 
+                        className={location === item.href || item.submenu.some(sub => location === sub.href) ? 'text-primary' : ''}
+                        data-testid={`link-${item.name.toLowerCase()}`}
+                      >
+                        {item.name}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <div className="grid w-48 gap-2 p-4">
+                          {item.submenu.map((subItem) => (
+                            <NavigationMenuLink key={subItem.name} asChild>
+                              <Link 
+                                href={subItem.href}
+                                className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ${
+                                  location === subItem.href ? 'text-primary bg-accent/50' : ''
+                                }`}
+                                data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                              >
+                                <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                              </Link>
+                            </NavigationMenuLink>
+                          ))}
+                        </div>
+                      </NavigationMenuContent>
+                    </>
+                  ) : (
+                    <NavigationMenuLink asChild>
+                      <Link 
+                        href={item.href}
+                        className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 ${
+                          location === item.href ? 'text-primary' : ''
+                        }`}
+                        data-testid={`link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        {item.name}
+                      </Link>
+                    </NavigationMenuLink>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
@@ -75,18 +124,52 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px]">
-                <nav className="flex flex-col space-y-4 mt-8">
+                <nav className="flex flex-col space-y-2 mt-8">
                   {navigation.map((item) => (
-                    <Link key={item.name} href={item.href}>
-                      <Button
-                        variant="ghost"
-                        className={`w-full justify-start ${location === item.href ? 'text-primary' : ''}`}
-                        onClick={() => setMobileOpen(false)}
-                        data-testid={`mobile-link-${item.name.toLowerCase()}`}
-                      >
-                        {item.name}
-                      </Button>
-                    </Link>
+                    <div key={item.name}>
+                      {item.submenu ? (
+                        <Collapsible>
+                          <CollapsibleTrigger asChild>
+                            <Button
+                              variant="ghost"
+                              className={`w-full justify-between ${
+                                location === item.href || item.submenu.some(sub => location === sub.href) ? 'text-primary' : ''
+                              }`}
+                              data-testid={`mobile-link-${item.name.toLowerCase()}`}
+                            >
+                              {item.name}
+                              <ChevronDown className="w-4 h-4" />
+                            </Button>
+                          </CollapsibleTrigger>
+                          <CollapsibleContent className="pl-4 space-y-1">
+                            {item.submenu.map((subItem) => (
+                              <Link key={subItem.name} href={subItem.href}>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
+                                  onClick={() => setMobileOpen(false)}
+                                  data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                >
+                                  {subItem.name}
+                                </Button>
+                              </Link>
+                            ))}
+                          </CollapsibleContent>
+                        </Collapsible>
+                      ) : (
+                        <Link href={item.href}>
+                          <Button
+                            variant="ghost"
+                            className={`w-full justify-start ${location === item.href ? 'text-primary' : ''}`}
+                            onClick={() => setMobileOpen(false)}
+                            data-testid={`mobile-link-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          >
+                            {item.name}
+                          </Button>
+                        </Link>
+                      )}
+                    </div>
                   ))}
                   <div className="pt-4 border-t space-y-2">
                     <Button className="w-full" data-testid="mobile-button-watch-tedx">

@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import Home from "@/pages/Home";
 import TEDx from "@/pages/TEDx";
+import Speaking from "@/pages/Speaking";
 import Admin from "@/pages/Admin";
 import NotFound from "@/pages/not-found";
 
@@ -16,6 +17,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/tedx" component={TEDx} />
+      <Route path="/speaking" component={Speaking} />
       <Route path="/admin" component={Admin} />
       {/* TODO: Add remaining pages - consulting, retreat, rar, incluu, stories, contact */}
       <Route component={NotFound} />
