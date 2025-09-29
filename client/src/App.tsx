@@ -10,6 +10,10 @@ import Home from "@/pages/Home";
 import TEDx from "@/pages/TEDx";
 import Speaking from "@/pages/Speaking";
 import Admin from "@/pages/Admin";
+import Consulting from "@/pages/Consulting";
+import Contact from "@/pages/Contact";
+import Incluu from "@/pages/Incluu";
+import Retreat from "@/pages/Retreat";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,7 +23,12 @@ function Router() {
       <Route path="/tedx" component={TEDx} />
       <Route path="/speaking" component={Speaking} />
       <Route path="/admin" component={Admin} />
-      {/* TODO: Add remaining pages - consulting, retreat, rar, incluu, stories, contact */}
+      <Route path="/consulting" component={Consulting} />
+      <Route path="/ai-governance" component={Consulting} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/incluu" component={Incluu} />
+      <Route path="/retreat" component={Retreat} />
+      {/* TODO: Add remaining pages - rar, stories */}
       <Route component={NotFound} />
     </Switch>
   );
