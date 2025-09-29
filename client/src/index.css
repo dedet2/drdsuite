@@ -16,15 +16,15 @@
 
   --background: 0 0% 98%;
   
-  /* Professional gradient backgrounds matching existing sites */
-  --gradient-dede: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(67, 56, 202, 0.2) 100%);
-  --gradient-incluu: linear-gradient(135deg, rgba(67, 56, 202, 0.1) 0%, rgba(59, 130, 246, 0.2) 100%);
-  --gradient-hero-dede: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(67, 56, 202, 0.5) 60%, rgba(0, 0, 0, 0.85) 100%);
-  --gradient-hero-incluu: linear-gradient(135deg, rgba(67, 56, 202, 0.3) 0%, rgba(59, 130, 246, 0.5) 60%, rgba(0, 0, 0, 0.85) 100%);
+  /* TRUE Purple-to-Cyan Gradient Backgrounds (from Incluu Updated Branding.pdf) */
+  --gradient-dede: linear-gradient(135deg, rgba(98, 0, 234, 0.7) 0%, rgba(124, 77, 255, 0.6) 30%, rgba(24, 255, 255, 0.6) 100%);
+  --gradient-incluu: linear-gradient(135deg, rgba(124, 77, 255, 0.7) 0%, rgba(68, 138, 255, 0.6) 50%, rgba(62, 188, 209, 0.6) 100%);
+  --gradient-hero-dede: linear-gradient(135deg, rgba(98, 0, 234, 0.85) 0%, rgba(124, 77, 255, 0.7) 40%, rgba(24, 255, 255, 0.5) 70%, rgba(0, 0, 0, 0.90) 100%);
+  --gradient-hero-incluu: linear-gradient(135deg, rgba(124, 77, 255, 0.85) 0%, rgba(68, 138, 255, 0.7) 40%, rgba(62, 188, 209, 0.5) 70%, rgba(0, 0, 0, 0.90) 100%);
   
-  /* Enhanced button and interactive element theming */
-  --button-primary-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.15);
-  --button-primary-shadow-incluu: 0 4px 14px 0 rgba(67, 56, 202, 0.15);
+  /* Enhanced button and interactive element theming with purple-cyan shadows */
+  --button-primary-shadow: 0 4px 14px 0 rgba(98, 0, 234, 0.25);
+  --button-primary-shadow-incluu: 0 4px 14px 0 rgba(124, 77, 255, 0.25);
 
   --foreground: 220 15% 15%;
 
@@ -42,15 +42,15 @@
 
   --sidebar-border: 220 13% 86%;
 
-  --sidebar-primary: 220 85% 25%;
+  --sidebar-primary: 265 100% 46%; /* Deep purple matching primary */
 
-  --sidebar-primary-foreground: 220 85% 95%;
+  --sidebar-primary-foreground: 0 0% 95%;
 
   --sidebar-accent: 220 13% 88%;
 
   --sidebar-accent-foreground: 220 15% 25%;
 
-  --sidebar-ring: 220 85% 25%;
+  --sidebar-ring: 265 100% 46%; /* Deep purple matching primary */
 
   --popover: 220 13% 92%;
 
@@ -58,10 +58,10 @@
 
   --popover-border: 220 13% 84%;
 
-  --primary: 224 71% 20%; /* Deep professional navy for excellent legibility */
+  --primary: 265 100% 46%; /* Deep Purple - TRUE brand color from PDF */
   --primary-readable: 0 0% 95%; /* Light text for dark backgrounds */
 
-  --primary-foreground: 0 0% 95%; /* Light text for excellent contrast on dark primary */
+  --primary-foreground: 0 0% 95%; /* Light text for excellent contrast on purple primary */
 
   --secondary: 220 13% 86%;
 
@@ -80,21 +80,24 @@
   --destructive-foreground: 0 75% 95%;
 
   --input: 220 13% 82%;
-  --ring: 217 91% 60%; /* Professional blue ring */
-  --chart-1: 220 85% 25%;
+  --ring: 265 100% 46%; /* Deep purple ring matching primary brand */
+  --chart-1: 265 100% 46%;
   --chart-2: 160 75% 30%;
   --chart-3: 45 95% 35%;
   --chart-4: 280 70% 30%;
   --chart-5: 340 75% 30%;
 
-  /* Authentic Brand Colors from Vercel Sites */
-  --dede-primary: 224 71% 20%; /* Deep professional navy from dr-dede.vercel.app */
-  --dede-secondary: 217 91% 55%; /* Rich professional blue */ 
-  --dede-accent: 262 83% 55%; /* Professional purple accent */
-  /* incluu: Professional blue-grays from incluu.vercel.app */
-  --incluu-primary: 217 91% 45%; /* Professional blue, not too bright */
-  --incluu-secondary: 224 71% 25%; /* Deep professional navy */
-  --incluu-accent: 220 15% 35%; /* Professional charcoal gray */
+  /* TRUE Authentic Brand Colors (from Incluu Updated Branding.pdf) */
+  --dede-primary: 265 100% 46%; /* Deep Purple #6200EA */
+  --dede-secondary: 236 31% 50%; /* Gray Blue #5A5FA6 */ 
+  --dede-accent: 328 79% 49%; /* Pink #e01b84 */
+  --dede-gradient-purple: 256 100% 65%; /* Mid Purple #7C4DFF for gradients */
+  --dede-gradient-cyan: 180 100% 55%; /* Bright Cyan #18FFFF for gradients */
+  /* incluu: Purple-to-Cyan gradient palette */
+  --incluu-primary: 256 100% 65%; /* Mid Purple #7C4DFF */
+  --incluu-secondary: 218 100% 63%; /* Mid Blue #448AFF */
+  --incluu-accent: 189 62% 53%; /* Dark Cyan #3EBCD1 */
+  --incluu-gradient-aubergine: 282 41% 42%; /* Aubergine Purple #7D3F98 for depth */
 
   --font-sans: Roboto, sans-serif;
   --font-serif: Montserrat, sans-serif;
@@ -170,15 +173,15 @@
 
   --sidebar-border: 0 0% 18%;
 
-  --sidebar-primary: 220 85% 25%;
+  --sidebar-primary: 256 100% 65%; /* Mid purple for dark mode */
 
-  --sidebar-primary-foreground: 220 85% 95%;
+  --sidebar-primary-foreground: 0 0% 95%;
 
   --sidebar-accent: 0 0% 15%;
 
   --sidebar-accent-foreground: 0 0% 85%;
 
-  --sidebar-ring: 220 85% 25%;
+  --sidebar-ring: 256 100% 65%; /* Mid purple for dark mode */
 
   --popover: 0 0% 12%;
 
@@ -186,9 +189,9 @@
 
   --popover-border: 0 0% 20%;
 
-  --primary: 220 85% 25%;
+  --primary: 256 100% 65%; /* Mid purple lightened for dark mode */
 
-  --primary-foreground: 220 85% 95%;
+  --primary-foreground: 0 0% 95%;
 
   --secondary: 0 0% 18%;
 
@@ -207,20 +210,23 @@
   --destructive-foreground: 0 75% 95%;
 
   --input: 0 0% 22%;
-  --ring: 220 85% 25%;
-  --chart-1: 220 85% 65%;
+  --ring: 256 100% 65%; /* Mid purple for dark mode */
+  --chart-1: 256 100% 70%;
   --chart-2: 160 75% 70%;
   --chart-3: 45 95% 75%;
   --chart-4: 280 70% 70%;
   --chart-5: 340 75% 70%;
 
-  /* Dark Mode Brand Tokens - professional colors adjusted for dark theme */
-  --dede-primary: 217 91% 65%; /* Lightened professional blue for dark mode */
-  --dede-secondary: 224 71% 70%; /* Lightened navy for dark mode */
-  --dede-accent: 262 83% 70%; /* Lightened purple for dark mode */
-  --incluu-primary: 217 91% 60%; /* Lightened professional blue for dark mode */
-  --incluu-secondary: 224 71% 65%; /* Lightened navy for dark mode */
-  --incluu-accent: 220 15% 75%; /* Lightened charcoal for dark mode */
+  /* Dark Mode Brand Tokens - TRUE colors lightened for dark theme */
+  --dede-primary: 256 100% 70%; /* Lightened Mid Purple for dark mode */
+  --dede-secondary: 236 31% 65%; /* Lightened Gray Blue for dark mode */
+  --dede-accent: 328 79% 65%; /* Lightened Pink for dark mode */
+  --dede-gradient-purple: 256 100% 75%; /* Lightened Mid Purple for gradients */
+  --dede-gradient-cyan: 180 100% 70%; /* Lightened Bright Cyan for gradients */
+  --incluu-primary: 256 100% 75%; /* Lightened Mid Purple for dark mode */
+  --incluu-secondary: 218 100% 70%; /* Lightened Mid Blue for dark mode */
+  --incluu-accent: 189 62% 65%; /* Lightened Dark Cyan for dark mode */
+  --incluu-gradient-aubergine: 282 41% 60%; /* Lightened Aubergine for dark mode */
 
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
