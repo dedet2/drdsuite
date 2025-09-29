@@ -22,7 +22,7 @@ const footerLinks = {
     { name: 'Speaking', href: '/contact' },
   ],
   Company: [
-    { name: 'About Dr. Dédé', href: '/tedx' },
+    { name: 'About Dr. Dédé', href: 'https://dr-dede.vercel.app/', external: true },
     { name: 'incluu Brand', href: '/incluu' },
     { name: 'RaR Program', href: '/rar' },
     { name: 'Contact', href: '/contact' },
@@ -68,21 +68,32 @@ export default function Footer() {
             <div key={category}>
               <h4 className="font-semibold mb-4">{category}</h4>
               <ul className="space-y-2">
-                {links.map((link) => (
+                {links.map((link: any) => (
                   <li key={link.name}>
-                    <Link href={link.href}>
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        className="h-auto p-0 text-muted-foreground hover:text-foreground justify-start"
-                        data-testid={`link-footer-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      >
-                        {link.name}
-                        {link.href.startsWith('http') && (
+                    {link.external || link.href.startsWith('http') ? (
+                      <a href={link.href} target="_blank" rel="noopener noreferrer">
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="h-auto p-0 text-muted-foreground hover:text-foreground justify-start"
+                          data-testid={`link-footer-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          {link.name}
                           <ExternalLink className="w-3 h-3 ml-1" />
-                        )}
-                      </Button>
-                    </Link>
+                        </Button>
+                      </a>
+                    ) : (
+                      <Link href={link.href}>
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="h-auto p-0 text-muted-foreground hover:text-foreground justify-start"
+                          data-testid={`link-footer-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          {link.name}
+                        </Button>
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
