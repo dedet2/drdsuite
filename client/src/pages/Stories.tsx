@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, ExternalLink, Calendar, Clock, BookOpen, Mic, Video, Award, Users, Lightbulb } from 'lucide-react';
+import ContactForm from '@/components/ContactForm';
 
 const featuredContent = [
   {
@@ -296,14 +297,25 @@ export default function Stories() {
                 Join a community of leaders building more inclusive technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" data-testid="button-subscribe-updates">
-                  <BookOpen className="w-4 h-4 mr-2" />
-                  Subscribe for Updates
-                </Button>
-                <Button variant="outline" size="lg" data-testid="button-contact-collaboration">
-                  <ArrowRight className="w-4 h-4 mr-2" />
-                  Collaborate With Us
-                </Button>
+                <ContactForm
+                  defaultType="newsletter"
+                  defaultService="Thought Leadership Content"
+                  triggerText="Subscribe for Updates"
+                  triggerSize="lg"
+                  icon={BookOpen}
+                  description="Get notified when new articles, talks, and resources are published. Join leaders building inclusive technology."
+                  context="stories-page"
+                />
+                <ContactForm
+                  defaultType="general"
+                  defaultService="Speaking & Workshops"
+                  triggerText="Collaborate With Us"
+                  triggerVariant="outline"
+                  triggerSize="lg"
+                  icon={ArrowRight}
+                  description="Interested in collaboration, partnerships, or joint initiatives? Let's explore opportunities together."
+                  context="stories-page"
+                />
               </div>
             </div>
           </Card>
