@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Play, Calendar, ArrowRight } from 'lucide-react';
-import aiGovernanceImage from '@assets/dr_dede_banner.jpg';
+import aiGovernanceImage from '@assets/generated_images/AI_governance_tech_background_845924c8.png';
 
 interface HeroProps {
   title: string;
@@ -26,33 +26,33 @@ export default function Hero({
   backgroundImage = aiGovernanceImage
 }: HeroProps) {
   return (
-    <section className="relative min-h-[90vh] sm:min-h-[85vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center lg:bg-right bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="absolute inset-0" style={{ background: 'var(--gradient-hero-current, linear-gradient(135deg, rgba(24, 255, 255, 0.2) 0%, rgba(90, 80, 155, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%))' }} />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 sm:px-8 lg:px-8 text-center text-white">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 leading-tight">
             <span className="block text-white">{title}</span>
-            <span className="block text-primary">
+            <span className="block bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
               {subtitle}
             </span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 max-w-2xl mx-auto px-4 sm:px-0">
+          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
             {description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-primary/20 hover:bg-primary/30 backdrop-blur-sm border border-primary/30 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+              className="text-lg px-8 py-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20"
               onClick={primaryCta.action}
               data-testid="button-hero-primary"
             >
@@ -64,7 +64,7 @@ export default function Hero({
             <Button 
               variant="outline" 
               size="lg"
-              className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-white/10 hover:bg-primary/20 backdrop-blur-sm border border-primary/50 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+              className="text-lg px-8 py-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white"
               onClick={secondaryCta.action}
               data-testid="button-hero-secondary"
             >

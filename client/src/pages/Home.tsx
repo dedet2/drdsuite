@@ -1,298 +1,201 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Play, ArrowRight, Users, Target, Heart, Globe, Award, Shield, Lightbulb, Calendar } from 'lucide-react';
-import ContactForm from '@/components/ContactForm';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
-
-const achievements = [
-  {
-    metric: "$500M+",
-    description: "Market expansion delivered through inclusive product strategies"
-  },
-  {
-    metric: "$300M+", 
-    description: "Cost savings achieved via accessibility-first implementations"
-  },
-  {
-    metric: "30+",
-    description: "Strategic engagements completed across diverse industries"
-  },
-  {
-    metric: "50+",
-    description: "AI governance frameworks deployed with inclusion principles"
-  }
-];
-
-const coreServices = [
-  {
-    title: "AI Governance & Risk Management",
-    description: "Comprehensive frameworks for responsible AI implementation with built-in compliance and risk mitigation.",
-    features: [
-      "AI governance policy development",
-      "Risk assessment and mitigation strategies", 
-      "Regulatory compliance frameworks",
-      "Ethical AI implementation guidelines"
-    ],
-    metrics: "50+ AI governance frameworks deployed",
-    icon: Shield
-  },
-  {
-    title: "Product Inclusion Strategy",
-    description: "Integration of DEI principles with product development to unlock new markets and improve user experience.",
-    features: [
-      "Inclusive design methodologies",
-      "Accessibility-first development",
-      "User research and testing",
-      "Market expansion strategies"
-    ],
-    metrics: "$500M+ market expansion delivered",
-    icon: Users
-  },
-  {
-    title: "Strategic Technology Advisory", 
-    description: "Fractional CPO/CPRO services for scaling organizations seeking ethical technology leadership.",
-    features: [
-      "Technology strategy development",
-      "Product roadmap optimization",
-      "Team building and leadership",
-      "Vendor evaluation and selection"
-    ],
-    metrics: "30+ strategic engagements completed",
-    icon: Target
-  }
-];
-
-const values = [
-  {
-    title: "Embodied Expertise",
-    description: "Lived experience drives authentic solutions. Our perspectives as Black, queer, disabled, and immigrant leaders inform every strategy.",
-    icon: Heart
-  },
-  {
-    title: "Business Impact", 
-    description: "Social justice isn't separate from business success. We deliver measurable results that prove inclusive practices drive growth.",
-    icon: Target
-  },
-  {
-    title: "Systemic Change",
-    description: "Individual accommodations aren't enough. We build systems and frameworks that create lasting organizational transformation.",
-    icon: Globe
-  },
-  {
-    title: "Community-Centered",
-    description: "Authentic inclusion happens when marginalized communities lead the conversation. We center affected voices in every solution.",
-    icon: Users
-  }
-];
+import VideoEmbed from '@/components/VideoEmbed';
+import { Button } from '@/components/ui/button';
+import { Shield, Users, Zap, ArrowRight } from 'lucide-react';
+import drDedeImage from '@assets/generated_images/Dr_Dede_professional_headshot_c8ae07f3.png';
+import retreatImage from '@assets/generated_images/Luxury_accessible_retreat_center_c5a186a2.png';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <Hero
-        title="Dr. Dédé + incluu"
-        subtitle="AI Governance & Accessible Futures"
-        description="Systems design for compliance, access, and growth. Built from embodied expertise. Transforming how organizations approach AI governance and inclusive technology through authentic, lived-experience leadership."
+        title="AI Governance"
+        subtitle="Accessible Futures"
+        description="Systems design for compliance, access, and growth. Built from embodied expertise."
         primaryCta={{
-          text: "Schedule Consultation",
-          action: () => {}
+          text: "Work With Me",
+          action: () => console.log('Work With Me clicked')
         }}
         secondaryCta={{
-          text: "Watch TEDx Talk",
-          action: () => window.open("https://nslacnow.manus.space/", "_blank")
+          text: "Watch TEDx",
+          action: () => console.log('Watch TEDx clicked')
         }}
       />
 
-      {/* Brand Introduction */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Black-Woman-Owned • Disability-Led • Tech Ethics</Badge>
-            <h2 className="text-3xl font-bold text-foreground mb-6">Unified Expertise, Dual Impact</h2>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-              Combining <strong>Dr. Dédé's</strong> thought leadership in AI governance and accessibility with 
-              <strong>incluu's</strong> proven business impact in inclusive technology systems. Two complementary brands 
-              united by a commitment to creating technology that serves everyone.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="hover-elevate">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Award className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">Dr. Dédé Tetsubayashi</CardTitle>
-                <CardDescription>
-                  AI GRC Executive, TEDx Speaker, Disability Advocate
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Thought leadership in AI governance, accessibility, and systems transformation. Personal experience as a Black, queer, disabled technology leader informs every strategy.
-                </p>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• Executive Retreats & Leadership Development</li>
-                  <li>• Speaking Engagements & Keynote Presentations</li>
-                  <li>• Disability Advocacy & Healthcare Navigation</li>
-                  <li>• TEDx: "AI Governance and Accessible Futures"</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-elevate">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Lightbulb className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">incluu consultancy</CardTitle>
-                <CardDescription>
-                  Black-woman-owned strategic AI governance & tech equity consulting
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Proven business impact through inclusive technology systems. When you center marginalized communities in design, you build better technology for everyone.
-                </p>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• AI Governance & Regulatory Compliance</li>
-                  <li>• Product Inclusion Strategy & Market Expansion</li>
-                  <li>• Executive Training & Organizational Transformation</li>
-                  <li>• Strategic Technology Advisory Services</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Services */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Core Services</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive solutions for AI governance, inclusive technology, and strategic leadership development.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {coreServices.map((service, index) => (
-              <ServiceCard
-                key={index}
-                title={service.title}
-                description={service.description}
-                features={service.features}
-                icon={service.icon}
-                cta={{
-                  text: "Learn More",
-                  action: () => {}
-                }}
-                highlighted={index === 1}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Business Impact Metrics */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Measurable Business Impact</h2>
-          <p className="text-lg text-muted-foreground mb-12">
-            Real results from strategic AI governance and tech equity implementations across industries.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">{achievement.metric}</div>
-                <div className="text-sm text-muted-foreground">{achievement.description}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Our Values</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Four core principles guide every strategy, every implementation, and every partnership.
+      {/* Services Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold font-serif mb-4">
+              Expertise That Delivers Results
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From compliance frameworks to accessible design, I help organizations build systems that work for everyone.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="h-full hover-elevate">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <value.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <CardTitle className="text-xl mb-2">{value.title}</CardTitle>
-                      <CardDescription className="text-base">{value.description}</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured TEDx */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="outline" className="mb-4">Featured Presentation</Badge>
-          <h2 className="text-3xl font-bold text-foreground mb-6">TEDx: AI Governance and Accessible Futures</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Watch Dr. Dédé's powerful 18-minute presentation exploring how responsible AI governance 
-            can create more inclusive and accessible futures for everyone.
-          </p>
-          
-          <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" data-testid="button-watch-tedx">
-              <Play className="mr-2 h-5 w-5" />
-              Watch TEDx Talk
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </a>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Ready to Transform Your AI Future?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join the Fortune 500 companies, innovative startups, and leading healthcare networks who trust 
-            Dr. Dédé and incluu to guide their AI governance transformation.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <ContactForm 
-              triggerText="Schedule Strategy Session"
-              triggerVariant="default"
-              triggerSize="lg"
-              description="Discuss your AI governance, accessibility, and inclusion needs"
-              context="home-page-cta"
-              defaultType="consultation"
-              defaultService="Strategic Consultation"
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <ServiceCard
+              title="AI Governance"
+              description="Compliance systems that scale with your business"
+              features={[
+                "Risk assessment frameworks",
+                "Regulatory compliance audits", 
+                "Policy development & implementation",
+                "Team training & workshops"
+              ]}
+              icon={Shield}
+              cta={{
+                text: "Learn More",
+                action: () => console.log('AI Governance clicked')
+              }}
             />
-            <Button variant="outline" size="lg">
-              <Calendar className="mr-2 h-5 w-5" />
-              View Success Stories
-            </Button>
+            
+            <ServiceCard
+              title="Accessibility Systems"
+              description="Inclusive design that opens new markets"
+              features={[
+                "WCAG 2.2 compliance audits",
+                "Assistive technology integration",
+                "User experience optimization", 
+                "Accessibility training programs"
+              ]}
+              icon={Users}
+              cta={{
+                text: "Get Started",
+                action: () => console.log('Accessibility clicked')
+              }}
+              highlighted={true}
+            />
+            
+            <ServiceCard
+              title="Growth Strategy"
+              description="ROI-focused implementation roadmaps"
+              features={[
+                "Market opportunity analysis",
+                "Implementation planning",
+                "Performance metrics & KPIs",
+                "Ongoing optimization support"
+              ]}
+              icon={Zap}
+              cta={{
+                text: "Schedule Call", 
+                action: () => console.log('Growth Strategy clicked')
+              }}
+            />
           </div>
+        </div>
+      </section>
 
-          <div className="text-sm text-muted-foreground">
-            <p>Global reach and impact • 48hr response time guaranteed • 100% client satisfaction</p>
+      {/* TEDx Video Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold font-serif mb-4">
+                The Future of AI Governance
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Watch my TEDx talk on building accessible futures through responsible AI governance
+              </p>
+            </div>
+            
+            <VideoEmbed
+              provider="youtube"
+              id="dQw4w9WgXcQ"
+              title="AI Governance and Accessible Futures | Dr. Dédé Tetsubayashi | TEDx"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* About & Retreat CTA */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold font-serif mb-6">
+                Embodied Expertise, Proven Results
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                As someone who lives the intersection of technology and accessibility daily, 
+                I bring unique insights to AI governance and systems design. My approach is rooted 
+                in lived experience and proven methodologies.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                From Fortune 500 compliance frameworks to startup accessibility audits, 
+                I help organizations build systems that are both inclusive and profitable.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" data-testid="button-luxury-retreat">
+                  Luxury Retreat Program
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+                <Button variant="outline" size="lg" data-testid="button-learn-more">
+                  Learn More About Me
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src={drDedeImage} 
+                alt="Dr. Dédé Tetsubayashi - AI Governance Expert"
+                className="rounded-lg shadow-2xl"
+              />
+              <div className="absolute -bottom-8 -right-8 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
+                <p className="font-semibold">Featured Speaker</p>
+                <p className="text-sm opacity-90">TEDx, SXSW, AI Summit</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Retreat Preview */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <img 
+                src={retreatImage}
+                alt="Luxury accessible retreat center"
+                className="rounded-lg shadow-2xl"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-4xl font-bold font-serif mb-6">
+                Executive Retreat Experience
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Transform your leadership approach in our luxury, fully accessible retreat center. 
+                Intimate cohorts of senior executives explore AI governance, accessibility strategy, 
+                and inclusive leadership.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                  <span>5-day immersive program in nature</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                  <span>Maximum 12 participants per cohort</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                  <span>Fully accessible facilities & programming</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                  <span>Personalized action plans & 6-month follow-up</span>
+                </li>
+              </ul>
+              <Button size="lg" data-testid="button-apply-retreat">
+                Apply for Next Cohort
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>

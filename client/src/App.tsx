@@ -7,37 +7,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import Home from "@/pages/Home";
-import Incluu from "@/pages/Incluu";
 import TEDx from "@/pages/TEDx";
-import Speaking from "@/pages/Speaking";
 import Admin from "@/pages/Admin";
-import Consulting from "@/pages/Consulting";
-import Contact from "@/pages/Contact";
-import Retreat from "@/pages/Retreat";
-import Stories from "@/pages/Stories";
-import CaseStudies from "@/pages/CaseStudies";
-import Testimonials from "@/pages/Testimonials";
-import LuxuryWellness from "@/pages/LuxuryWellness";
-import DisabilityAdvocacy from "@/pages/DisabilityAdvocacy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/incluu" component={Incluu} />
       <Route path="/tedx" component={TEDx} />
-      <Route path="/speaking" component={Speaking} />
       <Route path="/admin" component={Admin} />
-      <Route path="/consulting" component={Consulting} />
-      <Route path="/ai-governance" component={Consulting} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/retreat" component={Retreat} />
-      <Route path="/stories" component={Stories} />
-      <Route path="/case-studies" component={CaseStudies} />
-      <Route path="/testimonials" component={Testimonials} />
-      <Route path="/luxury-wellness" component={LuxuryWellness} />
-      <Route path="/disability-advocacy" component={DisabilityAdvocacy} />
+      {/* TODO: Add remaining pages - consulting, retreat, rar, incluu, stories, contact */}
       <Route component={NotFound} />
     </Switch>
   );

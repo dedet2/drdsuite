@@ -21,7 +21,7 @@ export const brandConfigs: Record<BrandType, BrandConfig> = {
     secondary: 'hsl(var(--incluu-secondary))',
     accent: 'hsl(var(--incluu-accent))',
     name: 'incluu',
-    tagline: 'Responsible AI & Biometric Tech'
+    tagline: 'Travel Accessibility Intelligence'
   }
 };
 
@@ -29,34 +29,8 @@ export function setBrandTheme(brand: BrandType) {
   const config = brandConfigs[brand];
   const root = document.documentElement;
   
-  // Set primary colors
   root.style.setProperty('--primary', brand === 'dede' ? 'var(--dede-primary)' : 'var(--incluu-primary)');
   root.style.setProperty('--ring', brand === 'dede' ? 'var(--dede-primary)' : 'var(--incluu-primary)');
   root.style.setProperty('--sidebar-primary', brand === 'dede' ? 'var(--dede-primary)' : 'var(--incluu-primary)');
   root.style.setProperty('--sidebar-ring', brand === 'dede' ? 'var(--dede-primary)' : 'var(--incluu-primary)');
-  
-  // Set secondary colors
-  root.style.setProperty('--secondary', brand === 'dede' ? 'var(--dede-secondary)' : 'var(--incluu-secondary)');
-  
-  // Set accent colors
-  root.style.setProperty('--accent', brand === 'dede' ? 'var(--dede-accent)' : 'var(--incluu-accent)');
-  
-  // Set chart colors to match brand
-  root.style.setProperty('--chart-1', brand === 'dede' ? 'var(--dede-primary)' : 'var(--incluu-primary)');
-  root.style.setProperty('--chart-2', brand === 'dede' ? 'var(--dede-secondary)' : 'var(--incluu-secondary)');
-  root.style.setProperty('--chart-3', brand === 'dede' ? 'var(--dede-accent)' : 'var(--incluu-accent)');
-  
-  // Set brand-specific gradients
-  root.style.setProperty('--gradient-current', brand === 'dede' ? 'var(--gradient-dede)' : 'var(--gradient-incluu)');
-  root.style.setProperty('--gradient-hero-current', brand === 'dede' ? 'var(--gradient-hero-dede)' : 'var(--gradient-hero-incluu)');
-  
-  // Set brand-specific component themes
-  root.style.setProperty('--button-primary-shadow', brand === 'dede' 
-    ? 'var(--button-primary-shadow)'
-    : 'var(--button-primary-shadow-incluu)'
-  );
-  
-  // Add brand class to body for any additional brand-specific styling
-  document.body.className = document.body.className.replace(/brand-\w+/g, '');
-  document.body.classList.add(`brand-${brand}`);
 }

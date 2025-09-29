@@ -24,7 +24,7 @@ export default function BrandSwitcher({ className }: BrandSwitcherProps) {
       variant="outline"
       size="sm"
       onClick={switchBrand}
-      className={`${className || ''} transition-all hover:bg-primary/10 hover:border-primary active:bg-primary/20`}
+      className={className}
       data-testid="button-brand-switcher"
       style={{ borderColor: config.primary }}
     >
