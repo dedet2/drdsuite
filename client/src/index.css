@@ -76,16 +76,17 @@
   --chart-4: 280 70% 30%;
   --chart-5: 340 75% 30%;
 
-  /* Brand Tokens */
-  --dede-primary: 220 85% 25%;
-  --dede-secondary: 220 15% 95%;
-  --dede-accent: 45 95% 55%;
-  --incluu-primary: 160 75% 30%;
-  --incluu-secondary: 160 10% 96%;
-  --incluu-accent: 280 70% 50%;
+  /* Brand Tokens - Dr. Dédé: Cyan primary, Purple secondary */
+  --dede-primary: 180 100% 56%; /* #18FFFF */
+  --dede-secondary: 254 31% 46%; /* #5A509B */
+  --dede-accent: 330 81% 51%; /* #e01b84 */
+  /* incluu: Purple primary, Cyan secondary */
+  --incluu-primary: 254 31% 46%; /* #5A509B */
+  --incluu-secondary: 180 100% 56%; /* #18FFFF */
+  --incluu-accent: 330 81% 51%; /* #e01b84 */
 
-  --font-sans: Inter, sans-serif;
-  --font-serif: Playfair Display, serif;
+  --font-sans: Roboto, sans-serif;
+  --font-serif: Montserrat, sans-serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(220 13% 85% / 0.00);
@@ -202,13 +203,13 @@
   --chart-4: 280 70% 70%;
   --chart-5: 340 75% 70%;
 
-  /* Dark Mode Brand Tokens */
-  --dede-primary: 220 85% 65%;
-  --dede-secondary: 220 15% 20%;
-  --dede-accent: 45 95% 75%;
-  --incluu-primary: 160 75% 70%;
-  --incluu-secondary: 160 10% 15%;
-  --incluu-accent: 280 70% 70%;
+  /* Dark Mode Brand Tokens - same colors, adjusted for dark theme */
+  --dede-primary: 180 100% 70%; /* Brighter cyan for dark mode */
+  --dede-secondary: 254 31% 55%; /* Lighter purple for dark mode */
+  --dede-accent: 330 81% 65%; /* Lighter pink for dark mode */
+  --incluu-primary: 254 31% 55%; /* Lighter purple for dark mode */
+  --incluu-secondary: 180 100% 70%; /* Brighter cyan for dark mode */
+  --incluu-accent: 330 81% 65%; /* Lighter pink for dark mode */
 
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
