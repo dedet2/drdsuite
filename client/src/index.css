@@ -16,15 +16,15 @@
 
   --background: 0 0% 98%;
   
-  /* Gradient backgrounds for brand themes - Updated to match dr-dede.com exactly */
-  --gradient-dede: linear-gradient(135deg, rgba(24, 255, 255, 0.15) 0%, rgba(44, 37, 77, 0.25) 100%);
-  --gradient-incluu: linear-gradient(135deg, rgba(44, 37, 77, 0.15) 0%, rgba(24, 255, 255, 0.25) 100%);
-  --gradient-hero-dede: linear-gradient(135deg, rgba(24, 255, 255, 0.4) 0%, rgba(44, 37, 77, 0.6) 60%, rgba(0, 0, 0, 0.85) 100%);
-  --gradient-hero-incluu: linear-gradient(135deg, rgba(44, 37, 77, 0.4) 0%, rgba(24, 255, 255, 0.6) 60%, rgba(0, 0, 0, 0.85) 100%);
+  /* Professional gradient backgrounds matching existing sites */
+  --gradient-dede: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(67, 56, 202, 0.2) 100%);
+  --gradient-incluu: linear-gradient(135deg, rgba(67, 56, 202, 0.1) 0%, rgba(59, 130, 246, 0.2) 100%);
+  --gradient-hero-dede: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(67, 56, 202, 0.5) 60%, rgba(0, 0, 0, 0.85) 100%);
+  --gradient-hero-incluu: linear-gradient(135deg, rgba(67, 56, 202, 0.3) 0%, rgba(59, 130, 246, 0.5) 60%, rgba(0, 0, 0, 0.85) 100%);
   
   /* Enhanced button and interactive element theming */
-  --button-primary-shadow: 0 4px 14px 0 rgba(24, 255, 255, 0.15);
-  --button-primary-shadow-incluu: 0 4px 14px 0 rgba(90, 80, 155, 0.15);
+  --button-primary-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.15);
+  --button-primary-shadow-incluu: 0 4px 14px 0 rgba(67, 56, 202, 0.15);
 
   --foreground: 220 15% 15%;
 
@@ -58,10 +58,10 @@
 
   --popover-border: 220 13% 84%;
 
-  --primary: 180 100% 56%; /* Start with Dr. Dédé cyan */
-  --primary-readable: 245 32% 23%; /* Dark purple text for cyan backgrounds */
+  --primary: 217 91% 60%; /* Professional blue - much better legibility */
+  --primary-readable: 224 71% 4%; /* Dark text for blue backgrounds */
 
-  --primary-foreground: 245 32% 15%; /* Dark text for better contrast on cyan */
+  --primary-foreground: 224 71% 4%; /* Dark text for excellent contrast */
 
   --secondary: 220 13% 86%;
 
@@ -80,21 +80,21 @@
   --destructive-foreground: 0 75% 95%;
 
   --input: 220 13% 82%;
-  --ring: 180 100% 56%; /* Start with Dr. Dédé cyan */
+  --ring: 217 91% 60%; /* Professional blue ring */
   --chart-1: 220 85% 25%;
   --chart-2: 160 75% 30%;
   --chart-3: 45 95% 35%;
   --chart-4: 280 70% 30%;
   --chart-5: 340 75% 30%;
 
-  /* Brand Tokens - Dr. Dédé: Cyan primary, Deep purple secondary */
-  --dede-primary: 180 100% 56%; /* #18FFFF - Bright cyan */
-  --dede-secondary: 245 32% 23%; /* #2C254D - Deep purple/violet from dr-dede.com */
-  --dede-accent: 330 81% 51%; /* #e01b84 */
-  /* incluu: Purple primary, Cyan secondary */
-  --incluu-primary: 245 32% 23%; /* #2C254D - Deep purple/violet */
-  --incluu-secondary: 180 100% 56%; /* #18FFFF - Bright cyan */
-  --incluu-accent: 330 81% 51%; /* #e01b84 */
+  /* Professional Brand Tokens matching existing sites */
+  --dede-primary: 217 91% 60%; /* Professional blue */
+  --dede-secondary: 224 71% 20%; /* Deep navy */ 
+  --dede-accent: 262 83% 58%; /* Purple accent */
+  /* incluu: Professional blue-grays */
+  --incluu-primary: 224 71% 20%; /* Deep navy */
+  --incluu-secondary: 217 91% 60%; /* Professional blue */
+  --incluu-accent: 262 83% 58%; /* Purple accent */
 
   --font-sans: Roboto, sans-serif;
   --font-serif: Montserrat, sans-serif;
