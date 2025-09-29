@@ -6,19 +6,40 @@
 ## Core Design Elements
 
 ### A. Color Palette
-**Dr. Dédé Brand Colors:**
-- Primary: 180 100% 56% (cyan #18FFFF)
-- Secondary: 254 31% 46% (purple #5A509B)
-- Accent: 330 81% 51% (pink #e01b84)
+**TRUE Authentic Brand Colors** (from Incluu Updated Branding.pdf)
 
-**incluu Brand Colors:**
-- Primary: 254 31% 46% (purple #5A509B)
-- Secondary: 180 100% 56% (cyan #18FFFF)
-- Accent: 330 81% 51% (pink #e01b84)
+**Core Purple-to-Cyan Gradient Palette:**
+- Deep Purple: 265 100% 46% (#6200EA) - Primary brand anchor
+- Mid Purple: 256 100% 65% (#7C4DFF) - Vibrant purple
+- Aubergine Purple: 282 41% 42% (#7D3F98) - Rich depth
+- Gray Blue: 236 31% 50% (#5A5FA6) - Transitional tone
+- Mid Blue: 218 100% 63% (#448AFF) - Bright blue
+- Dark Cyan: 189 62% 53% (#3EBCD1) - Deep cyan
+- Bright Cyan: 180 100% 55% (#18FFFF) - Electric cyan accent
+- Pink: 328 79% 49% (#e01b84) - Bold accent color
+
+**Supporting Colors:**
+- Purple Variant: 248 32% 46% (#5A509B)
+- Light Purple: 245 50% 66% (#847CD4)
+- Pale Purple: 240 56% 78% (#ACACE4)
+- Deep Blue: 233 57% 36% (#283592)
+- Blue Purple: 244 75% 65% (#6d64e8)
+
+**Dr. Dédé Brand Application:**
+- Primary: Deep Purple → Mid Purple → Bright Cyan (left to right gradient)
+- Secondary: Gray Blue for text/UI elements
+- Accent: Pink for CTAs and highlights
+
+**incluu Brand Application:**
+- Primary: Mid Purple → Mid Blue → Dark Cyan (left to right gradient)
+- Secondary: Aubergine Purple for depth
+- Accent: Pink for CTAs and highlights
 
 **Neutral System:**
-- Background: 0 0% 4% (rich black)
-- Foreground: 0 0% 98% (pure white)
+- Background Light: 0 0% 98% (off-white)
+- Background Dark: 0 0% 4% (rich black)
+- Foreground Light: 220 15% 15% (dark gray)
+- Foreground Dark: 0 0% 95% (off-white)
 - Muted: 220 10% 85% (warm gray)
 
 ### B. Typography
@@ -41,9 +62,9 @@
 - Persistent CTAs: "Book a Call" and "Watch TEDx"
 
 **Hero Sections:**
-- Large typography with gradient text effects
-- Asymmetrical layouts with image/video on alternating sides
-- Subtle background gradients (10-15% opacity overlays)
+- Large typography with bold gradient text effects (purple-to-cyan)
+- Split-screen layouts with Dr. Dédé photography on one side, gradient on other
+- Bold background gradients (purple-to-cyan, 60-80% opacity for impact)
 
 **Cards & Content:**
 - Subtle shadows and rounded corners (rounded-lg)
@@ -70,9 +91,11 @@
 ## Visual Treatment
 
 **Gradients:**
-- Subtle radial gradients in hero backgrounds
-- Brand-to-neutral gradients for section dividers
-- Avoid harsh contrasts; maintain accessibility
+- Bold purple-to-cyan linear gradients (135deg) for hero sections
+- Split-screen design pattern: solid gradient on left, photography on right
+- Professional "Do Better with Dr. Dédé" aesthetic with vibrant colors
+- Dark wash over photography (black gradient overlay) for text legibility
+- Gradient text effects using purple-to-cyan for headlines
 
 **Imagery:**
 - Professional photography with consistent color grading
