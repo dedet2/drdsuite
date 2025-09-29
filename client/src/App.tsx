@@ -14,6 +14,7 @@ import Consulting from "@/pages/Consulting";
 import Contact from "@/pages/Contact";
 import Incluu from "@/pages/Incluu";
 import Retreat from "@/pages/Retreat";
+import Stories from "@/pages/Stories";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -28,7 +29,8 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/incluu" component={Incluu} />
       <Route path="/retreat" component={Retreat} />
-      {/* TODO: Add remaining pages - rar, stories */}
+      <Route path="/stories" component={Stories} />
+      {/* TODO: Add remaining pages - rar */}
       <Route component={NotFound} />
     </Switch>
   );
