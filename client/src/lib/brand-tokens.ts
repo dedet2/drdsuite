@@ -45,12 +45,4 @@ export function setBrandTheme(brand: BrandType) {
   root.style.setProperty('--chart-1', brand === 'dede' ? 'var(--dede-primary)' : 'var(--incluu-primary)');
   root.style.setProperty('--chart-2', brand === 'dede' ? 'var(--dede-secondary)' : 'var(--incluu-secondary)');
   root.style.setProperty('--chart-3', brand === 'dede' ? 'var(--dede-accent)' : 'var(--incluu-accent)');
-  
-  // Set brand-specific gradients
-  root.style.setProperty('--gradient-current', brand === 'dede' ? 'var(--gradient-dede)' : 'var(--gradient-incluu)');
-  root.style.setProperty('--gradient-hero-current', brand === 'dede' ? 'var(--gradient-hero-dede)' : 'var(--gradient-hero-incluu)');
-  
-  // Add brand class to body for any additional brand-specific styling
-  document.body.className = document.body.className.replace(/brand-\w+/g, '');
-  document.body.classList.add(`brand-${brand}`);
 }
