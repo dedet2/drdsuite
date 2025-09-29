@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Play, Calendar, ArrowRight } from 'lucide-react';
-import aiGovernanceImage from '@assets/dr_dede_banner.jpg';
+import professionalHeadshot from '@assets/dr_dede_professional_headshot.jpg';
 
 interface HeroProps {
   title: string;
@@ -23,62 +23,64 @@ export default function Hero({
   description,
   primaryCta,
   secondaryCta,
-  backgroundImage = aiGovernanceImage
+  backgroundImage = professionalHeadshot
 }: HeroProps) {
   return (
-    <section className="relative min-h-[90vh] sm:min-h-[85vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center lg:bg-right bg-no-repeat"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="absolute inset-0" style={{ background: 'var(--gradient-hero-current, linear-gradient(135deg, rgba(24, 255, 255, 0.2) 0%, rgba(90, 80, 155, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%))' }} />
-      </div>
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 sm:px-8 lg:px-8 text-center text-white">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif mb-4 sm:mb-6 leading-tight">
-            <span className="block text-white">{title}</span>
-            <span className="block text-primary">
-              {subtitle}
-            </span>
-          </h1>
-          
-          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 max-w-2xl mx-auto px-4 sm:px-0">
-            {description}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
-            <Button 
-              size="lg" 
-              className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-primary/20 hover:bg-primary/30 backdrop-blur-sm border border-primary/30 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
-              onClick={primaryCta.action}
-              data-testid="button-hero-primary"
-            >
-              <Calendar className="w-5 h-5 mr-2" />
-              {primaryCta.text}
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+    <section className="relative min-h-[90vh] sm:min-h-[85vh] md:min-h-[80vh] flex items-center overflow-hidden">
+      {/* Split-Screen Layout */}
+      <div className="w-full h-full flex flex-col md:flex-row">
+        {/* Left Side: Gradient + Content */}
+        <div 
+          className="flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 py-16 md:py-0"
+          style={{ 
+            background: 'linear-gradient(135deg, rgba(98, 0, 234, 0.85) 0%, rgba(124, 77, 255, 0.75) 35%, rgba(68, 138, 255, 0.65) 70%, rgba(24, 255, 255, 0.6) 100%)'
+          }}
+        >
+          <div className="max-w-xl text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif mb-4 sm:mb-6 leading-tight">
+              <span className="block text-white drop-shadow-lg">{title}</span>
+              <span className="block drop-shadow-lg" style={{ color: 'hsl(180 100% 55%)' }}>
+                {subtitle}
+              </span>
+            </h1>
             
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 bg-white/10 hover:bg-primary/20 backdrop-blur-sm border border-primary/50 text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
-              onClick={secondaryCta.action}
-              data-testid="button-hero-secondary"
-            >
-              <Play className="w-5 h-5 mr-2" />
-              {secondaryCta.text}
-            </Button>
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white/95 leading-relaxed">
+              {description}
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Button 
+                size="lg" 
+                className="text-base sm:text-lg px-6 sm:px-8 bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto"
+                onClick={primaryCta.action}
+                data-testid="button-hero-primary"
+              >
+                <Calendar className="w-5 h-5 mr-2" />
+                {primaryCta.text}
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="text-base sm:text-lg px-6 sm:px-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-white text-white shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+                onClick={secondaryCta.action}
+                data-testid="button-hero-secondary"
+              >
+                <Play className="w-5 h-5 mr-2" />
+                {secondaryCta.text}
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+
+        {/* Right Side: Professional Photography */}
+        <div 
+          className="flex-1 relative bg-cover bg-center bg-no-repeat min-h-[40vh] md:min-h-full"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        >
+          {/* Dark wash for mobile text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50 md:hidden" />
         </div>
       </div>
     </section>
