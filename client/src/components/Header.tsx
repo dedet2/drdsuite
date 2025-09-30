@@ -11,9 +11,8 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import ThemeToggle from '@/components/ThemeToggle';
-import { Menu, Play, Calendar, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
-import ContactForm from '@/components/ContactForm';
 
 type NavigationItem = {
   name: string;
@@ -21,29 +20,51 @@ type NavigationItem = {
   external?: boolean;
   submenu?: Array<{
     name: string;
-    href: string;
+    href?: string;
     external?: boolean;
+    submenu?: Array<{
+      name: string;
+      href: string;
+      external?: boolean;
+    }>;
   }>;
 };
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
-  { name: 'incluu', href: '/incluu' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Testimonials', href: '/testimonials' },
-  { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
-  { name: 'Resources', href: 'https://dr-dede.vercel.app/', external: true },
-  { name: 'Dr. Dédé', href: 'https://dr-dede.vercel.app/', external: true },
   { 
-    name: 'Retreats & Advocacy',
+    name: 'incluu',
     submenu: [
-      { name: 'Executive Retreats', href: '/retreat' },
-      { name: 'Luxury Wellness', href: '/luxury-wellness' },
-      { name: 'Disability Advocacy', href: '/disability-advocacy' }
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Testimonials', href: '/testimonials' }
     ]
   },
-  { name: 'Speaking & Events', href: '/speaking' },
-  { name: 'ROI Calculator', href: 'https://pmukyznd.manus.space/', external: true }
+  { 
+    name: 'Resources',
+    submenu: [
+      { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
+      { name: 'Stories', href: '/stories' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' }
+    ]
+  },
+  { 
+    name: 'Dr. Dédé',
+    submenu: [
+      { 
+        name: 'Retreats & Advocacy',
+        submenu: [
+          { name: 'Executive Retreats', href: '/retreat' },
+          { name: 'Luxury Wellness', href: '/luxury-wellness' },
+          { name: 'Disability Advocacy', href: '/disability-advocacy' }
+        ]
+      },
+      { name: 'Speaking & Events', href: '/speaking' },
+      { name: 'Watch TEDx', href: 'https://nslacnow.manus.space/', external: true }
+    ]
+  },
+  { name: 'ROI Calculator', href: 'https://pmukyznd.manus.space/', external: true },
+  { name: 'Contact', href: '/contact' }
 ];
 
 export default function Header() {
@@ -79,29 +100,66 @@ export default function Header() {
                       <NavigationMenuContent>
                         <div className="grid w-56 gap-2 p-4">
                           {item.submenu.map((subItem) => (
-                            <NavigationMenuLink key={subItem.name} asChild>
-                              {subItem.external ? (
-                                <a 
-                                  href={subItem.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary"
-                                  data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                >
-                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
-                                </a>
+                            <div key={subItem.name}>
+                              {subItem.submenu ? (
+                                <div>
+                                  <div className="text-sm font-medium leading-none px-3 py-2 text-muted-foreground">
+                                    {subItem.name}
+                                  </div>
+                                  <div className="pl-3 space-y-1">
+                                    {subItem.submenu.map((nestedItem) => (
+                                      <NavigationMenuLink key={nestedItem.name} asChild>
+                                        {nestedItem.external ? (
+                                          <a 
+                                            href={nestedItem.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary text-sm"
+                                            data-testid={`link-${nestedItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                          >
+                                            {nestedItem.name}
+                                          </a>
+                                        ) : (
+                                          <Link 
+                                            href={nestedItem.href}
+                                            className={`block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary text-sm ${
+                                              location === nestedItem.href ? 'text-primary bg-primary/20' : ''
+                                            }`}
+                                            data-testid={`link-${nestedItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                          >
+                                            {nestedItem.name}
+                                          </Link>
+                                        )}
+                                      </NavigationMenuLink>
+                                    ))}
+                                  </div>
+                                </div>
                               ) : (
-                                <Link 
-                                  href={subItem.href}
-                                  className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
-                                    location === subItem.href ? 'text-primary bg-primary/20' : ''
-                                  }`}
-                                  data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                >
-                                  <div className="text-sm font-medium leading-none">{subItem.name}</div>
-                                </Link>
+                                <NavigationMenuLink asChild>
+                                  {subItem.external ? (
+                                    <a 
+                                      href={subItem.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary"
+                                      data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                    >
+                                      <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                    </a>
+                                  ) : (
+                                    <Link 
+                                      href={subItem.href!}
+                                      className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary ${
+                                        location === subItem.href ? 'text-primary bg-primary/20' : ''
+                                      }`}
+                                      data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                    >
+                                      <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                    </Link>
+                                  )}
+                                </NavigationMenuLink>
                               )}
-                            </NavigationMenuLink>
+                            </div>
                           ))}
                         </div>
                       </NavigationMenuContent>
@@ -136,21 +194,6 @@ export default function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://nslacnow.manus.space/">
-              <Button size="sm" data-testid="button-watch-tedx">
-                <Play className="w-4 h-4 mr-2" />
-                Watch TEDx
-              </Button>
-            </a>
-            <ContactForm
-              defaultType="consultation"
-              defaultService="Strategic Consulting"
-              triggerText="Contact"
-              triggerVariant="outline"
-              triggerSize="sm"
-              description="Schedule a consultation to discuss AI governance, product inclusion, or technology leadership needs."
-              context="header"
-            />
             <ThemeToggle />
           </div>
 
@@ -183,31 +226,78 @@ export default function Header() {
                           </CollapsibleTrigger>
                           <CollapsibleContent className="pl-4 space-y-1">
                             {item.submenu.map((subItem) => (
-                              subItem.external ? (
-                                <a key={subItem.name} href={subItem.href} target="_blank" rel="noopener noreferrer">
-                                  <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    className="w-full justify-start"
-                                    onClick={() => setMobileOpen(false)}
-                                    data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                  >
-                                    {subItem.name}
-                                  </Button>
-                                </a>
-                              ) : (
-                                <Link key={subItem.name} href={subItem.href}>
-                                  <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
-                                    onClick={() => setMobileOpen(false)}
-                                    data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                  >
-                                    {subItem.name}
-                                  </Button>
-                                </Link>
-                              )
+                              <div key={subItem.name}>
+                                {subItem.submenu ? (
+                                  <Collapsible>
+                                    <CollapsibleTrigger asChild>
+                                      <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        className="w-full justify-between"
+                                        data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                      >
+                                        {subItem.name}
+                                        <ChevronDown className="w-3 h-3" />
+                                      </Button>
+                                    </CollapsibleTrigger>
+                                    <CollapsibleContent className="pl-4 space-y-1">
+                                      {subItem.submenu.map((nestedItem) => (
+                                        nestedItem.external ? (
+                                          <a key={nestedItem.name} href={nestedItem.href} target="_blank" rel="noopener noreferrer">
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className="w-full justify-start text-xs"
+                                              onClick={() => setMobileOpen(false)}
+                                              data-testid={`mobile-link-${nestedItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                            >
+                                              {nestedItem.name}
+                                            </Button>
+                                          </a>
+                                        ) : (
+                                          <Link key={nestedItem.name} href={nestedItem.href}>
+                                            <Button
+                                              variant="ghost"
+                                              size="sm"
+                                              className={`w-full justify-start text-xs ${location === nestedItem.href ? 'text-primary' : ''}`}
+                                              onClick={() => setMobileOpen(false)}
+                                              data-testid={`mobile-link-${nestedItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                            >
+                                              {nestedItem.name}
+                                            </Button>
+                                          </Link>
+                                        )
+                                      ))}
+                                    </CollapsibleContent>
+                                  </Collapsible>
+                                ) : (
+                                  subItem.external ? (
+                                    <a href={subItem.href} target="_blank" rel="noopener noreferrer">
+                                      <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        className="w-full justify-start"
+                                        onClick={() => setMobileOpen(false)}
+                                        data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                      >
+                                        {subItem.name}
+                                      </Button>
+                                    </a>
+                                  ) : (
+                                    <Link href={subItem.href!}>
+                                      <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
+                                        onClick={() => setMobileOpen(false)}
+                                        data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                      >
+                                        {subItem.name}
+                                      </Button>
+                                    </Link>
+                                  )
+                                )}
+                              </div>
                             ))}
                           </CollapsibleContent>
                         </Collapsible>
@@ -238,24 +328,6 @@ export default function Header() {
                       )}
                     </div>
                   ))}
-                  <div className="pt-4 border-t space-y-2">
-                    <a href="https://nslacnow.manus.space/">
-                      <Button className="w-full" data-testid="mobile-button-watch-tedx">
-                        <Play className="w-4 h-4 mr-2" />
-                        Watch TEDx
-                      </Button>
-                    </a>
-                    <ContactForm
-                      defaultType="consultation"
-                      defaultService="Strategic Consulting"
-                      triggerText="Contact"
-                      triggerVariant="outline"
-                      triggerSize="default"
-                      className="w-full"
-                      description="Schedule a consultation to discuss AI governance, product inclusion, or technology leadership needs."
-                      context="mobile-header"
-                    />
-                  </div>
                 </nav>
               </SheetContent>
             </Sheet>

@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import Home from "@/pages/Home";
 import Incluu from "@/pages/Incluu";
+import DrDede from "@/pages/DrDede";
 import TEDx from "@/pages/TEDx";
 import Speaking from "@/pages/Speaking";
 import Admin from "@/pages/Admin";
@@ -19,6 +20,8 @@ import CaseStudies from "@/pages/CaseStudies";
 import Testimonials from "@/pages/Testimonials";
 import LuxuryWellness from "@/pages/LuxuryWellness";
 import DisabilityAdvocacy from "@/pages/DisabilityAdvocacy";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +29,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/incluu" component={Incluu} />
+      <Route path="/dr-dede" component={DrDede} />
       <Route path="/tedx" component={TEDx} />
       <Route path="/speaking" component={Speaking} />
       <Route path="/admin" component={Admin} />
@@ -38,6 +42,8 @@ function Router() {
       <Route path="/testimonials" component={Testimonials} />
       <Route path="/luxury-wellness" component={LuxuryWellness} />
       <Route path="/disability-advocacy" component={DisabilityAdvocacy} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
       <Route component={NotFound} />
     </Switch>
   );
