@@ -39,7 +39,7 @@ const navigation: NavigationItem[] = [
     name: 'incluu',
     href: '/incluu',
     submenu: [
-      { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
+      { name: 'Blog', href: 'https://www.incluu.us/blog', external: true, openInSameTab: true },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Testimonials', href: '/testimonials' }
     ]
@@ -48,7 +48,7 @@ const navigation: NavigationItem[] = [
     name: 'Resources',
     href: '/resources',
     submenu: [
-      { name: 'ROI Calculator', href: 'https://pmukyznd.manus.space/', external: true },
+      { name: 'ROI Calculator', href: 'https://pmukyznd.manus.space/', external: true, openInSameTab: true },
       { name: 'Stories', href: '/stories' },
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' }

@@ -55,7 +55,7 @@ export default function Footer() {
                   className="hover-elevate"
                   data-testid={`link-social-${social.name.toLowerCase()}`}
                 >
-                  <a href={social.href} target="_blank" rel="noopener noreferrer">
+                  <a href={social.href}>
                     <social.icon className="w-4 h-4" />
                   </a>
                 </Button>
@@ -71,7 +71,7 @@ export default function Footer() {
                 {links.map((link: any) => (
                   <li key={link.name}>
                     {link.external || link.href.startsWith('http') ? (
-                      <a href={link.href} target="_blank" rel="noopener noreferrer">
+                      <a href={link.href}>
                         <Button 
                           variant="ghost" 
                           size="sm" 
