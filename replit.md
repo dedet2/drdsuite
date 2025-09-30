@@ -88,18 +88,28 @@ Preferred communication style: Simple, everyday language.
 - **Contrast Solution**: Text overlay provides sufficient contrast (≥3:1) for large heading text while preserving brand aesthetic
 - **Professional Photography**: Split-screen hero layout with gradient + overlay on left, Dr. Dédé professional headshot on right
 
-### Navigation Structure (September 30, 2025 - PRD Compliant)
-- **Header Navigation**: Home | incluu ▾ | Resources ▾ | Dr. Dédé ▾ | ROI Calculator | Contact
+### Navigation Structure (September 30, 2025 - Final Implementation)
+- **Header Navigation**: Home | incluu ▾ | Resources ▾ | Dr. Dédé ▾ | Contact
 - **incluu Dropdown**: Case Studies | Testimonials
-- **Resources Dropdown**: Blog (external: incluu.us) | Stories | Privacy Policy | Terms of Service
+- **Resources Dropdown**: Blog (external new tab: incluu.us) | ROI Calculator (external new tab: pmukyznd.manus.space) | Stories | Privacy Policy | Terms of Service
 - **Dr. Dédé Dropdown**: 
   - Main link navigates to /dr-dede page
-  - Dropdown menu with: Retreats & Advocacy ▾ (nested submenu) | Speaking & Events | Watch TEDx (external)
-  - Retreats & Advocacy nested submenu: Executive Retreats | Luxury Wellness | Disability Advocacy
-- **External Links**: Blog (incluu.us), ROI Calculator (pmukyznd.manus.space), Watch TEDx (nslacnow.manus.space)
+  - Dropdown menu with: Retreats & Advocacy ▾ (nested submenu) | Speaking & Events | Watch TEDx (external same tab: nslacnow.manus.space)
+  - Retreats & Advocacy nested submenu: Executive Retreats → / | Luxury Wellness → / | Disability Advocacy → /
+- **External Link Behavior**: 
+  - Blog and ROI Calculator open in new tabs (target="_blank")
+  - Watch TEDx opens in same tab (openInSameTab flag implemented)
+  - Type system supports openInSameTab flag across all navigation levels (desktop + mobile)
 
 ### Content Pages (September 30, 2025)
-- **Dr. Dédé Page** (/dr-dede): Professional page with TEDx talk content, key insights, speaking topics, and professional photography. No emoji characters per design guidelines.
+- **Home Page** (/): 
+  - Hero: Dr. Dédé professional headshot with combined brand messaging (AI governance + inclusive innovation)
+  - Services: Unified offerings from incluu (AI Governance, Product Inclusion) + Dr. Dédé (Executive Retreats, Speaking & Events)
+  - Impact Metrics: $1.5B+ value, 100% compliance, 47 countries, 85% reduction in accessibility issues
+  - About: Professional bio and credentials
+  - Why Choose: incluu consulting expertise + Dr. Dédé thought leadership
+  - CTA: Inclusive AI future with links to contact and case studies
+- **Dr. Dédé Page** (/dr-dede): Professional page with TEDx talk content, key insights, speaking topics, and professional photography. Watch TEDx link opens in same tab.
 - **Case Studies Page** (/case-studies): Comprehensive client case studies with measurable business impact and ROI metrics
 - **Testimonials Page** (/testimonials): Client testimonials aligned with case studies, featuring decision-makers and success stories
 - **Privacy Policy** (/privacy): Professional privacy policy covering data collection, usage, and user rights
