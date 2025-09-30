@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Globe, Users, Heart, Shield, Target } from 'lucide-react';
+import { Globe, Users, Heart, Shield, Target, Calendar } from 'lucide-react';
 import { Link } from 'wouter';
 import ContactForm from '@/components/ContactForm';
 
@@ -14,8 +14,28 @@ export default function Retreat() {
             Retreats & Advocacy
           </h1>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Transformational executive retreats and disability advocacy programs that create lasting personal and organizational change.
+            Dr. Dédé and incluu offer transformational executive retreats and disability advocacy programs 
+            that create lasting personal and organizational change. Combining AI governance expertise with 
+            inclusive leadership development for comprehensive transformation.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <ContactForm 
+              triggerText="Schedule Executive Retreat"
+              triggerVariant="default"
+              triggerSize="lg"
+              description="Book a transformational retreat for your leadership team"
+              context="retreat-page-hero"
+              defaultType="consultation"
+              defaultService="Executive Retreat"
+              icon={Calendar}
+            />
+            <Link href="/disability-advocacy">
+              <Button variant="outline" size="lg" data-testid="button-explore-advocacy">
+                <Heart className="mr-2 h-5 w-5" />
+                Explore Advocacy Programs
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -71,16 +71,39 @@ export default function Testimonials() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-serif">
             What Our Clients Say
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
             Real feedback from leaders who've experienced the transformative power of 
-            inclusive technology and ethical AI governance.
+            Dr. Dédé's AI governance expertise combined with incluu's accessibility innovation. 
+            See how our dual approach creates unprecedented business value.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-start-transformation">
+                <ArrowRight className="mr-2 h-5 w-5" />
+                Start Your Transformation
+              </Button>
+            </Link>
+            <Link href="/case-studies">
+              <Button variant="outline" size="lg" data-testid="button-view-case-studies-hero">
+                View Case Studies
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Testimonials Grid */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              AI Governance Meets Accessibility Excellence
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our clients consistently report breakthrough results from our combined expertise in 
+              responsible AI development and inclusive design principles.
+            </p>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {testimonials.map((testimonial) => (
               <Card key={testimonial.id} className="hover-elevate">
@@ -119,6 +142,25 @@ export default function Testimonials() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Mid-section CTA */}
+          <div className="mt-12 text-center">
+            <Card className="p-8 bg-primary/5 border-primary/20">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Ready to Transform Your Organization?
+              </h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Join these industry leaders in building ethical, inclusive technology that drives 
+                measurable business results.
+              </p>
+              <Link href="/contact">
+                <Button size="lg" data-testid="button-book-consultation-mid">
+                  <ArrowRight className="mr-2 h-5 w-5" />
+                  Book Your Consultation
+                </Button>
+              </Link>
+            </Card>
           </div>
         </div>
       </section>
@@ -159,7 +201,8 @@ export default function Testimonials() {
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Experience the same transformative results these leaders have achieved. 
-            Let's discuss how inclusive technology can drive value for your organization.
+            Partner with Dr. Dédé and incluu to turn your AI governance and accessibility 
+            challenges into competitive advantages.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

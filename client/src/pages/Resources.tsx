@@ -49,10 +49,25 @@ export default function Resources() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-serif">
             Resources
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Access our tools, documentation, and insights to support your journey toward 
-            inclusive technology and responsible AI governance.
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
+            Access Dr. Dédé and incluu's comprehensive tools, documentation, and insights to support 
+            your journey toward inclusive technology and responsible AI governance. Calculate your 
+            ROI, explore thought leadership, and transform your organization.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://pmukyznd.manus.space/" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" data-testid="button-access-roi-calculator">
+                <Calculator className="mr-2 h-5 w-5" />
+                Calculate Your ROI
+              </Button>
+            </a>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" data-testid="button-get-personalized-assessment">
+                <ArrowRight className="mr-2 h-5 w-5" />
+                Get Personalized Assessment
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -110,10 +125,10 @@ export default function Resources() {
       {/* Additional Resources CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Need More Information?</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Ready to Transform Your Organization?</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Our team is ready to provide additional resources and support tailored to your 
-            specific needs in AI governance and inclusive technology.
+            Partner with Dr. Dédé and incluu to access personalized resources and support tailored to your 
+            specific AI governance and accessibility challenges. Our dual expertise delivers measurable results.
           </p>
           <Link href="/contact">
             <Button size="lg" data-testid="button-contact-resources">

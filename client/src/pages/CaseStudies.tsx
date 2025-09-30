@@ -93,10 +93,25 @@ export default function CaseStudies() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-serif">
             Case Studies
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
             Real transformations. Measurable results. From Fortune 500 enterprises to 
-            innovative startups, see how inclusive technology drives business value.
+            innovative startups, see how Dr. Dédé's AI governance expertise combined with 
+            incluu's accessibility innovation drives unprecedented business value.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-discuss-challenge">
+                <ArrowRight className="mr-2 h-5 w-5" />
+                Discuss Your Challenge
+              </Button>
+            </Link>
+            <Link href="/consulting">
+              <Button variant="outline" size="lg" data-testid="button-view-services">
+                <Shield className="mr-2 h-5 w-5" />
+                View Our Services
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -196,8 +211,9 @@ export default function CaseStudies() {
             Ready for Similar Results?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Let's discuss how inclusive technology practices can drive measurable 
-            business value for your organization.
+            Partner with Dr. Dédé and incluu to transform your AI governance and accessibility challenges 
+            into competitive advantages. Our dual expertise delivers measurable business value while 
+            ensuring ethical, inclusive technology practices.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

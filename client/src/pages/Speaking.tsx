@@ -62,8 +62,28 @@ export default function Speaking() {
             Speaking & Events
           </h1>
           <p className="text-lg text-white/90 mb-8 max-w-3xl mx-auto">
-            Transformational presentations on AI governance, accessibility, and inclusive leadership that drive meaningful organizational change. Available worldwide for conferences, corporate events, and educational institutions.
+            Dr. Dédé delivers transformational presentations on AI governance, accessibility, and inclusive leadership 
+            that drive meaningful organizational change. Combining lived experience with deep technical expertise 
+            from incluu's consulting practice, these talks inspire action and deliver practical frameworks.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <ContactForm 
+              triggerText="Book Speaking Engagement"
+              triggerVariant="default"
+              triggerSize="lg"
+              description="Request Dr. Dédé for your next conference, corporate event, or educational institution"
+              context="speaking-page-hero"
+              defaultType="speaking"
+              defaultService="Speaking Engagement"
+              icon={Calendar}
+            />
+            <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" data-testid="button-watch-tedx-hero">
+                <Play className="mr-2 h-5 w-5" />
+                Watch TEDx Talk
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 

@@ -78,7 +78,9 @@ export default function DrDede() {
               <p className="text-lg text-white/80 mb-8">
                 As a Black, queer, first-generation Togolese immigrant living with sickle-cell disease, 
                 Dr. Dédé brings an anthropologist's eye to AI governance. She doesn't just study how technology 
-                excludes—she's lived it. Every algorithmic failure has become data for building better systems.
+                excludes—she's lived it. Every algorithmic failure has become data for building better systems. 
+                Through her consultancy incluu and personal practice, she delivers transformative AI governance 
+                and accessibility solutions to Fortune 500 companies and scaling organizations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
@@ -301,16 +303,16 @@ export default function DrDede() {
                 $300M+, unlocked $500M+ in new markets.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://calendly.com/dr_dede/consultation" target="_blank" rel="noopener noreferrer">
+                <Link href="/contact">
                   <Button size="lg" data-testid="button-book-advisory">
                     <Calendar className="mr-2 h-5 w-5" />
-                    Book Advisory Call
+                    Schedule Consultation
                   </Button>
-                </a>
-                <Link href="/speaking">
-                  <Button variant="outline" size="lg" data-testid="button-speaking-inquiry">
-                    <Sparkles className="mr-2 h-5 w-5" />
-                    Speaking Inquiry
+                </Link>
+                <Link href="/incluu">
+                  <Button variant="outline" size="lg" data-testid="button-learn-incluu">
+                    <Users className="mr-2 h-5 w-5" />
+                    Learn About incluu
                   </Button>
                 </Link>
               </div>

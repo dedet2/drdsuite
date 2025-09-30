@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Users, Target, Heart, Globe, Award, ExternalLink, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, Target, Heart, Globe, Award, ExternalLink, CheckCircle, Sparkles } from 'lucide-react';
+import { Link } from 'wouter';
 
 const values = [
   {
@@ -73,7 +74,8 @@ export default function Incluu() {
           <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-4xl mx-auto px-4 sm:px-0">
             We help organizations build inclusive technology systems that drive business value. 
             Founded on the principle that social justice and profitable growth are not just compatible—they're 
-            essential to each other.
+            essential to each other. Partnering with Dr. Dédé Tetsubayashi, we combine deep AI governance expertise 
+            with groundbreaking accessibility innovation.
           </p>
           <div className="flex flex-wrap justify-center gap-2 px-4 sm:px-0">
             <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">Black-Woman-Owned</Badge>
@@ -163,14 +165,18 @@ export default function Incluu() {
                 creating solutions that are both ethically sound and commercially viable.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" data-testid="button-learn-services">
-                  <Target className="w-4 h-4 mr-2" />
-                  View Our Services
-                </Button>
-                <Button variant="outline" size="lg" data-testid="button-case-studies">
-                  <Award className="w-4 h-4 mr-2" />
-                  See Case Studies
-                </Button>
+                <Link href="/consulting">
+                  <Button size="lg" data-testid="button-learn-services">
+                    <Target className="w-4 h-4 mr-2" />
+                    Schedule Consultation
+                  </Button>
+                </Link>
+                <Link href="/case-studies">
+                  <Button variant="outline" size="lg" data-testid="button-case-studies">
+                    <Award className="w-4 h-4 mr-2" />
+                    See Success Stories
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -194,14 +200,15 @@ export default function Incluu() {
             <div className="absolute inset-0 opacity-25 pointer-events-none" style={{ background: 'var(--gradient-current, linear-gradient(135deg, rgba(90, 80, 155, 0.1) 0%, rgba(24, 255, 255, 0.2) 100%))' }} />
             <div className="relative">
               <div className="text-center mb-8">
-                <h2 className="text-3xl sm:text-4xl font-bold font-serif mb-4">Meet Our Founder</h2>
-                <h3 className="text-2xl font-bold mb-4">Dr. Dédé Tetsubayashi</h3>
+                <h2 className="text-3xl sm:text-4xl font-bold font-serif mb-4">Strategic Leadership Partnership</h2>
+                <h3 className="text-2xl font-bold mb-4">Dr. Dédé Tetsubayashi - Founder & Chief AI Governance Expert</h3>
               </div>
               
               <div className="max-w-4xl mx-auto">
                 <p className="text-lg text-muted-foreground mb-6 text-center">
                   Black, queer, first-generation Togolese immigrant and Cornell-educated social scientist 
-                  with 16+ years of experience in ethical technology and social justice.
+                  with 16+ years of experience in ethical technology and social justice. Through incluu and her 
+                  personal practice, Dr. Dédé delivers comprehensive AI governance and accessibility solutions.
                 </p>
                 
                 <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -242,14 +249,18 @@ export default function Incluu() {
             just compatible—they're essential to sustainable growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" data-testid="button-partner-incluu">
-              <Users className="w-4 h-4 mr-2" />
-              Partner With Us
-            </Button>
-            <Button variant="outline" size="lg" data-testid="button-incluu-website">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Visit incluu.us
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-partner-incluu">
+                <Users className="w-4 h-4 mr-2" />
+                Schedule Strategy Session
+              </Button>
+            </Link>
+            <Link href="/dr-dede">
+              <Button variant="outline" size="lg" data-testid="button-learn-dr-dede">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Meet Dr. Dédé
+              </Button>
+            </Link>
           </div>
         </section>
       </div>
