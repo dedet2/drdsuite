@@ -18,8 +18,8 @@ const footerLinks = {
   Resources: [
     { name: 'TEDx Talk', href: '/tedx' },
     { name: 'Stories & Articles', href: '/stories' },
-    { name: 'Case Studies', href: '/stories' },
-    { name: 'Speaking', href: '/contact' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Speaking', href: '/speaking' },
   ],
   Company: [
     { name: 'About Dr. Dédé', href: 'https://dr-dede.vercel.app/', external: true },

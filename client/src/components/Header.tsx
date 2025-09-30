@@ -18,14 +18,17 @@ type NavigationItem = {
   name: string;
   href?: string;
   external?: boolean;
+  openInSameTab?: boolean;
   submenu?: Array<{
     name: string;
     href?: string;
     external?: boolean;
+    openInSameTab?: boolean;
     submenu?: Array<{
       name: string;
       href: string;
       external?: boolean;
+      openInSameTab?: boolean;
     }>;
   }>;
 };
@@ -62,7 +65,7 @@ const navigation: NavigationItem[] = [
         ]
       },
       { name: 'Speaking & Events', href: '/speaking' },
-      { name: 'Watch TEDx', href: 'https://nslacnow.manus.space/' }
+      { name: 'Watch TEDx', href: 'https://nslacnow.manus.space/', external: true, openInSameTab: true }
     ]
   },
   { name: 'Contact', href: '/contact' }

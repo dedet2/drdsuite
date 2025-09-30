@@ -87,7 +87,7 @@ export default function CaseStudies() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/10 to-cyan-900/10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/20 via-purple-800/10 to-cyan-900/20">
         <div className="max-w-6xl mx-auto text-center">
           <Badge variant="outline" className="mb-4">Proven Impact</Badge>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 font-serif">

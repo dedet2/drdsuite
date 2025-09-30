@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Mountain, Sparkles, Users, Heart, Calendar, ArrowRight, CheckCircle } from 'lucide-react';
+import { Mountain, Sparkles, Users, Heart, Calendar, ArrowRight, CheckCircle, Target, Globe, Award } from 'lucide-react';
 import { Link } from 'wouter';
 import drDedePhoto from '/dr_dede_professional_headshot.jpg';
+import heroBanner from '/hero-banner.jpg';
 import retreatImage1 from '@assets/stock_images/luxury_executive_ret_c90fbc14.jpg';
 import retreatImage2 from '@assets/stock_images/luxury_executive_ret_f2d3928f.jpg';
 import retreatImage3 from '@assets/stock_images/luxury_executive_ret_51bd911f.jpg';
@@ -66,21 +67,70 @@ const impactMetrics = [
   }
 ];
 
+const retreatOfferings = [
+  {
+    title: "Executive Leadership Retreats",
+    description: "Transform your leadership approach through AI governance and inclusive innovation frameworks",
+    features: [
+      "3-day immersive experience",
+      "Private executive coaching",
+      "AI ethics framework development",
+      "Leadership transformation tools"
+    ],
+    image: retreatImage1,
+    icon: Award
+  },
+  {
+    title: "Luxury Wellness Retreats",
+    description: "Combine strategic planning with restorative wellness in accessible luxury environments",
+    features: [
+      "5-day wellness program",
+      "Meditation & mindfulness sessions",
+      "Strategic planning workshops",
+      "Spa & therapeutic treatments"
+    ],
+    image: retreatImage2,
+    icon: Sparkles
+  },
+  {
+    title: "Disability Advocacy Workshops",
+    description: "Build inclusive cultures and accessible technology through lived experience insights",
+    features: [
+      "2-day intensive workshop",
+      "Accessibility audits & frameworks",
+      "Disability justice training",
+      "Implementation roadmaps"
+    ],
+    image: retreatImage3,
+    icon: Globe
+  }
+];
+
+const retreatBenefits = [
+  "Fully accessible luxury accommodations",
+  "Personalized executive coaching sessions",
+  "AI governance workshop materials",
+  "Private chef and dietary accommodations",
+  "Transportation to/from retreat location",
+  "Post-retreat 90-day implementation support",
+  "Access to private leadership community",
+  "Comprehensive workbooks and frameworks",
+  "One-on-one strategy sessions with Dr. Dédé"
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Dr. Dédé Photo */}
+      {/* Hero Section with Banner Image */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Background with gradient and Dr. Dédé photo */}
+        {/* Background with banner image and gradient overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/95 via-purple-800/90 to-cyan-900/85"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-30">
-            <img 
-              src={drDedePhoto} 
-              alt="Dr. Dédé Tetsubayashi" 
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
+          <img 
+            src={heroBanner} 
+            alt="Dr. Dédé Tetsubayashi - Executive Retreat" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-purple-800/70 to-cyan-900/80"></div>
         </div>
 
         {/* Hero Content */}
