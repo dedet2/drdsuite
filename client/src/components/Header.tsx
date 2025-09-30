@@ -39,6 +39,7 @@ const navigation: NavigationItem[] = [
     name: 'incluu',
     href: '/incluu',
     submenu: [
+      { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Testimonials', href: '/testimonials' }
     ]
@@ -47,7 +48,6 @@ const navigation: NavigationItem[] = [
     name: 'Resources',
     href: '/resources',
     submenu: [
-      { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
       { name: 'ROI Calculator', href: 'https://pmukyznd.manus.space/', external: true },
       { name: 'Stories', href: '/stories' },
       { name: 'Privacy Policy', href: '/privacy' },
@@ -108,7 +108,7 @@ export default function Header() {
                       >
                         {item.name}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent>
+                      <NavigationMenuContent className="left-0 right-0">
                         <div className="grid w-56 gap-2 p-4">
                           {item.submenu.map((subItem) => (
                             <div key={subItem.name}>

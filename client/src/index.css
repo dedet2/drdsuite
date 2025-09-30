@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Center navigation dropdown menus */
+@layer components {
+  /* Center dropdowns under their parent menu items */
+  [data-radix-popper-content-wrapper] {
+    --radix-navigation-menu-viewport-width: 14rem !important;
+  }
+  
+  /* Ensure dropdown content is centered */
+  [data-state="open"][data-orientation="horizontal"] > div[style*="position"] {
+    left: 50% !important;
+    transform: translateX(-50%) translateY(var(--radix-popper-transform-origin-y)) !important;
+  }
+}
+
 /* LIGHT MODE */
 :root {
   --button-outline: rgba(0,0,0, .10);
