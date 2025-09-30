@@ -33,10 +33,13 @@ export default function Hero({
         <div 
           className="flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-12 py-16 md:py-0"
           style={{ 
-            background: 'linear-gradient(135deg, rgba(98, 0, 234, 0.85) 0%, rgba(124, 77, 255, 0.75) 35%, rgba(68, 138, 255, 0.65) 70%, rgba(24, 255, 255, 0.6) 100%)'
+            background: 'linear-gradient(135deg, rgba(98, 0, 234, 0.85) 0%, rgba(124, 77, 255, 0.80) 35%, rgba(68, 138, 255, 0.80) 70%, rgba(24, 255, 255, 0.85) 100%)'
           }}
         >
-          <div className="max-w-xl text-white">
+          <div className="max-w-xl text-white relative z-10">
+            {/* Dark overlay for WCAG contrast compliance */}
+            <div className="absolute inset-0 -inset-x-8 -inset-y-6 bg-black/30 backdrop-blur-sm rounded-2xl -z-10" />
+            
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif mb-4 sm:mb-6 leading-tight">
               <span className="block text-white drop-shadow-lg">{title}</span>
               <span className="block drop-shadow-lg" style={{ color: 'hsl(180 100% 55%)' }}>
