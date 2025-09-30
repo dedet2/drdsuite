@@ -60,6 +60,7 @@ const navigation: NavigationItem[] = [
     submenu: [
       { 
         name: 'Retreats & Advocacy',
+        href: '/retreats-advocacy',
         submenu: [
           { name: 'Executive Retreats', href: '/retreat' },
           { name: 'Luxury Wellness', href: '/luxury-wellness' },
@@ -115,9 +116,17 @@ export default function Header() {
                             <div key={subItem.name}>
                               {subItem.submenu ? (
                                 <div>
-                                  <div className="text-sm font-medium leading-none px-3 py-2 text-muted-foreground">
-                                    {subItem.name}
-                                  </div>
+                                  {subItem.href ? (
+                                    <Link href={subItem.href} className="block">
+                                      <div className="text-sm font-medium leading-none px-3 py-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors cursor-pointer">
+                                        {subItem.name}
+                                      </div>
+                                    </Link>
+                                  ) : (
+                                    <div className="text-sm font-medium leading-none px-3 py-2 text-muted-foreground">
+                                      {subItem.name}
+                                    </div>
+                                  )}
                                   <div className="pl-3 space-y-1">
                                     {subItem.submenu.map((nestedItem) => (
                                       <NavigationMenuLink key={nestedItem.name} asChild>
@@ -253,17 +262,41 @@ export default function Header() {
                               <div key={subItem.name}>
                                 {subItem.submenu ? (
                                   <Collapsible>
-                                    <CollapsibleTrigger asChild>
-                                      <Button
-                                        variant="ghost"
-                                        size="sm"
-                                        className="w-full justify-between"
-                                        data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                      >
-                                        {subItem.name}
-                                        <ChevronDown className="w-3 h-3" />
-                                      </Button>
-                                    </CollapsibleTrigger>
+                                    <div className="flex items-center">
+                                      {subItem.href ? (
+                                        <Link href={subItem.href} className="flex-1">
+                                          <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            className={`w-full justify-start ${location === subItem.href ? 'text-primary' : ''}`}
+                                            onClick={() => setMobileOpen(false)}
+                                            data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                          >
+                                            {subItem.name}
+                                          </Button>
+                                        </Link>
+                                      ) : (
+                                        <Button
+                                          variant="ghost"
+                                          size="sm"
+                                          className="flex-1 justify-start"
+                                          disabled
+                                          data-testid={`mobile-link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                        >
+                                          {subItem.name}
+                                        </Button>
+                                      )}
+                                      <CollapsibleTrigger asChild>
+                                        <Button
+                                          variant="ghost"
+                                          size="icon"
+                                          className="h-8 w-8"
+                                          data-testid={`mobile-expand-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                        >
+                                          <ChevronDown className="w-3 h-3" />
+                                        </Button>
+                                      </CollapsibleTrigger>
+                                    </div>
                                     <CollapsibleContent className="pl-4 space-y-1">
                                       {subItem.submenu.map((nestedItem) => (
                                         nestedItem.external ? (

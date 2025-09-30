@@ -19,6 +19,7 @@ const Admin = lazy(() => import("@/pages/Admin"));
 const Consulting = lazy(() => import("@/pages/Consulting"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Retreat = lazy(() => import("@/pages/Retreat"));
+const RetreatsAdvocacy = lazy(() => import("@/pages/RetreatsAdvocacy"));
 const Stories = lazy(() => import("@/pages/Stories"));
 const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
 const Testimonials = lazy(() => import("@/pages/Testimonials"));
@@ -60,6 +61,7 @@ function Router() {
         <Route path="/ai-governance" component={Consulting} />
         <Route path="/contact" component={Contact} />
         <Route path="/retreat" component={Retreat} />
+        <Route path="/retreats-advocacy" component={RetreatsAdvocacy} />
         <Route path="/resources" component={Resources} />
         <Route path="/stories" component={Stories} />
         <Route path="/case-studies" component={CaseStudies} />
