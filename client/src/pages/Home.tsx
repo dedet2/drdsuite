@@ -182,6 +182,9 @@ export default function Home() {
                     src={offering.image} 
                     alt={offering.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    width="400"
+                    height="300"
                   />
                 </div>
                 <CardHeader>
@@ -254,6 +257,9 @@ export default function Home() {
                 src="/dr_dede_professional_headshot.jpg" 
                 alt="Dr. Dédé Tetsubayashi"
                 className="w-full rounded-lg shadow-xl"
+                loading="lazy"
+                width="600"
+                height="800"
               />
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, LucideIcon } from 'lucide-react';
@@ -14,7 +15,7 @@ interface ServiceCardProps {
   highlighted?: boolean;
 }
 
-export default function ServiceCard({
+const ServiceCard = memo(function ServiceCard({
   title,
   description,
   features,
@@ -65,4 +66,6 @@ export default function ServiceCard({
       </CardFooter>
     </Card>
   );
-}
+});
+
+export default ServiceCard;
