@@ -6,7 +6,7 @@ export default function Privacy() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/10 to-cyan-900/10">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600/50 via-purple-500/40 to-cyan-400/50">
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="outline" className="mb-4">
             <Shield className="w-3 h-3 mr-2" />

@@ -8,7 +8,7 @@ export default function Retreat() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/85 via-cyan-500/80 to-purple-600/85">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/50 via-cyan-500/40 to-purple-600/50">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-white mb-6">
             Retreats & Advocacy
@@ -94,7 +94,7 @@ export default function Retreat() {
       </section>
 
       {/* Luxury Wellness Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/85 via-cyan-500/80 to-purple-600/85">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/50 via-cyan-500/40 to-purple-600/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Luxury Wellness</h2>
           <p className="text-lg text-white/90 mb-8">
@@ -180,7 +180,7 @@ export default function Retreat() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/85 via-cyan-500/80 to-purple-600/85">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/50 via-cyan-500/40 to-purple-600/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Leadership?</h2>
           <p className="text-lg text-white/90 mb-8">

@@ -45,7 +45,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600/50 via-purple-500/40 to-cyan-400/50">
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="outline" className="mb-4">Global Reach • 48hr Response Time</Badge>
           <h1 className="text-4xl font-bold text-foreground mb-6">

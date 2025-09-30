@@ -95,27 +95,31 @@ const speakingTopics = [
 
 export default function Stories() {
   return (
-    <div className="min-h-screen py-16 sm:py-20 md:py-24">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 sm:mb-6 px-4 sm:px-0">
-            Stories & Resources
-          </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-4xl mx-auto px-4 sm:px-0">
-            Thought leadership at the intersection of AI governance, accessibility, and social justice. 
-            Insights from 16+ years of lived experience and professional expertise in ethical technology.
-          </p>
-          <div className="flex flex-wrap justify-center gap-2 px-4 sm:px-0">
-            <Badge variant="secondary">Thought Leadership</Badge>
-            <Badge variant="secondary">AI Ethics</Badge>
-            <Badge variant="secondary">Accessibility</Badge>
-            <Badge variant="secondary">Social Justice</Badge>
+    <div className="min-h-screen">
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-purple-600/50 via-purple-500/40 to-cyan-400/50">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 sm:mb-6 px-4 sm:px-0 text-white">
+              Stories & Resources
+            </h1>
+            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-4xl mx-auto px-4 sm:px-0">
+              Thought leadership at the intersection of AI governance, accessibility, and social justice. 
+              Insights from 16+ years of lived experience and professional expertise in ethical technology.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 px-4 sm:px-0">
+              <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">Thought Leadership</Badge>
+              <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">AI Ethics</Badge>
+              <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">Accessibility</Badge>
+              <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">Social Justice</Badge>
+            </div>
           </div>
         </div>
+      </section>
 
+      <div className="container mx-auto px-6 sm:px-8 lg:px-8">
         {/* Featured Content */}
-        <section className="mb-20">
+        <section className="mb-20 mt-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold font-serif mb-4">Featured Content</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

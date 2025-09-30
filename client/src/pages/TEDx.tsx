@@ -5,30 +5,34 @@ import { Download, Share2, Quote, ExternalLink } from 'lucide-react';
 
 export default function TEDx() {
   return (
-    <div className="min-h-screen py-16 sm:py-20 md:py-24">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 sm:mb-6 px-4 sm:px-0">
-            AI Governance and Accessible Futures
-          </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto px-4 sm:px-0">
-            A TEDx talk exploring how responsible AI governance can create more inclusive and accessible futures for everyone.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" data-testid="button-share-talk">
-              <Share2 className="w-4 h-4 mr-2" />
-              Share This Talk
-            </Button>
-            <Button variant="outline" size="lg" data-testid="button-download-transcript">
-              <Download className="w-4 h-4 mr-2" />
-              Download Transcript
-            </Button>
+    <div className="min-h-screen">
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-cyan-400/50 via-cyan-500/40 to-purple-600/50">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-12 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 sm:mb-6 px-4 sm:px-0 text-white">
+              AI Governance and Accessible Futures
+            </h1>
+            <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 sm:px-0">
+              A TEDx talk exploring how responsible AI governance can create more inclusive and accessible futures for everyone.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" data-testid="button-share-talk">
+                <Share2 className="w-4 h-4 mr-2" />
+                Share This Talk
+              </Button>
+              <Button variant="outline" size="lg" data-testid="button-download-transcript">
+                <Download className="w-4 h-4 mr-2" />
+                Download Transcript
+              </Button>
+            </div>
           </div>
         </div>
+      </section>
 
+      <div className="container mx-auto px-6 sm:px-8 lg:px-8">
         {/* Video */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-16 mt-16">
           <VideoEmbed
             provider="youtube"
             id="ZnqUquGeUzI"
