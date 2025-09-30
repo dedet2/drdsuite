@@ -87,13 +87,13 @@ export default function CaseStudies() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/20 via-purple-800/10 to-cyan-900/20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge variant="outline" className="mb-4">Proven Impact</Badge>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 font-serif">
+          <Badge variant="outline" className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white">Proven Impact</Badge>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-serif">
             Case Studies
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Real transformations. Measurable results. From Fortune 500 enterprises to 
             innovative startups, see how inclusive technology drives business value.
           </p>

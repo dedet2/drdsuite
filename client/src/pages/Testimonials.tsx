@@ -65,13 +65,13 @@ export default function Testimonials() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/20 via-purple-800/10 to-cyan-900/20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85">
         <div className="max-w-6xl mx-auto text-center">
-          <Badge variant="outline" className="mb-4">Client Testimonials</Badge>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 font-serif">
+          <Badge variant="outline" className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white">Client Testimonials</Badge>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-serif">
             What Our Clients Say
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Real feedback from leaders who've experienced the transformative power of 
             inclusive technology and ethical AI governance.
           </p>

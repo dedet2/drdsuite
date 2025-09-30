@@ -73,7 +73,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] lg:flex lg:items-center overflow-hidden">
         {/* Background gradient - full width on mobile, left side on desktop */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-purple-800 to-cyan-900/90 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85 z-0"></div>
         
         {/* Mobile/Tablet: Image at top */}
         <div className="lg:hidden relative z-10 w-full h-[40vh] min-h-[300px]">
@@ -193,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Dual Brand Introduction */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/5 to-cyan-900/5">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Dr. Dédé Brand */}
@@ -332,12 +332,12 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/10 to-cyan-900/10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Build Ethical, Accessible AI?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             Whether you need AI governance frameworks or accessibility excellence, 
             we're here to help you build technology that works for everyone.
           </p>

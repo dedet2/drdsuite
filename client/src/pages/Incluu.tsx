@@ -58,28 +58,28 @@ const services = [
 
 export default function Incluu() {
   return (
-    <div className="min-h-screen py-16 sm:py-20 md:py-24">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85 py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-6 sm:px-8 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="mb-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif mb-4 px-4 sm:px-0">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-serif mb-4 px-4 sm:px-0 text-white">
               incluu
             </h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground font-light">
+            <p className="text-xl sm:text-2xl text-white/90 font-light">
               Black-woman-owned consultancy
             </p>
           </div>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto px-4 sm:px-0">
+          <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-4xl mx-auto px-4 sm:px-0">
             We help organizations build inclusive technology systems that drive business value. 
             Founded on the principle that social justice and profitable growth are not just compatible—they're 
             essential to each other.
           </p>
           <div className="flex flex-wrap justify-center gap-2 px-4 sm:px-0">
-            <Badge variant="secondary">Black-Woman-Owned</Badge>
-            <Badge variant="secondary">Disability-Led</Badge>
-            <Badge variant="secondary">Tech Ethics</Badge>
-            <Badge variant="secondary">AI Governance</Badge>
+            <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">Black-Woman-Owned</Badge>
+            <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">Disability-Led</Badge>
+            <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">Tech Ethics</Badge>
+            <Badge variant="outline" className="bg-white/10 backdrop-blur-sm border-white/20 text-white">AI Governance</Badge>
           </div>
         </div>
 

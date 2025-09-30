@@ -55,22 +55,22 @@ export default function Speaking() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="outline" className="mb-4">Global Speaking Expertise</Badge>
-          <h1 className="text-4xl font-bold text-foreground mb-6">
+          <Badge variant="outline" className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white">Global Speaking Expertise</Badge>
+          <h1 className="text-4xl font-bold text-white mb-6">
             Speaking & Events
           </h1>
-          <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-lg text-white/90 mb-8 max-w-3xl mx-auto">
             Transformational presentations on AI governance, accessibility, and inclusive leadership that drive meaningful organizational change. Available worldwide for conferences, corporate events, and educational institutions.
           </p>
         </div>
       </section>
 
       {/* Recent Presentations Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-primary/5">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Recent Presentations</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Recent Presentations</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="hover-elevate">
@@ -247,10 +247,10 @@ export default function Speaking() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary/5">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Book Dr. Dédé for Your Next Event</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-6">Book Dr. Dédé for Your Next Event</h2>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             Transform your audience with presentations that combine authentic storytelling, technical expertise, and actionable frameworks for inclusive innovation.
           </p>
           
@@ -270,7 +270,7 @@ export default function Speaking() {
             </Button>
           </div>
 
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-white/70">
             <p>Available worldwide • Virtual or in-person presentations</p>
             <p>Response within 24 hours guaranteed</p>
           </div>

@@ -8,12 +8,12 @@ export default function Retreat() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl font-bold text-white mb-6">
             Retreats & Advocacy
           </h1>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             Transformational executive retreats and disability advocacy programs that create lasting personal and organizational change.
           </p>
         </div>
@@ -94,10 +94,10 @@ export default function Retreat() {
       </section>
 
       {/* Luxury Wellness Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Luxury Wellness</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <h2 className="text-3xl font-bold text-white mb-6">Luxury Wellness</h2>
+          <p className="text-lg text-white/90 mb-8">
             Premium wellness experiences designed for high-achieving executives and organizations seeking transformational outcomes.
           </p>
           
@@ -180,10 +180,10 @@ export default function Retreat() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary/5">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Ready to Transform Your Leadership?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Leadership?</h2>
+          <p className="text-lg text-white/90 mb-8">
             Join executives from Fortune 500 companies who have transformed their leadership through our retreat programs.
           </p>
           <ContactForm 

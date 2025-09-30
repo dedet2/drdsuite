@@ -64,18 +64,18 @@ export default function DrDede() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/20 via-cyan-800/10 to-purple-900/20">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge variant="outline" className="mb-4">AI Governance Expert • TEDx Speaker</Badge>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 font-serif">
+              <Badge variant="outline" className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white">AI Governance Expert • TEDx Speaker</Badge>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-serif">
                 Dr. Dédé Tetsubayashi
               </h1>
-              <p className="text-xl text-muted-foreground mb-6">
+              <p className="text-xl text-white/90 mb-6">
                 Social Scientist. Technologist. Systems Disruptor.
               </p>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-white/80 mb-8">
                 As a Black, queer, first-generation Togolese immigrant living with sickle-cell disease, 
                 Dr. Dédé brings an anthropologist's eye to AI governance. She doesn't just study how technology 
                 excludes—she's lived it. Every algorithmic failure has become data for building better systems.
@@ -287,16 +287,16 @@ export default function DrDede() {
       {/* Advisory CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <Card className="p-12 bg-gradient-to-br from-purple-900/20 via-purple-800/10 to-cyan-900/20">
+          <Card className="p-12 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
             <div className="text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                 Work With Dr. Dédé
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-lg text-white/90 mb-6">
                 Whether you're a technologist, organizer, creative, simply dreaming of a better world, or building 
                 AI or biometric tech that could backfire, I'd love to help!
               </p>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-white/90 mb-8">
                 I turn risky, biased systems into compliant, high-performing products—fast. My strategies have saved 
                 $300M+, unlocked $500M+ in new markets.
               </p>
