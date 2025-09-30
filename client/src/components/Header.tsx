@@ -43,6 +43,7 @@ const navigation: NavigationItem[] = [
     name: 'Resources',
     submenu: [
       { name: 'Blog', href: 'https://www.incluu.us/blog', external: true },
+      { name: 'ROI Calculator', href: 'https://pmukyznd.manus.space/', external: true },
       { name: 'Stories', href: '/stories' },
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' }
@@ -55,16 +56,15 @@ const navigation: NavigationItem[] = [
       { 
         name: 'Retreats & Advocacy',
         submenu: [
-          { name: 'Executive Retreats', href: '/retreat' },
-          { name: 'Luxury Wellness', href: '/luxury-wellness' },
-          { name: 'Disability Advocacy', href: '/disability-advocacy' }
+          { name: 'Executive Retreats', href: '/' },
+          { name: 'Luxury Wellness', href: '/' },
+          { name: 'Disability Advocacy', href: '/' }
         ]
       },
       { name: 'Speaking & Events', href: '/speaking' },
-      { name: 'Watch TEDx', href: 'https://nslacnow.manus.space/', external: true }
+      { name: 'Watch TEDx', href: 'https://nslacnow.manus.space/' }
     ]
   },
-  { name: 'ROI Calculator', href: 'https://pmukyznd.manus.space/', external: true },
   { name: 'Contact', href: '/contact' }
 ];
 
