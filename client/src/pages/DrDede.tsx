@@ -64,7 +64,7 @@ export default function DrDede() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/85 via-cyan-500/80 to-purple-600/85">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -287,7 +287,7 @@ export default function DrDede() {
       {/* Advisory CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <Card className="p-12 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
+          <Card className="p-12 bg-gradient-to-br from-cyan-400/85 via-cyan-500/80 to-purple-600/85">
             <div className="text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                 Work With Dr. Dédé

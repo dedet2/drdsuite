@@ -55,7 +55,7 @@ export default function Speaking() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/85 via-cyan-500/80 to-purple-600/85">
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="outline" className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white">Global Speaking Expertise</Badge>
           <h1 className="text-4xl font-bold text-white mb-6">
@@ -68,7 +68,7 @@ export default function Speaking() {
       </section>
 
       {/* Recent Presentations Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/85 via-cyan-500/80 to-purple-600/85">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Recent Presentations</h2>
           
@@ -247,7 +247,7 @@ export default function Speaking() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-900/80 via-cyan-800/80 to-purple-900/85">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-400/85 via-cyan-500/80 to-purple-600/85">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Book Dr. Dédé for Your Next Event</h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">

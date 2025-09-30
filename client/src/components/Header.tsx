@@ -75,7 +75,7 @@ const navigation: NavigationItem[] = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/50 transition-colors">
@@ -98,8 +98,13 @@ export default function Header() {
                   {item.submenu ? (
                     <>
                       <NavigationMenuTrigger 
-                        className={`transition-colors hover:bg-primary/10 ${item.submenu && item.submenu.some(sub => location === sub.href) ? 'text-primary bg-primary/5' : ''}`}
+                        className={`transition-colors hover:bg-primary/10 ${item.submenu && item.submenu.some(sub => location === sub.href) ? 'text-primary bg-primary/5' : ''} ${location === item.href ? 'text-primary' : ''}`}
                         data-testid={`link-${item.name.toLowerCase()}`}
+                        onClick={() => {
+                          if (item.href) {
+                            setLocation(item.href);
+                          }
+                        }}
                       >
                         {item.name}
                       </NavigationMenuTrigger>
@@ -218,18 +223,30 @@ export default function Header() {
                     <div key={item.name}>
                       {item.submenu ? (
                         <Collapsible>
-                          <CollapsibleTrigger asChild>
-                            <Button
-                              variant="ghost"
-                              className={`w-full justify-between ${
-                                item.submenu && item.submenu.some(sub => location === sub.href) ? 'text-primary' : ''
-                              }`}
-                              data-testid={`mobile-link-${item.name.toLowerCase()}`}
-                            >
-                              {item.name}
-                              <ChevronDown className="w-4 h-4" />
-                            </Button>
-                          </CollapsibleTrigger>
+                          <div className="flex items-center">
+                            <Link href={item.href || '#'} className="flex-1">
+                              <Button
+                                variant="ghost"
+                                className={`w-full justify-start ${
+                                  location === item.href ? 'text-primary' : ''
+                                }`}
+                                onClick={() => setMobileOpen(false)}
+                                data-testid={`mobile-link-${item.name.toLowerCase()}`}
+                              >
+                                {item.name}
+                              </Button>
+                            </Link>
+                            <CollapsibleTrigger asChild>
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-10 w-10"
+                                data-testid={`mobile-expand-${item.name.toLowerCase()}`}
+                              >
+                                <ChevronDown className="w-4 h-4" />
+                              </Button>
+                            </CollapsibleTrigger>
+                          </div>
                           <CollapsibleContent className="pl-4 space-y-1">
                             {item.submenu.map((subItem) => (
                               <div key={subItem.name}>

@@ -58,7 +58,7 @@ const services = [
 
 export default function Incluu() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85 py-16 sm:py-20 md:py-24">
+    <div className="min-h-screen bg-gradient-to-br from-purple-600/85 via-purple-500/80 to-cyan-400/85 py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-6 sm:px-8 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

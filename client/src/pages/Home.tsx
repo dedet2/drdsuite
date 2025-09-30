@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Users, Heart, Calendar, ArrowRight, CheckCircle, Target, Globe, Shield, TrendingUp, Zap, Brain, Award, Briefcase } from 'lucide-react';
 import { Link } from 'wouter';
-import drDedePhoto from '/dr_dede_professional_headshot.jpg';
+import heroBanner from '/hero-banner.jpg';
 
 const impactMetrics = [
   {
@@ -73,16 +73,16 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] lg:flex lg:items-center overflow-hidden">
         {/* Background gradient - full width on mobile, left side on desktop */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/85 via-purple-500/80 to-cyan-400/85 z-0"></div>
         
         {/* Mobile/Tablet: Image at top */}
         <div className="lg:hidden relative z-10 w-full h-[40vh] min-h-[300px]">
           <img 
-            src={drDedePhoto} 
+            src={heroBanner} 
             alt="Dr. Dédé Tetsubayashi"
             className="w-full h-full object-cover object-[center_25%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/40 to-purple-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-600/40 to-purple-600/80"></div>
         </div>
         
         {/* Hero Content - full width on mobile, left side on desktop */}
@@ -118,11 +118,11 @@ export default function Home() {
         {/* Desktop: Hero Image - right side */}
         <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full z-10">
           <img 
-            src={drDedePhoto} 
+            src={heroBanner} 
             alt="Dr. Dédé Tetsubayashi"
             className="w-full h-full object-cover object-[center_30%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-purple-900/20 to-purple-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-purple-600/20 to-purple-600/90"></div>
         </div>
       </section>
 
@@ -193,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Dual Brand Introduction */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600/85 via-purple-500/80 to-cyan-400/85">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Dr. Dédé Brand */}
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600/85 via-purple-500/80 to-cyan-400/85">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Build Ethical, Accessible AI?

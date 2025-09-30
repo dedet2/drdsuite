@@ -43,7 +43,7 @@ export default function Resources() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-cyan-900/85">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600/85 via-purple-500/80 to-cyan-400/85">
         <div className="max-w-6xl mx-auto text-center">
           <Badge variant="outline" className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white">Tools & Documentation</Badge>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-serif">
