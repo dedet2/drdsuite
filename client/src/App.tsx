@@ -22,7 +22,8 @@ import LuxuryWellness from "@/pages/LuxuryWellness";
 import DisabilityAdvocacy from "@/pages/DisabilityAdvocacy";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
-import NotFound from "@/pages/not-found";
+import Resources from "@/pages/Resources";
+import NotFound from "@/pages/NotFound";
 
 function Router() {
   return (
@@ -37,6 +38,7 @@ function Router() {
       <Route path="/ai-governance" component={Consulting} />
       <Route path="/contact" component={Contact} />
       <Route path="/retreat" component={Retreat} />
+      <Route path="/resources" component={Resources} />
       <Route path="/stories" component={Stories} />
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/testimonials" component={Testimonials} />

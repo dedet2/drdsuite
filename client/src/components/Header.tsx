@@ -116,8 +116,8 @@ export default function Header() {
                                         {nestedItem.external ? (
                                           <a 
                                             href={nestedItem.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                            target={nestedItem.openInSameTab ? undefined : "_blank"}
+                                            rel={nestedItem.openInSameTab ? undefined : "noopener noreferrer"}
                                             className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary text-sm"
                                             data-testid={`link-${nestedItem.name.toLowerCase().replace(/\s+/g, '-')}`}
                                           >
@@ -143,8 +143,8 @@ export default function Header() {
                                   {subItem.external ? (
                                     <a 
                                       href={subItem.href}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
+                                      target={subItem.openInSameTab ? undefined : "_blank"}
+                                      rel={subItem.openInSameTab ? undefined : "noopener noreferrer"}
                                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary"
                                       data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
                                     >
@@ -247,7 +247,7 @@ export default function Header() {
                                     <CollapsibleContent className="pl-4 space-y-1">
                                       {subItem.submenu.map((nestedItem) => (
                                         nestedItem.external ? (
-                                          <a key={nestedItem.name} href={nestedItem.href} target="_blank" rel="noopener noreferrer">
+                                          <a key={nestedItem.name} href={nestedItem.href} target={nestedItem.openInSameTab ? undefined : "_blank"} rel={nestedItem.openInSameTab ? undefined : "noopener noreferrer"}>
                                             <Button
                                               variant="ghost"
                                               size="sm"
@@ -276,7 +276,7 @@ export default function Header() {
                                   </Collapsible>
                                 ) : (
                                   subItem.external ? (
-                                    <a href={subItem.href} target="_blank" rel="noopener noreferrer">
+                                    <a href={subItem.href} target={subItem.openInSameTab ? undefined : "_blank"} rel={subItem.openInSameTab ? undefined : "noopener noreferrer"}>
                                       <Button
                                         variant="ghost"
                                         size="sm"
