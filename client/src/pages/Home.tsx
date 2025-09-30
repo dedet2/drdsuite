@@ -71,12 +71,22 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-        {/* Background gradient - left side */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-purple-800 to-cyan-900/90"></div>
+      <section className="relative min-h-[80vh] lg:flex lg:items-center overflow-hidden">
+        {/* Background gradient - full width on mobile, left side on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-purple-800 to-cyan-900/90 z-0"></div>
         
-        {/* Hero Content - left side */}
-        <div className="relative z-10 w-full lg:w-1/2 px-4 sm:px-6 lg:px-12 py-20">
+        {/* Mobile/Tablet: Image at top */}
+        <div className="lg:hidden relative z-10 w-full h-[40vh] min-h-[300px]">
+          <img 
+            src={drDedePhoto} 
+            alt="Dr. Dédé Tetsubayashi"
+            className="w-full h-full object-cover object-[center_25%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/40 to-purple-900/80"></div>
+        </div>
+        
+        {/* Hero Content - full width on mobile, left side on desktop */}
+        <div className="relative z-20 w-full lg:w-1/2 px-4 sm:px-6 lg:px-12 py-12 lg:py-20">
           <Badge variant="outline" className="mb-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
             Dr. Dédé + incluu Partnership
           </Badge>
@@ -105,12 +115,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Hero Image - right side (hidden on mobile) */}
-        <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
+        {/* Desktop: Hero Image - right side */}
+        <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full z-10">
           <img 
             src={drDedePhoto} 
             alt="Dr. Dédé Tetsubayashi"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-[center_30%]"
           />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-purple-900/20 to-purple-900/90"></div>
         </div>
