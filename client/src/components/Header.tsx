@@ -61,9 +61,9 @@ const navigation: NavigationItem[] = [
       { 
         name: 'Retreats & Advocacy',
         submenu: [
-          { name: 'Executive Retreats', href: '/' },
-          { name: 'Luxury Wellness', href: '/' },
-          { name: 'Disability Advocacy', href: '/' }
+          { name: 'Executive Retreats', href: '/retreat' },
+          { name: 'Luxury Wellness', href: '/luxury-wellness' },
+          { name: 'Disability Advocacy', href: '/disability-advocacy' }
         ]
       },
       { name: 'Speaking & Events', href: '/speaking' },
@@ -100,15 +100,16 @@ export default function Header() {
                       <NavigationMenuTrigger 
                         className={`transition-colors hover:bg-primary/10 ${item.submenu && item.submenu.some(sub => location === sub.href) ? 'text-primary bg-primary/5' : ''} ${location === item.href ? 'text-primary' : ''}`}
                         data-testid={`link-${item.name.toLowerCase()}`}
-                        onClick={() => {
-                          if (item.href) {
+                        onPointerDown={(e) => {
+                          if (item.href && e.button === 0) {
+                            e.preventDefault();
                             setLocation(item.href);
                           }
                         }}
                       >
                         {item.name}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="left-0 right-0">
+                      <NavigationMenuContent>
                         <div className="grid w-56 gap-2 p-4">
                           {item.submenu.map((subItem) => (
                             <div key={subItem.name}>
