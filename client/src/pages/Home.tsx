@@ -3,98 +3,112 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Mountain, Sparkles, Users, Heart, Calendar, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'wouter';
+import drDedePhoto from '/dr_dede_professional_headshot.jpg';
 import retreatImage1 from '@assets/stock_images/luxury_executive_ret_c90fbc14.jpg';
 import retreatImage2 from '@assets/stock_images/luxury_executive_ret_f2d3928f.jpg';
 import retreatImage3 from '@assets/stock_images/luxury_executive_ret_51bd911f.jpg';
 
-const retreatOfferings = [
+const services = [
   {
-    title: "Executive Leadership Retreats",
-    description: "Transform your leadership through immersive experiences that blend strategic thinking with embodied wisdom.",
+    title: "AI Governance & Ethics",
+    description: "Strategic consulting to help organizations build ethical AI systems that drive business value and mitigate risk.",
     features: [
-      "AI Governance & Ethics Integration",
-      "Disability Justice in Tech Leadership",
-      "Inclusive Systems Design Workshops",
-      "Personal Leadership Development"
+      "Regulatory compliance strategies",
+      "Ethical AI framework development",
+      "Risk assessment methodologies",
+      "Policy development & implementation"
+    ],
+    icon: Target,
+    brand: "incluu"
+  },
+  {
+    title: "Executive Retreats & Speaking",
+    description: "Transformative leadership experiences and keynotes that blend AI governance with embodied wisdom.",
+    features: [
+      "Executive leadership retreats",
+      "TEDx-style keynote presentations",
+      "Custom workshops & training",
+      "Strategic planning offsites"
     ],
     icon: Users,
-    image: retreatImage1
+    brand: "dr-dede"
   },
   {
-    title: "Luxury Wellness Escapes",
-    description: "Rejuvenate mind, body, and spirit in curated environments designed for deep rest and transformation.",
+    title: "Product Inclusion Strategy",
+    description: "Turn accessibility and inclusion into competitive advantages that expand markets and drive innovation.",
     features: [
-      "Accessible Luxury Accommodations",
-      "Culturally-Responsive Healing Practices",
-      "Technology Detox & Digital Wellness",
-      "Community & Connection Building"
+      "Accessibility-first implementation",
+      "Inclusive design frameworks",
+      "Bias detection & mitigation",
+      "Market expansion strategies"
     ],
-    icon: Sparkles,
-    image: retreatImage2
-  },
-  {
-    title: "Strategic Planning Offsites",
-    description: "Design your organization's inclusive AI future in inspiring settings that foster creativity and collaboration.",
-    features: [
-      "AI Risk Assessment Frameworks",
-      "Product Inclusion Strategy Sessions",
-      "Team Alignment & Culture Building",
-      "Actionable Implementation Roadmaps"
-    ],
-    icon: Mountain,
-    image: retreatImage3
+    icon: Heart,
+    brand: "incluu"
   }
 ];
 
-const retreatBenefits = [
-  "Curated mountain and coastal retreat locations",
-  "Fully accessible luxury accommodations",
-  "Expert facilitation by Dr. Dédé Tetsubayashi",
-  "Small group sizes (12-20 participants max)",
-  "Culturally-responsive programming",
-  "Follow-up support & community access"
+const impactMetrics = [
+  {
+    metric: "$1.5B+",
+    description: "Total client value delivered through inclusive practices"
+  },
+  {
+    metric: "100%",
+    description: "Regulatory compliance success rate"
+  },
+  {
+    metric: "47",
+    description: "Countries served globally"
+  },
+  {
+    metric: "85%",
+    description: "Reduction in compliance review time"
+  }
 ];
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Retreat Image */}
+      {/* Hero Section with Dr. Dédé Photo */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
+        {/* Background with gradient and Dr. Dédé photo */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={retreatImage1} 
-            alt="Luxury Executive Retreat" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-purple-800/85 to-cyan-900/80 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/95 via-purple-800/90 to-cyan-900/85"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-30">
+            <img 
+              src={drDedePhoto} 
+              alt="Dr. Dédé Tetsubayashi" 
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="outline" className="mb-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
-            Executive Retreats & Wellness Experiences
-          </Badge>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif">
-            Transform Your Leadership
-          </h1>
-          <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-3xl mx-auto font-light">
-            Immersive executive retreats where AI governance meets embodied wisdom, 
-            accessibility meets luxury, and transformation meets community.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/retreat">
-              <Button size="lg" className="bg-white text-purple-900 hover:bg-white/90" data-testid="button-explore-retreats">
-                <Mountain className="mr-2 h-5 w-5" />
-                Explore Retreats
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm" data-testid="button-book-consultation">
-                <Calendar className="mr-2 h-5 w-5" />
-                Book Consultation
-              </Button>
-            </Link>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <Badge variant="outline" className="mb-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
+              AI Governance • Accessibility • Executive Leadership
+            </Badge>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif">
+              Transforming AI Through Equitable Innovation
+            </h1>
+            <p className="text-xl sm:text-2xl text-white/90 mb-8 font-light">
+              Expert consulting, strategic advisory, and transformative retreats that prove 
+              social justice and business success aren't just compatible—they're essential.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/dr-dede">
+                <Button size="lg" className="bg-white text-purple-900 hover:bg-white/90" data-testid="button-watch-tedx">
+                  Watch TEDx Talk
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline" className="border-white/30 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm" data-testid="button-book-consultation">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Consultation
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
