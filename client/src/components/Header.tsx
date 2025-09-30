@@ -107,7 +107,7 @@ export default function Header() {
                           }
                         }}
                       >
-                        {item.name}
+                        <span>{item.name}</span>
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
                         <div className="grid w-56 gap-2 p-4">
