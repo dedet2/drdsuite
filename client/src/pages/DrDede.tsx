@@ -81,7 +81,7 @@ export default function DrDede() {
                 excludes—she's lived it. Every algorithmic failure has become data for building better systems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://nslacnow.manus.space/">
+                <a href="https://nslacnow.manus.space/" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" data-testid="button-watch-tedx-talk">
                     <Play className="mr-2 h-5 w-5" />
                     Watch TEDx Talk

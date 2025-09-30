@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Mountain, Sparkles, Users, Heart, Calendar, ArrowRight, CheckCircle, Target } from 'lucide-react';
+import { Mountain, Sparkles, Users, Heart, Calendar, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'wouter';
 import drDedePhoto from '/dr_dede_professional_headshot.jpg';
 import retreatImage1 from '@assets/stock_images/luxury_executive_ret_c90fbc14.jpg';
@@ -113,32 +113,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Combined Services */}
+      {/* Retreat Offerings */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Our Services</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Retreat Experiences</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Combining strategic consulting from incluu with transformative leadership experiences from Dr. Dédé
+              Curated transformational experiences for leaders ready to build inclusive, 
+              ethical AI futures while nurturing their own wellbeing.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover-elevate h-full">
+            {retreatOfferings.map((offering, index) => (
+              <Card key={index} className="overflow-hidden hover-elevate h-full">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={offering.image} 
+                    alt={offering.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="w-6 h-6 text-primary" />
+                    <offering.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <Badge variant="outline" className="mb-2 w-fit">{service.brand}</Badge>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl">{offering.title}</CardTitle>
                   <CardDescription className="text-base">
-                    {service.description}
+                    {offering.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
+                    {offering.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start text-sm text-muted-foreground">
                         <CheckCircle className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                         {feature}
@@ -147,26 +154,6 @@ export default function Home() {
                   </ul>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Metrics */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Proven Impact</h2>
-            <p className="text-lg text-muted-foreground">
-              Real results that demonstrate the business value of inclusive technology
-            </p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {impactMetrics.map((item, index) => (
-              <div key={index} className="text-center">
-                <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-2">{item.metric}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
             ))}
           </div>
         </div>
@@ -223,62 +210,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Retreat Benefits */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Why Organizations Choose Us</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">What's Included</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Proven expertise at the intersection of business value and social justice
+              Every retreat is thoughtfully designed to provide transformational experiences 
+              in accessible, luxurious environments.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="hover-elevate">
-              <CardHeader>
-                <CardTitle className="text-xl">incluu Consulting</CardTitle>
-                <CardDescription>
-                  Black-woman-owned consultancy delivering measurable ROI through inclusive practices
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-primary mr-3 mt-0.5" />
-                  <span className="text-sm">$500M+ market expansion delivered</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-primary mr-3 mt-0.5" />
-                  <span className="text-sm">100% regulatory compliance success</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-primary mr-3 mt-0.5" />
-                  <span className="text-sm">30+ strategic engagements completed</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-elevate">
-              <CardHeader>
-                <CardTitle className="text-xl">Dr. Dédé Leadership</CardTitle>
-                <CardDescription>
-                  TEDx speaker and AI governance expert transforming how leaders approach technology
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-primary mr-3 mt-0.5" />
-                  <span className="text-sm">Executive retreats & workshops</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-primary mr-3 mt-0.5" />
-                  <span className="text-sm">Keynote speaking worldwide</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-primary mr-3 mt-0.5" />
-                  <span className="text-sm">Disability justice & accessibility focus</span>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {retreatBenefits.map((benefit, index) => (
+              <Card key={index} className="hover-elevate">
+                <CardContent className="p-6">
+                  <div className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-foreground">{benefit}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -287,30 +240,31 @@ export default function Home() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/10 to-cyan-900/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Ready to Build an Inclusive AI Future?
+            Ready to Transform Your Leadership?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Whether you need strategic consulting, executive leadership experiences, or transformative speaking engagements, 
-            we're here to help you prove that social justice and business success are essential to each other.
+            Join tech leaders, executives, and changemakers who have experienced profound 
+            transformation through our retreats.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" data-testid="button-get-started">
-                <Calendar className="mr-2 h-5 w-5" />
-                Get Started
+            <Link href="/retreat">
+              <Button size="lg" data-testid="button-view-retreats">
+                <Mountain className="mr-2 h-5 w-5" />
+                View Retreat Options
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link href="/case-studies">
-              <Button variant="outline" size="lg" data-testid="button-view-case-studies">
-                View Case Studies
+            <Link href="/contact">
+              <Button variant="outline" size="lg" data-testid="button-schedule-call">
+                <Calendar className="mr-2 h-5 w-5" />
+                Schedule Discovery Call
               </Button>
             </Link>
           </div>
 
           <div className="mt-8 text-sm text-muted-foreground">
-            <p>Global reach • 100% compliance success • Proven ROI</p>
+            <p>Limited spots available • Early bird pricing for 2025 • Scholarships available</p>
           </div>
         </div>
       </section>
