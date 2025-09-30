@@ -50,6 +50,7 @@ const navigation: NavigationItem[] = [
   },
   { 
     name: 'Dr. Dédé',
+    href: '/dr-dede',
     submenu: [
       { 
         name: 'Retreats & Advocacy',

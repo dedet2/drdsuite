@@ -88,10 +88,23 @@ Preferred communication style: Simple, everyday language.
 - **Contrast Solution**: Text overlay provides sufficient contrast (≥3:1) for large heading text while preserving brand aesthetic
 - **Professional Photography**: Split-screen hero layout with gradient + overlay on left, Dr. Dédé professional headshot on right
 
-### Navigation Structure (Complete)
-- **Header Navigation**: Home | incluu | Case Studies | Testimonials | Blog | Resources | Dr. Dédé | Retreats & Advocacy ▾ | Speaking & Events | ROI Calculator | Contact
-- **Retreats & Advocacy Submenu**: Executive Retreats | Luxury Wellness | Disability Advocacy
-- **External Links**: Blog (incluu.us), Resources (dr-dede.vercel.app), Dr. Dédé (dr-dede.vercel.app), ROI Calculator, TEDx Talk (nslacnow.manus.space)
+### Navigation Structure (September 30, 2025 - PRD Compliant)
+- **Header Navigation**: Home | incluu ▾ | Resources ▾ | Dr. Dédé ▾ | ROI Calculator | Contact
+- **incluu Dropdown**: Case Studies | Testimonials
+- **Resources Dropdown**: Blog (external: incluu.us) | Stories | Privacy Policy | Terms of Service
+- **Dr. Dédé Dropdown**: 
+  - Main link navigates to /dr-dede page
+  - Dropdown menu with: Retreats & Advocacy ▾ (nested submenu) | Speaking & Events | Watch TEDx (external)
+  - Retreats & Advocacy nested submenu: Executive Retreats | Luxury Wellness | Disability Advocacy
+- **External Links**: Blog (incluu.us), ROI Calculator (pmukyznd.manus.space), Watch TEDx (nslacnow.manus.space)
+
+### Content Pages (September 30, 2025)
+- **Dr. Dédé Page** (/dr-dede): Professional page with TEDx talk content, key insights, speaking topics, and professional photography. No emoji characters per design guidelines.
+- **Case Studies Page** (/case-studies): Comprehensive client case studies with measurable business impact and ROI metrics
+- **Testimonials Page** (/testimonials): Client testimonials aligned with case studies, featuring decision-makers and success stories
+- **Privacy Policy** (/privacy): Professional privacy policy covering data collection, usage, and user rights
+- **Terms of Service** (/terms): Comprehensive terms covering service usage, intellectual property, and limitations
+- **All Routes**: Properly configured in App.tsx with correct paths and component mappings
 
 ### SEO Implementation
 - **Meta Tags**: Descriptive titles and meta descriptions on all pages
