@@ -18,14 +18,17 @@ type NavigationItem = {
   name: string;
   href?: string;
   external?: boolean;
+  openInSameTab?: boolean;
   submenu?: Array<{
     name: string;
     href?: string;
     external?: boolean;
+    openInSameTab?: boolean;
     submenu?: Array<{
       name: string;
       href: string;
       external?: boolean;
+      openInSameTab?: boolean;
     }>;
   }>;
 };
@@ -62,7 +65,7 @@ const navigation: NavigationItem[] = [
         ]
       },
       { name: 'Speaking & Events', href: '/speaking' },
-      { name: 'Watch TEDx', href: 'https://nslacnow.manus.space/' }
+      { name: 'Watch TEDx', href: 'https://nslacnow.manus.space/', external: true, openInSameTab: true }
     ]
   },
   { name: 'Contact', href: '/contact' }
@@ -113,8 +116,7 @@ export default function Header() {
                                         {nestedItem.external ? (
                                           <a 
                                             href={nestedItem.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                            {...(!nestedItem.openInSameTab && { target: "_blank", rel: "noopener noreferrer" })}
                                             className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary text-sm"
                                             data-testid={`link-${nestedItem.name.toLowerCase().replace(/\s+/g, '-')}`}
                                           >
@@ -140,8 +142,7 @@ export default function Header() {
                                   {subItem.external ? (
                                     <a 
                                       href={subItem.href}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
+                                      {...(!subItem.openInSameTab && { target: "_blank", rel: "noopener noreferrer" })}
                                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary"
                                       data-testid={`link-${subItem.name.toLowerCase().replace(/\s+/g, '-')}`}
                                     >
@@ -273,7 +274,7 @@ export default function Header() {
                                   </Collapsible>
                                 ) : (
                                   subItem.external ? (
-                                    <a href={subItem.href} target="_blank" rel="noopener noreferrer">
+                                    <a href={subItem.href} {...(!subItem.openInSameTab && { target: "_blank", rel: "noopener noreferrer" })}>
                                       <Button
                                         variant="ghost"
                                         size="sm"
